@@ -27,11 +27,7 @@
             --link: #93c5fd;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -43,803 +39,126 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 32px;
-        }
-
-        a {
-            color: var(--link);
-            text-decoration: none;
-            transition: opacity 0.2s ease;
-        }
-
-        a:hover {
-            opacity: 0.75;
-        }
-
-        .cite {
-            font-size: 9px;
-            color: var(--link);
-            vertical-align: super;
-            margin-left: 1px;
-        }
-
-        header {
-            padding: 64px 0 48px;
-            border-bottom: 1px solid var(--border);
-            margin-bottom: 48px;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            gap: 24px;
-        }
-
-        .header-meta {
-            color: var(--text-muted);
-            font-size: 13px;
-            font-weight: 400;
-        }
-
-        h1 {
-            font-size: 26px;
-            font-weight: 500;
-            letter-spacing: -0.025em;
-            color: var(--text-primary);
-        }
-
-        .context-section {
-            margin-bottom: 48px;
-        }
-
-        .context-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
-
-        .context-title {
-            font-size: 12px;
-            font-weight: 500;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-        }
-
-        .context-link {
-            font-size: 12px;
-            color: var(--link);
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .context-link svg {
-            width: 11px;
-            height: 11px;
-        }
-
-        .context-content {
-            display: flex;
-            align-items: flex-start;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-
-        .context-main {
-            flex: 1;
-            min-width: 280px;
-        }
-
-        .context-main p {
-            color: var(--text-secondary);
-            font-size: 14px;
-            line-height: 1.6;
-        }
-
-        .context-main .highlight {
-            color: var(--text-primary);
-            font-weight: 500;
-        }
-
-        .context-stats-wrapper {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .context-stats-label {
-            font-size: 10px;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            text-align: center;
-        }
-
-        .context-stats {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .context-stat {
-            text-align: center;
-            padding: 0 8px;
-        }
-
-        .context-stat .value {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--text-primary);
-            letter-spacing: -0.02em;
-        }
-
-        .context-stat .label {
-            font-size: 10px;
-            color: var(--text-muted);
-            margin-top: 2px;
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
-        }
-
-        .search-wrapper {
-            margin-bottom: 20px;
-        }
-
-        .search-input {
-            width: 100%;
-            padding: 12px 16px;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            color: var(--text-primary);
-            font-size: 14px;
-            font-family: inherit;
-            font-weight: 400;
-            transition: all 0.2s ease;
-        }
-
-        .search-input:focus {
-            outline: none;
-            border-color: var(--border-hover);
-            background: var(--bg-card);
-        }
-
-        .search-input::placeholder {
-            color: var(--text-muted);
-        }
-
-        .nav-pills {
-            display: flex;
-            gap: 2px;
-            margin-bottom: 32px;
-            padding: 3px;
-            background: var(--bg-secondary);
-            border-radius: 8px;
-            width: fit-content;
-        }
-
-        .nav-pill {
-            padding: 7px 14px;
-            background: transparent;
-            border: none;
-            border-radius: 6px;
-            color: var(--text-muted);
-            font-size: 13px;
-            font-weight: 450;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-family: inherit;
-        }
-
-        .nav-pill:hover {
-            color: var(--text-secondary);
-        }
-
-        .nav-pill.active {
-            background: var(--bg-elevated);
-            color: var(--text-primary);
-        }
-
-        .competitors-grid {
-            display: grid;
-            gap: 12px;
-        }
-
-        .competitor-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: all 0.2s ease;
-        }
-
-        .competitor-card:hover {
-            border-color: var(--border-hover);
-        }
-
-        .competitor-card.expanded .card-content {
-            display: block;
-        }
-
-        .card-header {
-            padding: 18px 22px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .card-header-left {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-        }
-
-        .rank-badge {
-            width: 32px;
-            height: 32px;
-            background: var(--accent-soft);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 500;
-            font-size: 13px;
-            color: var(--text-secondary);
-        }
-
-        .company-info h3 {
-            font-size: 15px;
-            font-weight: 500;
-            margin-bottom: 2px;
-        }
-
-        .company-info h3 a {
-            color: inherit;
-        }
-
-        .company-info h3 a:hover {
-            color: var(--link);
-        }
-
-        .company-meta {
-            display: flex;
-            gap: 10px;
-            font-size: 12px;
-            color: var(--text-muted);
-        }
-
-        .tags {
-            display: flex;
-            gap: 5px;
-            flex-wrap: wrap;
-        }
-
-        .tag {
-            padding: 3px 8px;
-            background: var(--bg-secondary);
-            border-radius: 5px;
-            font-size: 10px;
-            color: var(--text-muted);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.02em;
-        }
-
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+        a { color: var(--link); text-decoration: none; transition: opacity 0.2s ease; }
+        a:hover { opacity: 0.75; }
+        .cite { font-size: 9px; color: var(--link); vertical-align: super; margin-left: 1px; }
+        header { padding: 64px 0 48px; border-bottom: 1px solid var(--border); margin-bottom: 48px; }
+        .header-content { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; }
+        .header-meta { color: var(--text-muted); font-size: 13px; font-weight: 400; }
+        h1 { font-size: 26px; font-weight: 500; letter-spacing: -0.025em; color: var(--text-primary); }
+        .context-section { margin-bottom: 48px; }
+        .context-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+        .context-title { font-size: 12px; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+        .context-link { font-size: 12px; color: var(--link); display: flex; align-items: center; gap: 4px; }
+        .context-link svg { width: 11px; height: 11px; }
+        .context-content { display: flex; align-items: flex-start; gap: 40px; flex-wrap: wrap; }
+        .context-main { flex: 1; min-width: 280px; }
+        .context-main p { color: var(--text-secondary); font-size: 14px; line-height: 1.6; }
+        .context-main .highlight { color: var(--text-primary); font-weight: 500; }
+        .context-stats-wrapper { display: flex; flex-direction: column; gap: 8px; }
+        .context-stats-label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; text-align: center; }
+        .context-stats { display: flex; gap: 20px; flex-wrap: wrap; }
+        .context-stat { text-align: center; padding: 0 8px; }
+        .context-stat .value { font-size: 18px; font-weight: 600; color: var(--text-primary); letter-spacing: -0.02em; }
+        .context-stat .label { font-size: 10px; color: var(--text-muted); margin-top: 2px; text-transform: uppercase; letter-spacing: 0.03em; }
+        .search-wrapper { margin-bottom: 20px; }
+        .search-input { width: 100%; padding: 12px 16px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; color: var(--text-primary); font-size: 14px; font-family: inherit; font-weight: 400; transition: all 0.2s ease; }
+        .search-input:focus { outline: none; border-color: var(--border-hover); background: var(--bg-card); }
+        .search-input::placeholder { color: var(--text-muted); }
+        .nav-pills { display: flex; gap: 2px; margin-bottom: 32px; padding: 3px; background: var(--bg-secondary); border-radius: 8px; width: fit-content; }
+        .nav-pill { padding: 7px 14px; background: transparent; border: none; border-radius: 6px; color: var(--text-muted); font-size: 13px; font-weight: 450; cursor: pointer; transition: all 0.2s ease; font-family: inherit; }
+        .nav-pill:hover { color: var(--text-secondary); }
+        .nav-pill.active { background: var(--bg-elevated); color: var(--text-primary); }
+        .competitors-grid { display: grid; gap: 12px; }
+        .competitor-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: all 0.2s ease; }
+        .competitor-card:hover { border-color: var(--border-hover); }
+        .competitor-card.expanded .card-content { display: block; }
+        .card-header { padding: 18px 22px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+        .card-header-left { display: flex; align-items: center; gap: 14px; }
+        .rank-badge { width: 32px; height: 32px; background: var(--accent-soft); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 500; font-size: 13px; color: var(--text-secondary); }
+        .company-info h3 { font-size: 15px; font-weight: 500; margin-bottom: 2px; }
+        .company-info h3 a { color: inherit; }
+        .company-info h3 a:hover { color: var(--link); }
+        .company-meta { display: flex; gap: 10px; font-size: 12px; color: var(--text-muted); }
+        .tags { display: flex; gap: 5px; flex-wrap: wrap; }
+        .tag { padding: 3px 8px; background: var(--bg-secondary); border-radius: 5px; font-size: 10px; color: var(--text-muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.02em; }
         .tag.device { background: var(--success-soft); color: var(--success); }
         .tag.ai { background: var(--accent-soft); color: var(--text-secondary); }
         .tag.arpa { background: var(--warning-soft); color: var(--warning); }
-
-        .expand-icon {
-            width: 24px;
-            height: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s ease;
-            color: var(--text-muted);
-        }
-
-        .competitor-card.expanded .expand-icon {
-            transform: rotate(180deg);
-        }
-
-        .card-content {
-            display: none;
-            padding: 0 22px 22px;
-            border-top: 1px solid var(--border);
-        }
-
-        .content-section {
-            padding-top: 22px;
-        }
-
-        .content-section h4 {
-            font-size: 10px;
-            font-weight: 500;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            margin-bottom: 12px;
-        }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 10px;
-            margin-bottom: 18px;
-        }
-
-        .info-item {
-            background: var(--bg-secondary);
-            padding: 12px 14px;
-            border-radius: 8px;
-        }
-
-        .info-item .label {
-            font-size: 10px;
-            color: var(--text-muted);
-            margin-bottom: 3px;
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
-        }
-
-        .info-item .value {
-            font-size: 13px;
-            font-weight: 500;
-        }
-
-        .founders-list {
-            display: flex;
-            gap: 6px;
-            flex-wrap: wrap;
-            margin-top: 6px;
-        }
-
-        .founder-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            padding: 5px 10px;
-            background: var(--bg-secondary);
-            border-radius: 5px;
-            font-size: 11px;
-            color: var(--text-secondary);
-        }
-
-        .linkedin-icon {
-            display: inline-block;
-            width: 12px;
-            height: 12px;
-            background: #0a66c2;
-            border-radius: 2px;
-            position: relative;
-        }
-
-        .linkedin-icon::after {
-            content: "in";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 8px;
-            font-weight: 700;
-            color: white;
-        }
-
-        .products-list {
-            display: grid;
-            gap: 8px;
-        }
-
-        .product-item {
-            background: var(--bg-secondary);
-            padding: 14px;
-            border-radius: 8px;
-            border-left: 2px solid var(--text-muted);
-        }
-
-        .product-item h5 {
-            font-size: 13px;
-            font-weight: 500;
-            margin-bottom: 5px;
-        }
-
-        .product-item p {
-            font-size: 12px;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        .ai-details {
-            background: var(--bg-secondary);
-            padding: 14px;
-            border-radius: 8px;
-        }
-
-        .ai-details p {
-            color: var(--text-secondary);
-            font-size: 12px;
-            margin-bottom: 8px;
-            line-height: 1.6;
-        }
-
-        .ai-details p:last-child {
-            margin-bottom: 0;
-        }
-
-        .performance-stat {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--success-soft);
-            padding: 6px 12px;
-            border-radius: 6px;
-            margin-top: 8px;
-        }
-
-        .performance-stat .number {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--success);
-        }
-
-        .performance-stat .unit {
-            font-size: 11px;
-            color: var(--text-secondary);
-        }
-
-        .ausa-advantage {
-            background: var(--success-soft);
-            border: 1px solid rgba(110, 231, 183, 0.12);
-            padding: 14px;
-            border-radius: 8px;
-            margin-top: 18px;
-        }
-
-        .ausa-advantage h4 {
-            color: var(--success);
-            margin-bottom: 6px;
-        }
-
-        .ausa-advantage p {
-            color: var(--text-secondary);
-            font-size: 12px;
-            line-height: 1.6;
-        }
-
-        .warning-banner {
-            background: var(--danger-soft);
-            border: 1px solid rgba(252, 165, 165, 0.12);
-            padding: 12px 14px;
-            border-radius: 8px;
-            margin-top: 14px;
-        }
-
-        .warning-banner p {
-            color: var(--danger);
-            font-size: 12px;
-        }
-
-        .product-image-link {
-            display: inline-block;
-            padding: 5px 10px;
-            background: var(--bg-elevated);
-            border-radius: 5px;
-            font-size: 11px;
-            margin-top: 8px;
-        }
-
-        .specs-grid {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-top: 10px;
-        }
-
-        .spec-item {
-            background: var(--accent-soft);
-            padding: 8px 14px;
-            border-radius: 6px;
-            text-align: center;
-        }
-
-        .spec-item .spec-value {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .spec-item .spec-label {
-            font-size: 9px;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-            margin-top: 1px;
-        }
-
-        .comparison-section {
-            margin-top: 56px;
-            margin-bottom: 48px;
-        }
-
-        .comparison-section h2 {
-            font-size: 18px;
-            font-weight: 500;
-            margin-bottom: 20px;
-            letter-spacing: -0.01em;
-        }
-
-        .table-wrapper {
-            overflow-x: auto;
-            border-radius: 10px;
-            border: 1px solid var(--border);
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 12px;
-        }
-
-        th, td {
-            padding: 12px 14px;
-            text-align: left;
-            border-bottom: 1px solid var(--border);
-        }
-
-        th {
-            background: var(--bg-card);
-            font-weight: 500;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            font-size: 10px;
-            letter-spacing: 0.05em;
-        }
-
-        td {
-            background: var(--bg-secondary);
-        }
-
-        tr:last-child td {
-            border-bottom: none;
-        }
-
-        tr:hover td {
-            background: var(--bg-card);
-        }
-
+        .expand-icon { width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; color: var(--text-muted); }
+        .competitor-card.expanded .expand-icon { transform: rotate(180deg); }
+        .card-content { display: none; padding: 0 22px 22px; border-top: 1px solid var(--border); }
+        .content-section { padding-top: 22px; }
+        .content-section h4 { font-size: 10px; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin-bottom: 18px; }
+        .info-item { background: var(--bg-secondary); padding: 12px 14px; border-radius: 8px; }
+        .info-item .label { font-size: 10px; color: var(--text-muted); margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.03em; }
+        .info-item .value { font-size: 13px; font-weight: 500; }
+        .founders-list { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
+        .founder-link { display: inline-flex; align-items: center; gap: 5px; padding: 5px 10px; background: var(--bg-secondary); border-radius: 5px; font-size: 11px; color: var(--text-secondary); }
+        .linkedin-icon { display: inline-block; width: 12px; height: 12px; background: #0a66c2; border-radius: 2px; position: relative; }
+        .linkedin-icon::after { content: "in"; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 8px; font-weight: 700; color: white; }
+        .products-list { display: grid; gap: 8px; }
+        .product-item { background: var(--bg-secondary); padding: 14px; border-radius: 8px; border-left: 2px solid var(--text-muted); }
+        .product-item h5 { font-size: 13px; font-weight: 500; margin-bottom: 5px; }
+        .product-item p { font-size: 12px; color: var(--text-secondary); line-height: 1.6; }
+        .ai-details { background: var(--bg-secondary); padding: 14px; border-radius: 8px; }
+        .ai-details p { color: var(--text-secondary); font-size: 12px; margin-bottom: 8px; line-height: 1.6; }
+        .ai-details p:last-child { margin-bottom: 0; }
+        .performance-stat { display: inline-flex; align-items: center; gap: 8px; background: var(--success-soft); padding: 6px 12px; border-radius: 6px; margin-top: 8px; }
+        .performance-stat .number { font-size: 18px; font-weight: 600; color: var(--success); }
+        .performance-stat .unit { font-size: 11px; color: var(--text-secondary); }
+        .ausa-advantage { background: var(--success-soft); border: 1px solid rgba(110, 231, 183, 0.12); padding: 14px; border-radius: 8px; margin-top: 18px; }
+        .ausa-advantage h4 { color: var(--success); margin-bottom: 6px; }
+        .ausa-advantage p { color: var(--text-secondary); font-size: 12px; line-height: 1.6; }
+        .warning-banner { background: var(--danger-soft); border: 1px solid rgba(252, 165, 165, 0.12); padding: 12px 14px; border-radius: 8px; margin-top: 14px; }
+        .warning-banner p { color: var(--danger); font-size: 12px; }
+        .product-image-link { display: inline-block; padding: 5px 10px; background: var(--bg-elevated); border-radius: 5px; font-size: 11px; margin-top: 8px; }
+        .specs-grid { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+        .spec-item { background: var(--accent-soft); padding: 8px 14px; border-radius: 6px; text-align: center; }
+        .spec-item .spec-value { font-size: 14px; font-weight: 600; color: var(--text-primary); }
+        .spec-item .spec-label { font-size: 9px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; margin-top: 1px; }
+        .comparison-section { margin-top: 56px; margin-bottom: 48px; }
+        .comparison-section h2 { font-size: 18px; font-weight: 500; margin-bottom: 20px; letter-spacing: -0.01em; }
+        .table-wrapper { overflow-x: auto; border-radius: 10px; border: 1px solid var(--border); }
+        table { width: 100%; border-collapse: collapse; font-size: 12px; }
+        th, td { padding: 12px 14px; text-align: left; border-bottom: 1px solid var(--border); }
+        th { background: var(--bg-card); font-weight: 500; color: var(--text-muted); text-transform: uppercase; font-size: 10px; letter-spacing: 0.05em; }
+        td { background: var(--bg-secondary); }
+        tr:last-child td { border-bottom: none; }
+        tr:hover td { background: var(--bg-card); }
         .check { color: var(--success); }
         .cross { color: var(--danger); }
         .partial { color: var(--warning); }
-
-        .references-section {
-            margin-top: 48px;
-            padding-top: 32px;
-            border-top: 1px solid var(--border);
-        }
-
-        .references-section h3 {
-            font-size: 14px;
-            font-weight: 500;
-            margin-bottom: 16px;
-            color: var(--text-secondary);
-        }
-
-        .references-list {
-            display: grid;
-            gap: 8px;
-        }
-
-        .reference-item {
-            font-size: 11px;
-            color: var(--text-muted);
-            line-height: 1.5;
-        }
-
-        .reference-item a {
-            color: var(--link);
-        }
-
-        footer {
-            padding: 32px 0;
-            border-top: 1px solid var(--border);
-            margin-top: 48px;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 11px;
-        }
-
-        .external-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 3px;
-        }
-
-        .external-link svg {
-            width: 10px;
-            height: 10px;
-            opacity: 0.4;
-        }
-
+        .references-section { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--border); }
+        .references-section h3 { font-size: 14px; font-weight: 500; margin-bottom: 16px; color: var(--text-secondary); }
+        .references-list { display: grid; gap: 8px; }
+        .reference-item { font-size: 11px; color: var(--text-muted); line-height: 1.5; }
+        .reference-item a { color: var(--link); }
+        footer { padding: 32px 0; border-top: 1px solid var(--border); margin-top: 48px; text-align: center; color: var(--text-muted); font-size: 11px; }
+        .external-link { display: inline-flex; align-items: center; gap: 3px; }
+        .external-link svg { width: 10px; height: 10px; opacity: 0.4; }
         .hidden { display: none !important; }
 
-        .voice-bot-container {
-            position: fixed;
-            bottom: 28px;
-            right: 28px;
-            z-index: 1000;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            gap: 12px;
-        }
-
-        .voice-status {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 12px 16px;
-            max-width: 320px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-            opacity: 0;
-            transform: translateY(10px) scale(0.95);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            pointer-events: none;
-        }
-
-        .voice-status.visible {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-            pointer-events: auto;
-        }
-
-        .voice-status-header {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 6px;
-        }
-
-        .voice-status-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: var(--text-muted);
-        }
-
-        .voice-status.listening .voice-status-dot {
-            background: #f472b6;
-            animation: pulse-dot 1.5s ease-in-out infinite;
-        }
-
-        .voice-status.speaking .voice-status-dot {
-            background: var(--success);
-            animation: pulse-dot 0.8s ease-in-out infinite;
-        }
-
-        @keyframes pulse-dot {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.2); }
-        }
-
-        .voice-status-label {
-            font-size: 11px;
-            font-weight: 500;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .voice-status-text {
-            font-size: 13px;
-            color: var(--text-secondary);
-            line-height: 1.5;
-        }
-
-        .voice-mic-btn {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            border: none;
-            cursor: pointer;
-            position: relative;
-            background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 50%, #6366f1 100%);
-            box-shadow: 0 4px 20px rgba(236, 72, 153, 0.4), 0 0 0 0 rgba(236, 72, 153, 0.4);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .voice-mic-btn:hover {
-            transform: scale(1.08);
-            box-shadow: 0 6px 28px rgba(236, 72, 153, 0.5), 0 0 0 0 rgba(236, 72, 153, 0.4);
-        }
-
-        .voice-mic-btn:active {
-            transform: scale(0.95);
-        }
-
-        .voice-mic-btn.listening {
-            animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-
-        .voice-mic-btn.speaking {
-            background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
-            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4), 0 0 0 0 rgba(16, 185, 129, 0.4);
-        }
-
-        .voice-mic-btn.not-supported {
-            background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
-            cursor: not-allowed;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        }
-
-        @keyframes pulse-ring {
-            0% { box-shadow: 0 4px 20px rgba(236, 72, 153, 0.4), 0 0 0 0 rgba(236, 72, 153, 0.5); }
-            70% { box-shadow: 0 4px 20px rgba(236, 72, 153, 0.4), 0 0 0 15px rgba(236, 72, 153, 0); }
-            100% { box-shadow: 0 4px 20px rgba(236, 72, 153, 0.4), 0 0 0 0 rgba(236, 72, 153, 0); }
-        }
-
-        .voice-mic-btn svg {
-            width: 26px;
-            height: 26px;
-            color: white;
-            filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
-        }
-
-        .voice-mic-btn .mic-waves {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            opacity: 0;
-        }
-
-        .voice-mic-btn.listening .mic-waves {
-            animation: mic-wave 1.5s ease-out infinite;
-        }
-
-        @keyframes mic-wave {
-            0% { transform: scale(1); opacity: 0.4; border: 2px solid rgba(255, 255, 255, 0.5); }
-            100% { transform: scale(1.6); opacity: 0; border: 2px solid rgba(255, 255, 255, 0); }
-        }
-
-        .voice-hint {
-            position: absolute;
-            bottom: 70px;
-            right: 0;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 10px 14px;
-            font-size: 12px;
-            color: var(--text-secondary);
-            white-space: nowrap;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-            opacity: 0;
-            transform: translateY(5px);
-            transition: all 0.2s ease;
-            pointer-events: none;
-        }
-
-        .voice-mic-btn:hover .voice-hint {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .voice-mic-btn.listening .voice-hint,
-        .voice-mic-btn.speaking .voice-hint {
-            opacity: 0 !important;
-        }
+        .voice-bot-container { position: fixed; bottom: 24px; right: 24px; z-index: 1000; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
+        .voice-status { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 10px 14px; max-width: 280px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); opacity: 0; transform: translateY(8px); transition: all 0.2s ease; pointer-events: none; }
+        .voice-status.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+        .voice-status-header { display: flex; align-items: center; gap: 6px; margin-bottom: 4px; }
+        .voice-status-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--text-muted); }
+        .voice-status.listening .voice-status-dot { background: var(--warning); animation: blink 1s infinite; }
+        .voice-status.speaking .voice-status-dot { background: var(--success); animation: blink 0.5s infinite; }
+        @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+        .voice-status-label { font-size: 10px; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; }
+        .voice-status-text { font-size: 12px; color: var(--text-secondary); line-height: 1.4; }
+        .voice-mic-btn { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--border); cursor: pointer; background: var(--bg-elevated); box-shadow: 0 2px 8px rgba(0,0,0,0.2); transition: all 0.2s ease; display: flex; align-items: center; justify-content: center; }
+        .voice-mic-btn:hover { background: var(--bg-card); border-color: var(--border-hover); transform: scale(1.05); }
+        .voice-mic-btn.listening { background: var(--warning-soft); border-color: var(--warning); }
+        .voice-mic-btn.speaking { background: var(--success-soft); border-color: var(--success); }
+        .voice-mic-btn.not-supported { opacity: 0.5; cursor: not-allowed; }
+        .voice-mic-btn svg { width: 18px; height: 18px; color: var(--text-secondary); }
+        .voice-mic-btn.listening svg { color: var(--warning); }
+        .voice-mic-btn.speaking svg { color: var(--success); }
 
         @media (max-width: 768px) {
             .container { padding: 0 20px; }
@@ -851,9 +170,8 @@
             .info-grid { grid-template-columns: 1fr; }
             .context-content { flex-direction: column; gap: 20px; }
             .context-stats { justify-content: flex-start; }
-            .voice-bot-container { bottom: 20px; right: 20px; }
-            .voice-mic-btn { width: 54px; height: 54px; }
-            .voice-status { max-width: 260px; }
+            .voice-bot-container { bottom: 16px; right: 16px; }
+            .voice-mic-btn { width: 40px; height: 40px; }
         }
     </style>
 </head>
@@ -869,14 +187,7 @@
         <section class="context-section">
             <div class="context-header">
                 <span class="context-title">ARPA-H ADVOCATE · $5.5B</span>
-                <a href="https://arpa-h.gov/explore-funding/programs/advocate/teaming" target="_blank" class="context-link">
-                    Teaming Page
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                        <polyline points="15 3 21 3 21 9"></polyline>
-                        <line x1="10" y1="14" x2="21" y2="3"></line>
-                    </svg>
-                </a>
+                <a href="https://arpa-h.gov/explore-funding/programs/advocate/teaming" target="_blank" class="context-link">Teaming Page <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
             </div>
             <div class="context-content">
                 <div class="context-main">
@@ -885,26 +196,11 @@
                 <div class="context-stats-wrapper">
                     <div class="context-stats-label">Teaming Page Applicants<a href="#ref-7" class="cite">[7]</a></div>
                     <div class="context-stats">
-                        <div class="context-stat">
-                            <div class="value">37%</div>
-                            <div class="label">AI Startups</div>
-                        </div>
-                        <div class="context-stat">
-                            <div class="value">13%</div>
-                            <div class="label">Academic</div>
-                        </div>
-                        <div class="context-stat">
-                            <div class="value">8%</div>
-                            <div class="label">Defense</div>
-                        </div>
-                        <div class="context-stat">
-                            <div class="value">7%</div>
-                            <div class="label">Health Sys</div>
-                        </div>
-                        <div class="context-stat">
-                            <div class="value">6%</div>
-                            <div class="label">Big Tech</div>
-                        </div>
+                        <div class="context-stat"><div class="value">37%</div><div class="label">AI Startups</div></div>
+                        <div class="context-stat"><div class="value">13%</div><div class="label">Academic</div></div>
+                        <div class="context-stat"><div class="value">8%</div><div class="label">Defense</div></div>
+                        <div class="context-stat"><div class="value">7%</div><div class="label">Health Sys</div></div>
+                        <div class="context-stat"><div class="value">6%</div><div class="label">Big Tech</div></div>
                     </div>
                 </div>
             </div>
@@ -927,51 +223,25 @@
                         <div class="rank-badge">1</div>
                         <div class="company-info">
                             <h3><a href="https://www.tytocare.com/" target="_blank" class="external-link">TytoCare <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
-                            <div class="company-meta">
-                                <span>Founded 2012</span>
-                                <span>NYC / Israel</span>
-                            </div>
+                            <div class="company-meta"><span>Founded 2012</span><span>NYC / Israel</span></div>
                         </div>
                     </div>
-                    <div class="tags">
-                        <span class="tag device">Hardware</span>
-                        <span class="tag ai">AI</span>
-                    </div>
-                    <div class="expand-icon">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </div>
+                    <div class="tags"><span class="tag device">Hardware</span><span class="tag ai">AI</span></div>
+                    <div class="expand-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                 </div>
                 <div class="card-content">
                     <div class="content-section">
                         <div class="info-grid">
-                            <div class="info-item">
-                                <div class="label">Years in Market</div>
-                                <div class="value">14 years (since 2012)</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="label">Funding</div>
-                                <div class="value">$205M (8 rounds, 26 investors)<a href="#ref-1" class="cite">[1]</a></div>
-                            </div>
-                            <div class="info-item">
-                                <div class="label">Revenue</div>
-                                <div class="value">$5-25M/year</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="label">Impact</div>
-                                <div class="value">180+ health systems (US, EU, China, Latin America)</div>
-                            </div>
+                            <div class="info-item"><div class="label">Years in Market</div><div class="value">14 years (since 2012)</div></div>
+                            <div class="info-item"><div class="label">Funding</div><div class="value">$205M (8 rounds, 26 investors)<a href="#ref-1" class="cite">[1]</a></div></div>
+                            <div class="info-item"><div class="label">Revenue</div><div class="value">$5-25M/year</div></div>
+                            <div class="info-item"><div class="label">Impact</div><div class="value">180+ health systems (US, EU, China, Latin America)</div></div>
                         </div>
                         <div class="info-item" style="margin-bottom: 18px;">
                             <div class="label">Co-Founders</div>
                             <div class="founders-list">
-                                <a href="https://www.linkedin.com/in/dedigilad/" target="_blank" class="founder-link">
-                                    <span class="linkedin-icon"></span> Dedi Gilad
-                                </a>
-                                <a href="https://www.linkedin.com/in/ofer-tzadik-3921b33/" target="_blank" class="founder-link">
-                                    <span class="linkedin-icon"></span> Ofer Tzadik
-                                </a>
+                                <a href="https://www.linkedin.com/in/dedigilad/" target="_blank" class="founder-link"><span class="linkedin-icon"></span> Dedi Gilad</a>
+                                <a href="https://www.linkedin.com/in/ofer-tzadik-3921b33/" target="_blank" class="founder-link"><span class="linkedin-icon"></span> Ofer Tzadik</a>
                             </div>
                         </div>
                     </div>
@@ -997,16 +267,10 @@
                         <h4>AI Capabilities</h4>
                         <div class="ai-details">
                             <p><strong>Tyto Insights:</strong> FDA-cleared AI for wheeze, crackle, and rhonchi detection. Diagnostic support only — flags findings for clinicians, no autonomous decision-making. ML algorithms trained and validated by pulmonologists on 1.8M lung sound recordings.<a href="#ref-1" class="cite">[1]</a></p>
-                            <div class="performance-stat">
-                                <span class="number">95.85%</span>
-                                <span class="unit">AUC (vs 79% for GPs, 83% for pulmonary experts)</span>
-                            </div>
+                            <div class="performance-stat"><span class="number">95.85%</span><span class="unit">AUC (vs 79% for GPs, 83% for pulmonary experts)</span></div>
                         </div>
                     </div>
-                    <div class="ausa-advantage">
-                        <h4>AUSA Advantage</h4>
-                        <p>AUSA's compact 7-in-1 device eliminates attachment management. Integrated form factor simplifies patient self-exams versus TytoCare's modular system.</p>
-                    </div>
+                    <div class="ausa-advantage"><h4>AUSA Advantage</h4><p>AUSA's compact 7-in-1 device eliminates attachment management. Integrated form factor simplifies patient self-exams versus TytoCare's modular system.</p></div>
                 </div>
             </article>
 
@@ -1016,90 +280,43 @@
                         <div class="rank-badge">2</div>
                         <div class="company-info">
                             <h3><a href="https://alivecor.com/" target="_blank" class="external-link">AliveCor <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
-                            <div class="company-meta">
-                                <span>Founded 2011</span>
-                                <span>Mountain View, CA</span>
-                            </div>
+                            <div class="company-meta"><span>Founded 2011</span><span>Mountain View, CA</span></div>
                         </div>
                     </div>
-                    <div class="tags">
-                        <span class="tag device">Hardware</span>
-                        <span class="tag ai">AI</span>
-                        <span class="tag arpa">ARPA-H</span>
-                    </div>
-                    <div class="expand-icon">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </div>
+                    <div class="tags"><span class="tag device">Hardware</span><span class="tag ai">AI</span><span class="tag arpa">ARPA-H</span></div>
+                    <div class="expand-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                 </div>
                 <div class="card-content">
                     <div class="content-section">
                         <div class="info-grid">
-                            <div class="info-item">
-                                <div class="label">Years in Market</div>
-                                <div class="value">15 years (since 2011)</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="label">Funding</div>
-                                <div class="value">$165M+<a href="#ref-2" class="cite">[2]</a></div>
-                            </div>
-                            <div class="info-item">
-                                <div class="label">Revenue</div>
-                                <div class="value">$30-50M/year</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="label">Impact</div>
-                                <div class="value">1M+ quarterly users</div>
-                            </div>
+                            <div class="info-item"><div class="label">Years in Market</div><div class="value">15 years (since 2011)</div></div>
+                            <div class="info-item"><div class="label">Funding</div><div class="value">$165M+<a href="#ref-2" class="cite">[2]</a></div></div>
+                            <div class="info-item"><div class="label">Revenue</div><div class="value">$30-50M/year</div></div>
+                            <div class="info-item"><div class="label">Impact</div><div class="value">1M+ quarterly users</div></div>
                         </div>
                         <div class="info-item" style="margin-bottom: 18px;">
                             <div class="label">Co-Founders</div>
                             <div class="founders-list">
-                                <a href="https://www.linkedin.com/in/drdavealbert/" target="_blank" class="founder-link">
-                                    <span class="linkedin-icon"></span> Dr. David Albert
-                                </a>
-                                <a href="https://au.linkedin.com/in/bruce-satchwell-289982" target="_blank" class="founder-link">
-                                    <span class="linkedin-icon"></span> Bruce Satchwell
-                                </a>
-                                <a href="https://www.linkedin.com/in/kim-barnett-330982/" target="_blank" class="founder-link">
-                                    <span class="linkedin-icon"></span> Kim Barnett
-                                </a>
+                                <a href="https://www.linkedin.com/in/drdavealbert/" target="_blank" class="founder-link"><span class="linkedin-icon"></span> Dr. David Albert</a>
+                                <a href="https://au.linkedin.com/in/bruce-satchwell-289982" target="_blank" class="founder-link"><span class="linkedin-icon"></span> Bruce Satchwell</a>
+                                <a href="https://www.linkedin.com/in/kim-barnett-330982/" target="_blank" class="founder-link"><span class="linkedin-icon"></span> Kim Barnett</a>
                             </div>
                         </div>
                     </div>
                     <div class="content-section">
                         <h4>Products · First FDA Clearance 2012<a href="#ref-2" class="cite">[2]</a></h4>
                         <div class="products-list">
-                            <div class="product-item">
-                                <h5>KardiaMobile 1-Lead · $79</h5>
-                                <p>FDA cleared 2012. Consumer screening device. Fingers on electrodes → records Lead I ECG → encoded as ultrasonic audio (~18kHz) → phone microphone hears signal → app decodes to ECG → AI analysis → instant AFib/Normal results.<a href="#ref-2" class="cite">[2]</a></p>
-                            </div>
-                            <div class="product-item">
-                                <h5>KardiaMobile 6L · $99-129</h5>
-                                <p>FDA cleared 2019. 30s recording, 500Hz sample rate, 24-bit resolution, ~21g weight. Place thumbs on top, left ankle on bottom → Bluetooth auto-connects → records all 6 leads simultaneously → KAI AI detects AFib + 10+ arrhythmias.<a href="#ref-2" class="cite">[2]</a></p>
-                            </div>
-                            <div class="product-item">
-                                <h5>KardiaMobile Card · ~$99</h5>
-                                <p>FDA cleared Nov 2021. Credit card form factor. Slide from wallet → finger contact on electrodes → Bluetooth auto-connects → records Lead I ECG → instant AI analysis.<a href="#ref-2" class="cite">[2]</a></p>
-                            </div>
-                            <div class="product-item">
-                                <h5>KardiaMobile 12L · $3,000+</h5>
-                                <p>FDA cleared June 2024. World's first AI-powered, handheld 12-lead ECG with single-cable design. 5 electrodes vs traditional 10 (50% reduction). Hospital-grade 12-lead report in 30-60 seconds. Clinician product, not consumer.<a href="#ref-2" class="cite">[2]</a></p>
-                                <a href="https://store.alivecor.com/" target="_blank" class="product-image-link">View Products →</a>
-                            </div>
+                            <div class="product-item"><h5>KardiaMobile 1-Lead · $79</h5><p>FDA cleared 2012. Consumer screening device. Fingers on electrodes → records Lead I ECG → AI analysis → instant AFib/Normal results.<a href="#ref-2" class="cite">[2]</a></p></div>
+                            <div class="product-item"><h5>KardiaMobile 6L · $99-129</h5><p>FDA cleared 2019. 30s recording, 500Hz sample rate, 24-bit resolution, ~21g weight. Records all 6 leads simultaneously → KAI AI detects AFib + 10+ arrhythmias.<a href="#ref-2" class="cite">[2]</a></p></div>
+                            <div class="product-item"><h5>KardiaMobile Card · ~$99</h5><p>FDA cleared Nov 2021. Credit card form factor.<a href="#ref-2" class="cite">[2]</a></p></div>
+                            <div class="product-item"><h5>KardiaMobile 12L · $3,000+</h5><p>FDA cleared June 2024. World's first AI-powered, handheld 12-lead ECG. Hospital-grade report in 30-60 seconds.<a href="#ref-2" class="cite">[2]</a></p><a href="https://store.alivecor.com/" target="_blank" class="product-image-link">View Products →</a></div>
                         </div>
                     </div>
                     <div class="content-section">
                         <h4>AI Training</h4>
-                        <div class="ai-details">
-                            <p><strong>Training Data:</strong> 1.75 million labeled clinical ECG recordings from leading US medical centers. Multiple neural networks specialized for different detection tasks. Detects 39 conditions (varies by device and KardiaCare subscription).<a href="#ref-2" class="cite">[2]</a></p>
-                        </div>
+                        <div class="ai-details"><p><strong>Training Data:</strong> 1.75 million labeled clinical ECG recordings. Multiple neural networks specialized for different detection tasks. Detects 39 conditions.<a href="#ref-2" class="cite">[2]</a></p></div>
                     </div>
-                    <div class="ausa-advantage">
-                        <h4>AUSA Advantage</h4>
-                        <p>AliveCor is ECG-only. AUSA provides comprehensive monitoring including SpO2, temperature, BP, and lung sounds in one integrated device.</p>
-                    </div>
+                    <div class="ausa-advantage"><h4>AUSA Advantage</h4><p>AliveCor is ECG-only. AUSA provides comprehensive monitoring including SpO2, temperature, BP, and lung sounds in one integrated device.</p></div>
                 </div>
             </article>
 
@@ -1109,85 +326,42 @@
                         <div class="rank-badge">3</div>
                         <div class="company-info">
                             <h3><a href="https://biofourmis.com/" target="_blank" class="external-link">Biofourmis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
-                            <div class="company-meta">
-                                <span>Founded 2015</span>
-                                <span>Boston</span>
-                            </div>
+                            <div class="company-meta"><span>Founded 2015</span><span>Boston</span></div>
                         </div>
                     </div>
-                    <div class="tags">
-                        <span class="tag device">Hardware</span>
-                        <span class="tag ai">AI</span>
-                        <span class="tag arpa">ARPA-H</span>
-                    </div>
-                    <div class="expand-icon">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </div>
+                    <div class="tags"><span class="tag device">Hardware</span><span class="tag ai">AI</span><span class="tag arpa">ARPA-H</span></div>
+                    <div class="expand-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                 </div>
                 <div class="card-content">
                     <div class="content-section">
                         <div class="info-grid">
-                            <div class="info-item">
-                                <div class="label">Years in Market</div>
-                                <div class="value">11 years (since 2015)</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="label">Funding</div>
-                                <div class="value">$465M<a href="#ref-3" class="cite">[3]</a></div>
-                            </div>
-                            <div class="info-item">
-                                <div class="label">Peak Valuation</div>
-                                <div class="value">$1.3B (Apr 2022)</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="label">Revenue</div>
-                                <div class="value">$35-50M/year</div>
-                            </div>
+                            <div class="info-item"><div class="label">Years in Market</div><div class="value">11 years (since 2015)</div></div>
+                            <div class="info-item"><div class="label">Funding</div><div class="value">$465M<a href="#ref-3" class="cite">[3]</a></div></div>
+                            <div class="info-item"><div class="label">Peak Valuation</div><div class="value">$1.3B (Apr 2022)</div></div>
+                            <div class="info-item"><div class="label">Revenue</div><div class="value">$35-50M/year</div></div>
                         </div>
                         <div class="info-item" style="margin-bottom: 18px;">
                             <div class="label">Co-Founders</div>
                             <div class="founders-list">
-                                <a href="https://www.linkedin.com/in/kuldeep-singh-rajput-858533112/" target="_blank" class="founder-link">
-                                    <span class="linkedin-icon"></span> Kuldeep Singh Rajput · Founder
-                                </a>
-                                <a href="https://www.linkedin.com/in/mmajmudar" target="_blank" class="founder-link">
-                                    <span class="linkedin-icon"></span> Maulik Majmudar, MD
-                                </a>
+                                <a href="https://www.linkedin.com/in/kuldeep-singh-rajput-858533112/" target="_blank" class="founder-link"><span class="linkedin-icon"></span> Kuldeep Singh Rajput</a>
+                                <a href="https://www.linkedin.com/in/mmajmudar" target="_blank" class="founder-link"><span class="linkedin-icon"></span> Maulik Majmudar, MD</a>
                             </div>
                         </div>
                     </div>
                     <div class="content-section">
                         <h4>Device · Everion Armband (Acquired)</h4>
-                        <div class="ai-details">
-                            <p>24/7 continuous monitoring: Heart Rate, Heart Rate Variability, SpO2, Respiration Rate, Stroke Volume, Core Body Temperature, Electrodermal Activity (EDA/stress), Activity Tracking (3-axis accelerometer).</p>
-                        </div>
+                        <div class="ai-details"><p>24/7 continuous monitoring: Heart Rate, HRV, SpO2, Respiration Rate, Stroke Volume, Core Body Temperature, EDA, Activity Tracking.</p></div>
                     </div>
                     <div class="content-section">
                         <h4>AI Systems</h4>
                         <div class="products-list">
-                            <div class="product-item">
-                                <h5>Biovitals Analytics</h5>
-                                <p>FDA-cleared. Studies baseline readings of patient and detects pattern fluctuations.</p>
-                            </div>
-                            <div class="product-item">
-                                <h5>Heart Rhythm Reader</h5>
-                                <p>FDA-cleared. Deep neural network trained on 1M+ heart recordings. Detects 30+ types of irregular heartbeats.</p>
-                            </div>
-                            <div class="product-item">
-                                <h5>BiovitalsHF</h5>
-                                <p>FDA Breakthrough Designation 2020. Combines Everion data + patient symptoms (via app) + lab results to suggest HF medication adjustments when abnormalities detected.</p>
-                            </div>
+                            <div class="product-item"><h5>Biovitals Analytics</h5><p>FDA-cleared. Studies baseline readings and detects pattern fluctuations.</p></div>
+                            <div class="product-item"><h5>Heart Rhythm Reader</h5><p>FDA-cleared. Deep neural network trained on 1M+ recordings. Detects 30+ irregular heartbeat types.</p></div>
+                            <div class="product-item"><h5>BiovitalsHF</h5><p>FDA Breakthrough Designation 2020. Suggests HF medication adjustments when abnormalities detected.</p></div>
                         </div>
                     </div>
-                    <div class="warning-banner">
-                        <p>Founder departed 2023 (legal charges for falsifying invoices, forgery). 120 layoffs. Acquired by CopilotIQ 2024. No teleconsultation or care provider portal.<a href="#ref-3" class="cite">[3]</a></p>
-                    </div>
-                    <div class="ausa-advantage">
-                        <h4>AUSA Advantage</h4>
-                        <p>Biofourmis faced leadership instability and acquisition. AUSA offers stable teleconsultation ecosystem with provider portal and Rx management.</p>
-                    </div>
+                    <div class="warning-banner"><p>Founder departed 2023 (legal charges). 120 layoffs. Acquired by CopilotIQ 2024.<a href="#ref-3" class="cite">[3]</a></p></div>
+                    <div class="ausa-advantage"><h4>AUSA Advantage</h4><p>Biofourmis faced leadership instability. AUSA offers stable teleconsultation ecosystem with provider portal and Rx management.</p></div>
                 </div>
             </article>
 
@@ -1197,84 +371,40 @@
                         <div class="rank-badge">4</div>
                         <div class="company-info">
                             <h3><a href="https://www.withings.com/us/en/beam-o" target="_blank" class="external-link">Withings BeamO <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
-                            <div class="company-meta">
-                                <span>France · 2008</span>
-                                <span>FDA Nov 2025<a href="#ref-4" class="cite">[4]</a></span>
-                            </div>
+                            <div class="company-meta"><span>France · 2008</span><span>FDA Nov 2025<a href="#ref-4" class="cite">[4]</a></span></div>
                         </div>
                     </div>
-                    <div class="tags">
-                        <span class="tag device">Hardware</span>
-                    </div>
-                    <div class="expand-icon">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </div>
+                    <div class="tags"><span class="tag device">Hardware</span></div>
+                    <div class="expand-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                 </div>
                 <div class="card-content">
                     <div class="content-section">
                         <div class="info-grid">
-                            <div class="info-item">
-                                <div class="label">Years in Market</div>
-                                <div class="value">18 years (since 2008)</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="label">Funding</div>
-                                <div class="value">$60M+ (acquired by Nokia 2016)</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="label">Revenue</div>
-                                <div class="value">$100M+ (est.)</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="label">Impact</div>
-                                <div class="value">Consumer device leader</div>
-                            </div>
+                            <div class="info-item"><div class="label">Years in Market</div><div class="value">18 years (since 2008)</div></div>
+                            <div class="info-item"><div class="label">Funding</div><div class="value">$60M+ (acquired by Nokia 2016)</div></div>
+                            <div class="info-item"><div class="label">Revenue</div><div class="value">$100M+ (est.)</div></div>
+                            <div class="info-item"><div class="label">Impact</div><div class="value">Consumer device leader</div></div>
                         </div>
                         <div class="info-item" style="margin-bottom: 18px;">
                             <div class="label">Chairman</div>
-                            <div class="founders-list">
-                                <a href="https://fr.linkedin.com/in/ericcarreel" target="_blank" class="founder-link">
-                                    <span class="linkedin-icon"></span> Éric Carreel
-                                </a>
-                            </div>
+                            <div class="founders-list"><a href="https://fr.linkedin.com/in/ericcarreel" target="_blank" class="founder-link"><span class="linkedin-icon"></span> Éric Carreel</a></div>
                         </div>
                         <div class="specs-grid">
-                            <div class="spec-item">
-                                <div class="spec-value">$249.95</div>
-                                <div class="spec-label">Price<a href="#ref-4" class="cite">[4]</a></div>
-                            </div>
-                            <div class="spec-item">
-                                <div class="spec-value">80g</div>
-                                <div class="spec-label">Weight</div>
-                            </div>
-                            <div class="spec-item">
-                                <div class="spec-value">13.6cm</div>
-                                <div class="spec-label">Length</div>
-                            </div>
-                            <div class="spec-item">
-                                <div class="spec-value">8 mo</div>
-                                <div class="spec-label">Battery</div>
-                            </div>
+                            <div class="spec-item"><div class="spec-value">$249.95</div><div class="spec-label">Price<a href="#ref-4" class="cite">[4]</a></div></div>
+                            <div class="spec-item"><div class="spec-value">80g</div><div class="spec-label">Weight</div></div>
+                            <div class="spec-item"><div class="spec-value">13.6cm</div><div class="spec-label">Length</div></div>
+                            <div class="spec-item"><div class="spec-value">8 mo</div><div class="spec-label">Battery</div></div>
                         </div>
                     </div>
                     <div class="content-section">
                         <h4>Measurements · 4-in-1 Scanner</h4>
-                        <div class="ai-details">
-                            <p>1-lead ECG with AFib detection · Digital stethoscope · Pulse oximeter · Contactless thermometer. Checkup in &lt;60 seconds.</p>
-                        </div>
+                        <div class="ai-details"><p>1-lead ECG with AFib detection · Digital stethoscope · Pulse oximeter · Contactless thermometer. Checkup in &lt;60 seconds.</p></div>
                     </div>
                     <div class="content-section">
                         <h4>Pro Version</h4>
-                        <div class="ai-details">
-                            <p><strong><a href="https://withingshealthsolutions.com/devices/beam-o-pro/" target="_blank">BeamO Pro</a></strong> is the clinical-grade upgrade over the consumer BeamO. Cellular-enabled with LTE connectivity for healthcare providers, designed for remote patient monitoring programs. Includes HIPAA-compliant data transmission, provider dashboard integration, and medical-grade workflows not available in the consumer version.<a href="#ref-4" class="cite">[4]</a></p>
-                        </div>
+                        <div class="ai-details"><p><strong><a href="https://withingshealthsolutions.com/devices/beam-o-pro/" target="_blank">BeamO Pro</a></strong> is clinical-grade with LTE connectivity for healthcare providers. HIPAA-compliant data transmission.<a href="#ref-4" class="cite">[4]</a></p></div>
                     </div>
-                    <div class="ausa-advantage">
-                        <h4>AUSA Advantage</h4>
-                        <p>BeamO is consumer-focused with limited clinical integrations. AUSA provides 7-in-1 device with full provider portal, teleconsultation, and Rx management capabilities.</p>
-                    </div>
+                    <div class="ausa-advantage"><h4>AUSA Advantage</h4><p>BeamO is consumer-focused. AUSA provides 7-in-1 device with full provider portal, teleconsultation, and Rx management.</p></div>
                 </div>
             </article>
 
@@ -1284,71 +414,36 @@
                         <div class="rank-badge">5</div>
                         <div class="company-info">
                             <h3><a href="https://www.insighthealth.ai/" target="_blank" class="external-link">Insight Health AI <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
-                            <div class="company-meta">
-                                <span>Founded 2024</span>
-                                <span>San Francisco</span>
-                            </div>
+                            <div class="company-meta"><span>Founded 2024</span><span>San Francisco</span></div>
                         </div>
                     </div>
-                    <div class="tags">
-                        <span class="tag ai">AI</span>
-                        <span class="tag arpa">ARPA-H</span>
-                    </div>
-                    <div class="expand-icon">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </div>
+                    <div class="tags"><span class="tag ai">AI</span><span class="tag arpa">ARPA-H</span></div>
+                    <div class="expand-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                 </div>
                 <div class="card-content">
                     <div class="content-section">
                         <div class="info-grid">
-                            <div class="info-item">
-                                <div class="label">Years in Market</div>
-                                <div class="value">2 years (since 2024)</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="label">Funding</div>
-                                <div class="value">$4.6M Seed (Jul 2025)<a href="#ref-8" class="cite">[8]</a></div>
-                            </div>
-                            <div class="info-item">
-                                <div class="label">Clinicians</div>
-                                <div class="value">1,500+ daily active</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="label">Impact</div>
-                                <div class="value">100K+ hours saved monthly</div>
-                            </div>
+                            <div class="info-item"><div class="label">Years in Market</div><div class="value">2 years (since 2024)</div></div>
+                            <div class="info-item"><div class="label">Funding</div><div class="value">$4.6M Seed (Jul 2025)<a href="#ref-8" class="cite">[8]</a></div></div>
+                            <div class="info-item"><div class="label">Clinicians</div><div class="value">1,500+ daily active</div></div>
+                            <div class="info-item"><div class="label">Impact</div><div class="value">100K+ hours saved monthly</div></div>
                         </div>
                         <div class="info-item" style="margin-bottom: 18px;">
                             <div class="label">Co-Founders</div>
                             <div class="founders-list">
-                                <a href="https://www.linkedin.com/in/jaimal-soni/" target="_blank" class="founder-link">
-                                    <span class="linkedin-icon"></span> Jaimal Soni · CEO (ex-Segment)
-                                </a>
-                                <a href="https://www.linkedin.com/in/saransivashanmugam/" target="_blank" class="founder-link">
-                                    <span class="linkedin-icon"></span> Saran Siva · CTO (ex-Segment)
-                                </a>
+                                <a href="https://www.linkedin.com/in/jaimal-soni/" target="_blank" class="founder-link"><span class="linkedin-icon"></span> Jaimal Soni · CEO</a>
+                                <a href="https://www.linkedin.com/in/saransivashanmugam/" target="_blank" class="founder-link"><span class="linkedin-icon"></span> Saran Siva · CTO</a>
                             </div>
                         </div>
                     </div>
                     <div class="content-section">
                         <h4>Products</h4>
                         <div class="products-list">
-                            <div class="product-item">
-                                <h5>Lumi · Conversational AI Agent</h5>
-                                <p>First autonomous clinical AI. Patient-facing voice/text agent that calls patients before consultations to gather history, medications, referrals, and perform triage. 100,000+ autonomous patient conversations conducted.</p>
-                            </div>
-                            <div class="product-item">
-                                <h5>Aura AI</h5>
-                                <p>Clinical notes from consultations. iOS app + web extension. Used across neurosurgery, oncology, GI, primary care.</p>
-                            </div>
+                            <div class="product-item"><h5>Lumi · Conversational AI Agent</h5><p>Patient-facing voice/text agent for pre-consultation triage. 100,000+ autonomous conversations.</p></div>
+                            <div class="product-item"><h5>Aura AI</h5><p>Clinical notes from consultations. iOS app + web extension.</p></div>
                         </div>
                     </div>
-                    <div class="ausa-advantage">
-                        <h4>AUSA Advantage</h4>
-                        <p>Insight Health AI is software-only, requiring third-party hardware. AUSA combines hardware diagnostics with AI in a unified platform.</p>
-                    </div>
+                    <div class="ausa-advantage"><h4>AUSA Advantage</h4><p>Insight Health AI is software-only. AUSA combines hardware diagnostics with AI in a unified platform.</p></div>
                 </div>
             </article>
 
@@ -1358,73 +453,36 @@
                         <div class="rank-badge">6</div>
                         <div class="company-info">
                             <h3><a href="https://anumana.ai/" target="_blank" class="external-link">nference / Anumana <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
-                            <div class="company-meta">
-                                <span>Anumana 2021</span>
-                                <span>Mayo Clinic + Duke Health</span>
-                            </div>
+                            <div class="company-meta"><span>Anumana 2021</span><span>Mayo Clinic + Duke Health</span></div>
                         </div>
                     </div>
-                    <div class="tags">
-                        <span class="tag ai">AI</span>
-                    </div>
-                    <div class="expand-icon">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </div>
+                    <div class="tags"><span class="tag ai">AI</span></div>
+                    <div class="expand-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                 </div>
                 <div class="card-content">
                     <div class="content-section">
                         <div class="info-grid">
-                            <div class="info-item">
-                                <div class="label">Years in Market</div>
-                                <div class="value">5 years (Anumana 2021)</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="label">Funding</div>
-                                <div class="value">$185M<a href="#ref-5" class="cite">[5]</a></div>
-                            </div>
-                            <div class="info-item">
-                                <div class="label">Revenue</div>
-                                <div class="value">$36.7M (nference)</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="label">Impact</div>
-                                <div class="value">Boston Scientific partner</div>
-                            </div>
+                            <div class="info-item"><div class="label">Years in Market</div><div class="value">5 years (Anumana 2021)</div></div>
+                            <div class="info-item"><div class="label">Funding</div><div class="value">$185M<a href="#ref-5" class="cite">[5]</a></div></div>
+                            <div class="info-item"><div class="label">Revenue</div><div class="value">$36.7M (nference)</div></div>
+                            <div class="info-item"><div class="label">Impact</div><div class="value">Boston Scientific partner</div></div>
                         </div>
                         <div class="info-item" style="margin-bottom: 18px;">
                             <div class="label">Founder & CEO</div>
-                            <div class="founders-list">
-                                <a href="https://www.linkedin.com/in/muraliaravamudan/" target="_blank" class="founder-link">
-                                    <span class="linkedin-icon"></span> Murali Aravamudan
-                                </a>
-                            </div>
+                            <div class="founders-list"><a href="https://www.linkedin.com/in/muraliaravamudan/" target="_blank" class="founder-link"><span class="linkedin-icon"></span> Murali Aravamudan</a></div>
                         </div>
                     </div>
                     <div class="content-section">
                         <h4>nference Platform</h4>
-                        <div class="ai-details">
-                            <p><strong>nSights Platform:</strong> AI insights on structured and unstructured records of 11 million+ patients from health system partners including Mayo Clinic and Duke Health. Customers: pharmaceutical companies and researchers.</p>
-                        </div>
+                        <div class="ai-details"><p>AI insights on 11M+ patient records from Mayo Clinic and Duke Health.</p></div>
                     </div>
                     <div class="content-section">
                         <h4>FDA-Cleared Product · Oct 2023<a href="#ref-5" class="cite">[5]</a></h4>
                         <div class="products-list">
-                            <div class="product-item">
-                                <h5>ECG-AI LEF</h5>
-                                <p>Anumana founded by nference in partnership with Mayo Clinic. Detects low ejection fraction from standard 12-lead ECGs. Identifies heart failure risk before symptoms. Runs on existing hospital systems.<a href="#ref-5" class="cite">[5]</a></p>
-                                <div class="performance-stat">
-                                    <span class="number">84.5%</span>
-                                    <span class="unit">Sensitivity · 0.932 AUROC<a href="#ref-5" class="cite">[5]</a></span>
-                                </div>
-                            </div>
+                            <div class="product-item"><h5>ECG-AI LEF</h5><p>Detects low ejection fraction from 12-lead ECGs. Identifies heart failure risk before symptoms.<a href="#ref-5" class="cite">[5]</a></p><div class="performance-stat"><span class="number">84.5%</span><span class="unit">Sensitivity · 0.932 AUROC</span></div></div>
                         </div>
                     </div>
-                    <div class="ausa-advantage">
-                        <h4>AUSA Advantage</h4>
-                        <p>Anumana requires hospital ECG infrastructure. AUSA provides portable point-of-care diagnostics with integrated patient management workflows.</p>
-                    </div>
+                    <div class="ausa-advantage"><h4>AUSA Advantage</h4><p>Anumana requires hospital ECG infrastructure. AUSA provides portable point-of-care diagnostics.</p></div>
                 </div>
             </article>
 
@@ -1434,68 +492,30 @@
                         <div class="rank-badge">7</div>
                         <div class="company-info">
                             <h3><a href="https://vocare.com/" target="_blank" class="external-link">VoCare <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
-                            <div class="company-meta">
-                                <span>Founded 2009</span>
-                            </div>
+                            <div class="company-meta"><span>Founded 2009</span></div>
                         </div>
                     </div>
-                    <div class="tags">
-                        <span class="tag device">Hardware</span>
-                    </div>
-                    <div class="expand-icon">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </div>
+                    <div class="tags"><span class="tag device">Hardware</span></div>
+                    <div class="expand-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                 </div>
                 <div class="card-content">
                     <div class="content-section">
                         <div class="info-grid">
-                            <div class="info-item">
-                                <div class="label">Years in Market</div>
-                                <div class="value">17 years (since 2009)</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="label">Funding</div>
-                                <div class="value">Undisclosed</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="label">Revenue</div>
-                                <div class="value">Undisclosed</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="label">Role</div>
-                                <div class="value">US distributor (Linktop)</div>
-                            </div>
+                            <div class="info-item"><div class="label">Years in Market</div><div class="value">17 years (since 2009)</div></div>
+                            <div class="info-item"><div class="label">Funding</div><div class="value">Undisclosed</div></div>
+                            <div class="info-item"><div class="label">Revenue</div><div class="value">Undisclosed</div></div>
+                            <div class="info-item"><div class="label">Role</div><div class="value">US distributor (Linktop)</div></div>
                         </div>
                         <div class="info-item" style="margin-bottom: 18px;">
                             <div class="label">Founder</div>
-                            <div class="founders-list">
-                                <a href="https://www.linkedin.com/in/steven-r-peabody-85b5a3140/" target="_blank" class="founder-link">
-                                    <span class="linkedin-icon"></span> Steven R. Peabody
-                                </a>
-                            </div>
+                            <div class="founders-list"><a href="https://www.linkedin.com/in/steven-r-peabody-85b5a3140/" target="_blank" class="founder-link"><span class="linkedin-icon"></span> Steven R. Peabody</a></div>
                         </div>
                     </div>
                     <div class="content-section">
                         <h4>Device</h4>
-                        <div class="products-list">
-                            <div class="product-item">
-                                <h5>Vitals 360 · 6-in-1 Android Device</h5>
-                                <p>Heart rate, SpO2, Temperature, BP, ECG, Pulse. Manufactured by Linktop (China), VoCare is US distributor. Device preassigned to patient before use.</p>
-                            </div>
-                        </div>
+                        <div class="products-list"><div class="product-item"><h5>Vitals 360 · 6-in-1 Android Device</h5><p>Heart rate, SpO2, Temperature, BP, ECG, Pulse. Manufactured by Linktop (China).</p></div></div>
                     </div>
-                    <div class="content-section">
-                        <h4>Use Cases</h4>
-                        <div class="ai-details">
-                            <p>Nurses who visit patients at home, staff for routine resident vital checks, remote patient monitoring (RPM). Provider portal lets assigned nurses/doctors view readings, set alert thresholds, add notes.</p>
-                        </div>
-                    </div>
-                    <div class="ausa-advantage">
-                        <h4>AUSA Advantage</h4>
-                        <p>VoCare distributes third-party hardware with basic portal and no Rx management. AUSA offers proprietary 7-in-1 with full clinical care management workflows.</p>
-                    </div>
+                    <div class="ausa-advantage"><h4>AUSA Advantage</h4><p>VoCare distributes third-party hardware with basic portal. AUSA offers proprietary 7-in-1 with full clinical workflows.</p></div>
                 </div>
             </article>
 
@@ -1505,63 +525,33 @@
                         <div class="rank-badge">8</div>
                         <div class="company-info">
                             <h3><a href="https://www.doctronic.ai/" target="_blank" class="external-link">Doctronic <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
-                            <div class="company-meta">
-                                <span>Founded 2023</span>
-                                <span>New York</span>
-                            </div>
+                            <div class="company-meta"><span>Founded 2023</span><span>New York</span></div>
                         </div>
                     </div>
-                    <div class="tags">
-                        <span class="tag ai">AI</span>
-                    </div>
-                    <div class="expand-icon">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </div>
+                    <div class="tags"><span class="tag ai">AI</span></div>
+                    <div class="expand-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                 </div>
                 <div class="card-content">
                     <div class="content-section">
                         <div class="info-grid">
-                            <div class="info-item">
-                                <div class="label">Years in Market</div>
-                                <div class="value">3 years (since 2023)</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="label">Funding</div>
-                                <div class="value">$20M</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="label">Revenue</div>
-                                <div class="value">Pre-revenue</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="label">Impact</div>
-                                <div class="value" style="color: var(--warning);">Utah sandbox only</div>
-                            </div>
+                            <div class="info-item"><div class="label">Years in Market</div><div class="value">3 years (since 2023)</div></div>
+                            <div class="info-item"><div class="label">Funding</div><div class="value">$20M</div></div>
+                            <div class="info-item"><div class="label">Revenue</div><div class="value">Pre-revenue</div></div>
+                            <div class="info-item"><div class="label">Impact</div><div class="value" style="color: var(--warning);">Utah sandbox only</div></div>
                         </div>
                         <div class="info-item" style="margin-bottom: 18px;">
                             <div class="label">Co-Founders</div>
                             <div class="founders-list">
-                                <a href="https://www.linkedin.com/in/mattpavelle/" target="_blank" class="founder-link">
-                                    <span class="linkedin-icon"></span> Matt Pavelle · Co-CEO
-                                </a>
-                                <a href="https://www.linkedin.com/in/adamoskowitz/" target="_blank" class="founder-link">
-                                    <span class="linkedin-icon"></span> Dr. Adam Oskowitz · UCSF
-                                </a>
+                                <a href="https://www.linkedin.com/in/mattpavelle/" target="_blank" class="founder-link"><span class="linkedin-icon"></span> Matt Pavelle</a>
+                                <a href="https://www.linkedin.com/in/adamoskowitz/" target="_blank" class="founder-link"><span class="linkedin-icon"></span> Dr. Adam Oskowitz</a>
                             </div>
                         </div>
                     </div>
                     <div class="content-section">
                         <h4>Focus · Rx Refills Only</h4>
-                        <div class="ai-details">
-                            <p>No FDA clearance. Operating under Utah regulatory sandbox. AI for refilling prescriptions via chatbot — only handles refills, escalates to physician if uncertain. Tested on 500 urgent care cases: AI matched physician decisions 99.2% of the time (submitted to Utah regulators as safety evidence).</p>
-                        </div>
+                        <div class="ai-details"><p>No FDA clearance. Utah regulatory sandbox. AI for prescription refills via chatbot. 99.2% match with physician decisions.</p></div>
                     </div>
-                    <div class="ausa-advantage">
-                        <h4>AUSA Advantage</h4>
-                        <p>Doctronic operates only in Utah sandbox, handles refills only. AUSA pursues FDA clearance nationally with full diagnostic and Rx capabilities.</p>
-                    </div>
+                    <div class="ausa-advantage"><h4>AUSA Advantage</h4><p>Doctronic is Utah sandbox only, refills only. AUSA pursues FDA clearance nationally with full diagnostic and Rx capabilities.</p></div>
                 </div>
             </article>
 
@@ -1571,73 +561,37 @@
                         <div class="rank-badge">9</div>
                         <div class="company-info">
                             <h3><a href="https://www.tempus.com/" target="_blank" class="external-link">Tempus AI <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
-                            <div class="company-meta">
-                                <span>Founded 2015</span>
-                                <span>NASDAQ: TEM</span>
-                            </div>
+                            <div class="company-meta"><span>Founded 2015</span><span>NASDAQ: TEM</span></div>
                         </div>
                     </div>
-                    <div class="tags">
-                        <span class="tag ai">AI</span>
-                    </div>
-                    <div class="expand-icon">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </div>
+                    <div class="tags"><span class="tag ai">AI</span></div>
+                    <div class="expand-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                 </div>
                 <div class="card-content">
                     <div class="content-section">
                         <div class="info-grid">
-                            <div class="info-item">
-                                <div class="label">Years in Market</div>
-                                <div class="value">11 years (since 2015)</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="label">Funding</div>
-                                <div class="value">$1B+ pre-IPO<a href="#ref-6" class="cite">[6]</a></div>
-                            </div>
-                            <div class="info-item">
-                                <div class="label">Revenue</div>
-                                <div class="value" style="color: var(--success);">$1.27B (2025)<a href="#ref-6" class="cite">[6]</a></div>
-                            </div>
-                            <div class="info-item">
-                                <div class="label">Impact</div>
-                                <div class="value">NASDAQ: TEM (IPO Jun 2024)<a href="#ref-6" class="cite">[6]</a></div>
-                            </div>
+                            <div class="info-item"><div class="label">Years in Market</div><div class="value">11 years (since 2015)</div></div>
+                            <div class="info-item"><div class="label">Funding</div><div class="value">$1B+ pre-IPO<a href="#ref-6" class="cite">[6]</a></div></div>
+                            <div class="info-item"><div class="label">Revenue</div><div class="value" style="color: var(--success);">$1.27B (2025)<a href="#ref-6" class="cite">[6]</a></div></div>
+                            <div class="info-item"><div class="label">Impact</div><div class="value">NASDAQ: TEM (IPO Jun 2024)</div></div>
                         </div>
                         <div class="info-item" style="margin-bottom: 18px;">
                             <div class="label">Founder</div>
-                            <div class="founders-list">
-                                <a href="https://www.linkedin.com/in/ericlefkofsky/" target="_blank" class="founder-link">
-                                    <span class="linkedin-icon"></span> Eric Lefkofsky · CEO (Groupon co-founder)
-                                </a>
-                            </div>
+                            <div class="founders-list"><a href="https://www.linkedin.com/in/ericlefkofsky/" target="_blank" class="founder-link"><span class="linkedin-icon"></span> Eric Lefkofsky · CEO</a></div>
                         </div>
                     </div>
                     <div class="content-section">
                         <h4>Business Model</h4>
-                        <div class="ai-details">
-                            <p>Tempus is fundamentally a <strong>cancer company</strong>. Primary revenue streams: lab testing (largest), data licensing, and Tempus Next. Cardiovascular AI is a minor expansion vertical.</p>
-                        </div>
+                        <div class="ai-details"><p>Tempus is primarily a <strong>cancer company</strong>. Cardiovascular AI is a minor expansion vertical.</p></div>
                     </div>
                     <div class="content-section">
                         <h4>Cardiovascular AI · Secondary Focus</h4>
                         <div class="products-list">
-                            <div class="product-item">
-                                <h5>ECG-AF · FDA Jun 2024<a href="#ref-6" class="cite">[6]</a></h5>
-                                <p>Detects atrial fibrillation risk from standard hospital ECGs.</p>
-                            </div>
-                            <div class="product-item">
-                                <h5>ECG-Low EF · FDA Cleared</h5>
-                                <p>Detects weak heart pumping — a sign of early heart failure. Both run on ECGs that already exist in hospital systems, no new device needed.</p>
-                            </div>
+                            <div class="product-item"><h5>ECG-AF · FDA Jun 2024<a href="#ref-6" class="cite">[6]</a></h5><p>Detects atrial fibrillation risk from hospital ECGs.</p></div>
+                            <div class="product-item"><h5>ECG-Low EF · FDA Cleared</h5><p>Detects weak heart pumping from existing hospital ECGs.</p></div>
                         </div>
                     </div>
-                    <div class="ausa-advantage">
-                        <h4>AUSA Advantage</h4>
-                        <p>Tempus cardiovascular AI is a side business analyzing hospital ECGs. AUSA focuses entirely on remote cardiac monitoring with portable home diagnostics.</p>
-                    </div>
+                    <div class="ausa-advantage"><h4>AUSA Advantage</h4><p>Tempus cardiovascular AI is a side business. AUSA focuses entirely on remote cardiac monitoring with portable home diagnostics.</p></div>
                 </div>
             </article>
         </div>
@@ -1646,108 +600,18 @@
             <h2>Feature Comparison</h2>
             <div class="table-wrapper">
                 <table>
-                    <thead>
-                        <tr>
-                            <th>Company</th>
-                            <th>Hardware</th>
-                            <th>AI</th>
-                            <th>FDA</th>
-                            <th>Portal</th>
-                            <th>EHR</th>
-                            <th>ARPA-H</th>
-                        </tr>
-                    </thead>
+                    <thead><tr><th>Company</th><th>Hardware</th><th>AI</th><th>FDA</th><th>Portal</th><th>EHR</th><th>ARPA-H</th></tr></thead>
                     <tbody>
-                        <tr>
-                            <td><strong>AUSA</strong></td>
-                            <td class="check">7-in-1</td>
-                            <td class="check">Yes</td>
-                            <td class="partial">Pending</td>
-                            <td class="check">Full CMS</td>
-                            <td class="cross">No</td>
-                            <td class="partial">TBD</td>
-                        </tr>
-                        <tr>
-                            <td><a href="https://www.tytocare.com/" target="_blank">TytoCare</a></td>
-                            <td class="check">Modular</td>
-                            <td class="check">Diagnostic</td>
-                            <td class="check">2016</td>
-                            <td class="check">Yes</td>
-                            <td class="check">100+</td>
-                            <td class="cross">No</td>
-                        </tr>
-                        <tr>
-                            <td><a href="https://alivecor.com/" target="_blank">AliveCor</a></td>
-                            <td class="check">ECG</td>
-                            <td class="check">39 cond.</td>
-                            <td class="check">2012</td>
-                            <td class="partial">Limited</td>
-                            <td class="partial">Limited</td>
-                            <td class="check">Yes</td>
-                        </tr>
-                        <tr>
-                            <td><a href="https://biofourmis.com/" target="_blank">Biofourmis</a></td>
-                            <td class="check">Armband</td>
-                            <td class="check">Predictive</td>
-                            <td class="check">Yes</td>
-                            <td class="cross">No</td>
-                            <td class="partial">Limited</td>
-                            <td class="check">Yes</td>
-                        </tr>
-                        <tr>
-                            <td><a href="https://www.withings.com/us/en/beam-o" target="_blank">Withings</a></td>
-                            <td class="check">4-in-1</td>
-                            <td class="cross">No</td>
-                            <td class="check">Nov 2025</td>
-                            <td class="cross">Consumer</td>
-                            <td class="cross">No</td>
-                            <td class="cross">No</td>
-                        </tr>
-                        <tr>
-                            <td><a href="https://www.insighthealth.ai/" target="_blank">Insight Health</a></td>
-                            <td class="cross">No</td>
-                            <td class="check">Agentic</td>
-                            <td class="cross">N/A</td>
-                            <td class="check">Yes</td>
-                            <td class="check">Yes</td>
-                            <td class="check">Yes</td>
-                        </tr>
-                        <tr>
-                            <td><a href="https://anumana.ai/" target="_blank">Anumana</a></td>
-                            <td class="cross">No</td>
-                            <td class="check">ECG-AI</td>
-                            <td class="check">Oct 2023</td>
-                            <td class="cross">No</td>
-                            <td class="check">Hospital</td>
-                            <td class="cross">No</td>
-                        </tr>
-                        <tr>
-                            <td><a href="https://vocare.com/" target="_blank">VoCare</a></td>
-                            <td class="check">6-in-1</td>
-                            <td class="cross">No</td>
-                            <td class="check">Yes</td>
-                            <td class="partial">Basic</td>
-                            <td class="cross">No</td>
-                            <td class="cross">No</td>
-                        </tr>
-                        <tr>
-                            <td><a href="https://www.doctronic.ai/" target="_blank">Doctronic</a></td>
-                            <td class="cross">No</td>
-                            <td class="check">Rx</td>
-                            <td class="cross">Utah</td>
-                            <td class="cross">No</td>
-                            <td class="cross">No</td>
-                            <td class="cross">No</td>
-                        </tr>
-                        <tr>
-                            <td><a href="https://www.tempus.com/" target="_blank">Tempus AI</a></td>
-                            <td class="cross">No</td>
-                            <td class="check">ECG</td>
-                            <td class="check">Jun 2024</td>
-                            <td class="partial">Research</td>
-                            <td class="check">Yes</td>
-                            <td class="cross">No</td>
-                        </tr>
+                        <tr><td><strong>AUSA</strong></td><td class="check">7-in-1</td><td class="check">Yes</td><td class="partial">Pending</td><td class="check">Full CMS</td><td class="cross">No</td><td class="partial">TBD</td></tr>
+                        <tr><td><a href="https://www.tytocare.com/" target="_blank">TytoCare</a></td><td class="check">Modular</td><td class="check">Diagnostic</td><td class="check">2016</td><td class="check">Yes</td><td class="check">100+</td><td class="cross">No</td></tr>
+                        <tr><td><a href="https://alivecor.com/" target="_blank">AliveCor</a></td><td class="check">ECG</td><td class="check">39 cond.</td><td class="check">2012</td><td class="partial">Limited</td><td class="partial">Limited</td><td class="check">Yes</td></tr>
+                        <tr><td><a href="https://biofourmis.com/" target="_blank">Biofourmis</a></td><td class="check">Armband</td><td class="check">Predictive</td><td class="check">Yes</td><td class="cross">No</td><td class="partial">Limited</td><td class="check">Yes</td></tr>
+                        <tr><td><a href="https://www.withings.com/us/en/beam-o" target="_blank">Withings</a></td><td class="check">4-in-1</td><td class="cross">No</td><td class="check">Nov 2025</td><td class="cross">Consumer</td><td class="cross">No</td><td class="cross">No</td></tr>
+                        <tr><td><a href="https://www.insighthealth.ai/" target="_blank">Insight Health</a></td><td class="cross">No</td><td class="check">Agentic</td><td class="cross">N/A</td><td class="check">Yes</td><td class="check">Yes</td><td class="check">Yes</td></tr>
+                        <tr><td><a href="https://anumana.ai/" target="_blank">Anumana</a></td><td class="cross">No</td><td class="check">ECG-AI</td><td class="check">Oct 2023</td><td class="cross">No</td><td class="check">Hospital</td><td class="cross">No</td></tr>
+                        <tr><td><a href="https://vocare.com/" target="_blank">VoCare</a></td><td class="check">6-in-1</td><td class="cross">No</td><td class="check">Yes</td><td class="partial">Basic</td><td class="cross">No</td><td class="cross">No</td></tr>
+                        <tr><td><a href="https://www.doctronic.ai/" target="_blank">Doctronic</a></td><td class="cross">No</td><td class="check">Rx</td><td class="cross">Utah</td><td class="cross">No</td><td class="cross">No</td><td class="cross">No</td></tr>
+                        <tr><td><a href="https://www.tempus.com/" target="_blank">Tempus AI</a></td><td class="cross">No</td><td class="check">ECG</td><td class="check">Jun 2024</td><td class="partial">Research</td><td class="check">Yes</td><td class="cross">No</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -1756,211 +620,94 @@
         <section class="references-section">
             <h3>References</h3>
             <div class="references-list">
-                <div class="reference-item" id="ref-1">[1] TytoCare funding and FDA clearance: <a href="https://www.crunchbase.com/organization/tytocare" target="_blank">Crunchbase</a>, <a href="https://www.tytocare.com/" target="_blank">tytocare.com</a></div>
-                <div class="reference-item" id="ref-2">[2] AliveCor product specs and FDA clearances: <a href="https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm" target="_blank">FDA 510(k) Database</a>, <a href="https://alivecor.com/" target="_blank">alivecor.com</a></div>
-                <div class="reference-item" id="ref-3">[3] Biofourmis valuation and acquisition: <a href="https://www.crunchbase.com/organization/biofourmis" target="_blank">Crunchbase</a>, <a href="https://www.mobihealthnews.com/" target="_blank">MobiHealthNews</a></div>
-                <div class="reference-item" id="ref-4">[4] Withings BeamO FDA clearance Nov 2025, BeamO Pro: <a href="https://www.withings.com/us/en/beam-o" target="_blank">withings.com</a>, <a href="https://withingshealthsolutions.com/devices/beam-o-pro/" target="_blank">withingshealthsolutions.com</a></div>
-                <div class="reference-item" id="ref-5">[5] Anumana FDA 510(k) clearance Oct 2023, performance data: <a href="https://anumana.ai/" target="_blank">anumana.ai</a>, FDA De Novo Database</div>
-                <div class="reference-item" id="ref-6">[6] Tempus AI IPO Jun 2024, revenue: <a href="https://investor.tempus.com/" target="_blank">Tempus Investor Relations</a>, SEC filings</div>
-                <div class="reference-item" id="ref-7">[7] ARPA-H ADVOCATE teaming page applicant breakdown: <a href="https://arpa-h.gov/explore-funding/programs/advocate/teaming" target="_blank">arpa-h.gov/advocate/teaming</a></div>
-                <div class="reference-item" id="ref-8">[8] Insight Health AI funding: <a href="https://techcrunch.com/" target="_blank">TechCrunch</a>, company press releases</div>
+                <div class="reference-item" id="ref-1">[1] TytoCare: <a href="https://www.crunchbase.com/organization/tytocare" target="_blank">Crunchbase</a>, <a href="https://www.tytocare.com/" target="_blank">tytocare.com</a></div>
+                <div class="reference-item" id="ref-2">[2] AliveCor: <a href="https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm" target="_blank">FDA 510(k)</a>, <a href="https://alivecor.com/" target="_blank">alivecor.com</a></div>
+                <div class="reference-item" id="ref-3">[3] Biofourmis: <a href="https://www.crunchbase.com/organization/biofourmis" target="_blank">Crunchbase</a>, <a href="https://www.mobihealthnews.com/" target="_blank">MobiHealthNews</a></div>
+                <div class="reference-item" id="ref-4">[4] Withings BeamO: <a href="https://www.withings.com/us/en/beam-o" target="_blank">withings.com</a>, <a href="https://withingshealthsolutions.com/devices/beam-o-pro/" target="_blank">BeamO Pro</a></div>
+                <div class="reference-item" id="ref-5">[5] Anumana: <a href="https://anumana.ai/" target="_blank">anumana.ai</a>, FDA De Novo Database</div>
+                <div class="reference-item" id="ref-6">[6] Tempus AI: <a href="https://investor.tempus.com/" target="_blank">Investor Relations</a>, SEC filings</div>
+                <div class="reference-item" id="ref-7">[7] ARPA-H ADVOCATE: <a href="https://arpa-h.gov/explore-funding/programs/advocate/teaming" target="_blank">arpa-h.gov/advocate/teaming</a></div>
+                <div class="reference-item" id="ref-8">[8] Insight Health AI: <a href="https://techcrunch.com/" target="_blank">TechCrunch</a></div>
             </div>
         </section>
     </div>
 
-    <footer>
-        <div class="container">
-            <p>AUSA Competitive Analysis · Internal · February 2026</p>
-        </div>
-    </footer>
+    <footer><div class="container"><p>AUSA Competitive Analysis · Internal · February 2026</p></div></footer>
 
     <div class="voice-bot-container">
         <div class="voice-status" id="voiceStatus">
-            <div class="voice-status-header">
-                <div class="voice-status-dot"></div>
-                <span class="voice-status-label" id="voiceStatusLabel">Ready</span>
-            </div>
-            <div class="voice-status-text" id="voiceStatusText">Click the mic to ask a question</div>
+            <div class="voice-status-header"><div class="voice-status-dot"></div><span class="voice-status-label" id="voiceStatusLabel">Ready</span></div>
+            <div class="voice-status-text" id="voiceStatusText">Tap mic to ask a question</div>
         </div>
-        <button class="voice-mic-btn" id="voiceMicBtn" aria-label="Voice assistant">
-            <div class="mic-waves"></div>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
-                <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
-                <line x1="12" y1="19" x2="12" y2="23"></line>
-                <line x1="8" y1="23" x2="16" y2="23"></line>
-            </svg>
-            <span class="voice-hint">Ask me about competitors</span>
+        <button class="voice-mic-btn" id="voiceMicBtn" title="Voice assistant (Web Speech API)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
         </button>
     </div>
 
     <script>
-        document.querySelectorAll('.card-header').forEach(header => {
-            header.addEventListener('click', (e) => {
-                if (e.target.tagName === 'A' || e.target.closest('a')) return;
-                header.closest('.competitor-card').classList.toggle('expanded');
-            });
-        });
-
-        document.querySelectorAll('.nav-pill').forEach(pill => {
-            pill.addEventListener('click', () => {
-                document.querySelectorAll('.nav-pill').forEach(p => p.classList.remove('active'));
-                pill.classList.add('active');
-                const filter = pill.dataset.filter;
-                document.querySelectorAll('.competitor-card').forEach(card => {
-                    if (filter === 'all') card.classList.remove('hidden');
-                    else card.classList.toggle('hidden', !card.dataset.categories.includes(filter));
-                });
-            });
-        });
-
-        document.getElementById('searchInput').addEventListener('input', (e) => {
-            const query = e.target.value.toLowerCase();
-            document.querySelectorAll('.competitor-card').forEach(card => {
-                card.classList.toggle('hidden', !card.textContent.toLowerCase().includes(query));
-            });
-            document.querySelectorAll('.nav-pill').forEach(p => p.classList.remove('active'));
-            document.querySelector('.nav-pill[data-filter="all"]').classList.add('active');
-        });
+        document.querySelectorAll('.card-header').forEach(h => h.addEventListener('click', e => { if (!e.target.closest('a')) h.closest('.competitor-card').classList.toggle('expanded'); }));
+        document.querySelectorAll('.nav-pill').forEach(p => p.addEventListener('click', () => { document.querySelectorAll('.nav-pill').forEach(x => x.classList.remove('active')); p.classList.add('active'); const f = p.dataset.filter; document.querySelectorAll('.competitor-card').forEach(c => c.classList.toggle('hidden', f !== 'all' && !c.dataset.categories.includes(f))); }));
+        document.getElementById('searchInput').addEventListener('input', e => { const q = e.target.value.toLowerCase(); document.querySelectorAll('.competitor-card').forEach(c => c.classList.toggle('hidden', !c.textContent.toLowerCase().includes(q))); });
 
         (function() {
-            const micBtn = document.getElementById('voiceMicBtn');
-            const statusEl = document.getElementById('voiceStatus');
-            const statusLabel = document.getElementById('voiceStatusLabel');
-            const statusText = document.getElementById('voiceStatusText');
-
+            const mic = document.getElementById('voiceMicBtn'), status = document.getElementById('voiceStatus'), label = document.getElementById('voiceStatusLabel'), text = document.getElementById('voiceStatusText');
             const companies = [
-                { keys: ['tytocare', 'tyto', 'tito', 'tipo', 'tight oh'], name: 'TytoCare', founded: 2012, location: 'NYC and Israel', funding: '$205 million', revenue: '$5 to $25 million per year', founders: ['Dedi Gilad', 'Ofer Tzadik'], hasHardware: true, hasAI: true, arpaH: false, fda: 'FDA cleared in 2016', device: 'modular hub system with otoscope, stethoscope, thermometer, and exam camera', ausaAdvantage: 'AUSA compact 7-in-1 device eliminates attachment management' },
-                { keys: ['alivecor', 'alive cor', 'alive core', 'kardia', 'a live core'], name: 'AliveCor', founded: 2011, location: 'Mountain View, California', funding: 'over $165 million', revenue: '$30 to $50 million per year', founders: ['Dr. David Albert', 'Bruce Satchwell', 'Kim Barnett'], hasHardware: true, hasAI: true, arpaH: true, fda: 'first FDA clearance in 2012', device: 'KardiaMobile ECG devices', ausaAdvantage: 'AliveCor is ECG-only, AUSA provides SpO2, temperature, BP, and lung sounds' },
-                { keys: ['biofourmis', 'bio fourmis', 'bioformis', 'bio for miss'], name: 'Biofourmis', founded: 2015, location: 'Boston', funding: '$465 million', revenue: '$35 to $50 million per year', founders: ['Kuldeep Singh Rajput', 'Maulik Majmudar'], hasHardware: true, hasAI: true, arpaH: true, fda: 'FDA cleared', device: 'Everion armband for continuous monitoring', ausaAdvantage: 'Biofourmis had leadership issues, AUSA offers stable ecosystem' },
-                { keys: ['withings', 'beamo', 'beam o', 'beam', 'with ings'], name: 'Withings BeamO', founded: 2008, location: 'France', funding: 'over $60 million', revenue: 'over $100 million', founders: ['Eric Carreel'], hasHardware: true, hasAI: false, arpaH: false, fda: 'FDA cleared November 2025', device: '4-in-1 scanner with ECG, stethoscope, pulse oximeter, and thermometer', ausaAdvantage: 'BeamO is consumer-focused, AUSA has full provider portal' },
-                { keys: ['insight', 'insight health', 'lumi'], name: 'Insight Health AI', founded: 2024, location: 'San Francisco', funding: '$4.6 million seed round', founders: ['Jaimal Soni', 'Saran Siva'], hasHardware: false, hasAI: true, arpaH: true, device: 'software only - Lumi AI agent and Aura AI', ausaAdvantage: 'Insight is software-only, AUSA combines hardware with AI' },
-                { keys: ['nference', 'anumana', 'inference', 'n ference', 'anna mana'], name: 'nference and Anumana', founded: 2021, location: 'partnered with Mayo Clinic', funding: '$185 million', revenue: '$36.7 million', founders: ['Murali Aravamudan'], hasHardware: false, hasAI: true, arpaH: false, fda: 'FDA cleared October 2023', device: 'ECG-AI software for hospitals', ausaAdvantage: 'Anumana needs hospital infrastructure, AUSA is portable' },
-                { keys: ['vocare', 'vo care', 'voca'], name: 'VoCare', founded: 2009, founders: ['Steven R. Peabody'], hasHardware: true, hasAI: false, arpaH: false, fda: 'FDA cleared', device: 'Vitals 360, a 6-in-1 device', ausaAdvantage: 'VoCare distributes third-party hardware, AUSA has proprietary 7-in-1' },
-                { keys: ['doctronic', 'doctronics', 'doc tronic', 'doctor nick'], name: 'Doctronic', founded: 2023, location: 'New York', funding: '$20 million', founders: ['Matt Pavelle', 'Dr. Adam Oskowitz'], hasHardware: false, hasAI: true, arpaH: false, fda: 'no FDA clearance, Utah sandbox only', device: 'AI for prescription refills only', ausaAdvantage: 'Doctronic is Utah sandbox only, AUSA pursues national FDA clearance' },
-                { keys: ['tempus', 'tempest', 'temp us'], name: 'Tempus AI', founded: 2015, location: 'publicly traded on NASDAQ', funding: 'over $1 billion pre-IPO', revenue: '$1.27 billion', founders: ['Eric Lefkofsky'], hasHardware: false, hasAI: true, arpaH: false, fda: 'FDA cleared June 2024', device: 'ECG analysis software for hospitals', ausaAdvantage: 'Tempus focuses on cancer, cardiovascular AI is secondary' }
+                { k: ['tytocare','tyto','tito'], n: 'TytoCare', y: 2012, l: 'NYC/Israel', f: '$205M', r: '$5-25M/yr', fo: ['Dedi Gilad','Ofer Tzadik'], hw: 1, ai: 1, ar: 0, fda: 'FDA 2016', d: 'modular hub with otoscope, stethoscope, thermometer', adv: 'AUSA 7-in-1 eliminates attachments' },
+                { k: ['alivecor','alive','kardia'], n: 'AliveCor', y: 2011, l: 'Mountain View', f: '$165M+', r: '$30-50M/yr', fo: ['Dr. David Albert','Bruce Satchwell','Kim Barnett'], hw: 1, ai: 1, ar: 1, fda: 'FDA 2012', d: 'KardiaMobile ECG devices', adv: 'AliveCor ECG-only, AUSA has SpO2, temp, BP, lung sounds' },
+                { k: ['biofourmis','bio'], n: 'Biofourmis', y: 2015, l: 'Boston', f: '$465M', r: '$35-50M/yr', fo: ['Kuldeep Singh Rajput','Maulik Majmudar'], hw: 1, ai: 1, ar: 1, fda: 'FDA cleared', d: 'Everion armband', adv: 'Biofourmis had leadership issues, AUSA stable' },
+                { k: ['withings','beamo','beam'], n: 'Withings BeamO', y: 2008, l: 'France', f: '$60M+', r: '$100M+', fo: ['Eric Carreel'], hw: 1, ai: 0, ar: 0, fda: 'FDA Nov 2025', d: '4-in-1 scanner', adv: 'BeamO consumer-focused, AUSA has provider portal' },
+                { k: ['insight','lumi'], n: 'Insight Health AI', y: 2024, l: 'San Francisco', f: '$4.6M seed', fo: ['Jaimal Soni','Saran Siva'], hw: 0, ai: 1, ar: 1, d: 'Lumi AI agent, Aura AI', adv: 'Insight software-only, AUSA has hardware+AI' },
+                { k: ['nference','anumana','inference'], n: 'nference/Anumana', y: 2021, l: 'Mayo Clinic partner', f: '$185M', r: '$36.7M', fo: ['Murali Aravamudan'], hw: 0, ai: 1, ar: 0, fda: 'FDA Oct 2023', d: 'ECG-AI software', adv: 'Anumana needs hospital infra, AUSA portable' },
+                { k: ['vocare'], n: 'VoCare', y: 2009, fo: ['Steven R. Peabody'], hw: 1, ai: 0, ar: 0, fda: 'FDA cleared', d: 'Vitals 360 6-in-1', adv: 'VoCare 3rd party hardware, AUSA proprietary 7-in-1' },
+                { k: ['doctronic','doctronics'], n: 'Doctronic', y: 2023, l: 'New York', f: '$20M', fo: ['Matt Pavelle','Dr. Adam Oskowitz'], hw: 0, ai: 1, ar: 0, fda: 'Utah sandbox only', d: 'Rx refill AI', adv: 'Doctronic Utah-only, AUSA national FDA' },
+                { k: ['tempus'], n: 'Tempus AI', y: 2015, l: 'NASDAQ: TEM', f: '$1B+ pre-IPO', r: '$1.27B', fo: ['Eric Lefkofsky'], hw: 0, ai: 1, ar: 0, fda: 'FDA Jun 2024', d: 'ECG analysis for hospitals', adv: 'Tempus cancer-focused, AUSA cardiac-focused' }
             ];
-
-            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-            if (!SpeechRecognition) {
-                micBtn.classList.add('not-supported');
-                statusText.textContent = 'Voice not supported. Try Chrome.';
-                statusEl.classList.add('visible');
-                return;
-            }
-
-            const recognition = new SpeechRecognition();
-            recognition.continuous = false;
-            recognition.interimResults = false;
-            recognition.lang = 'en-US';
-            let isListening = false;
-
-            function showStatus(label, text, state) {
-                statusLabel.textContent = label;
-                statusText.textContent = text;
-                statusEl.className = 'voice-status visible ' + (state || '');
-            }
-
-            function speak(text) {
-                if (!window.speechSynthesis) return;
-                window.speechSynthesis.cancel();
-                const utterance = new SpeechSynthesisUtterance(text);
-                utterance.rate = 1.0;
-                micBtn.classList.remove('listening');
-                micBtn.classList.add('speaking');
-                showStatus('Speaking', text, 'speaking');
-                utterance.onend = () => {
-                    micBtn.classList.remove('speaking');
-                    setTimeout(() => statusEl.classList.remove('visible'), 3000);
-                };
-                window.speechSynthesis.speak(utterance);
-            }
-
-            function findCompany(query) {
-                const q = query.toLowerCase().replace(/[^\w\s]/g, '');
-                for (const c of companies) {
-                    for (const key of c.keys) {
-                        if (q.includes(key)) return c;
-                    }
+            const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+            if (!SR) { mic.classList.add('not-supported'); text.textContent = 'Voice not supported'; status.classList.add('visible'); return; }
+            const rec = new SR(); rec.lang = 'en-US'; let listening = 0, speaking = 0;
+            const show = (l, t, s) => { label.textContent = l; text.textContent = t; status.className = 'voice-status visible ' + (s||''); };
+            const hide = () => status.classList.remove('visible');
+            const find = q => { q = q.toLowerCase(); for (const c of companies) for (const k of c.k) if (q.includes(k)) return c; return null; };
+            const process = t => {
+                const q = t.toLowerCase();
+                if (q.includes('list') || q.includes('competitor') || q.includes('how many')) return '9 competitors: TytoCare, AliveCor, Biofourmis, Withings, Insight Health, nference, VoCare, Doctronic, Tempus.';
+                if (q.includes('arpa')) return 'ARPA-H companies: AliveCor, Biofourmis, Insight Health AI.';
+                if (q.includes('hardware') || q.includes('device')) return 'Hardware: TytoCare, AliveCor, Biofourmis, Withings, VoCare.';
+                if (q.includes('funding') || q.includes('most money')) return 'Most funded: Biofourmis $465M, Tempus $1B+ pre-IPO, TytoCare $205M.';
+                if (q.includes('ausa') && q.includes('advantage')) return 'AUSA: 7-in-1 device, provider portal, teleconsultation, Rx management.';
+                const c = find(q);
+                if (c) {
+                    if (q.includes('founder') || q.includes('who')) return c.n + ' founded by ' + c.fo.join(' and ') + '.';
+                    if (q.includes('fund') || q.includes('raise')) return c.f ? c.n + ' raised ' + c.f : 'Funding undisclosed.';
+                    if (q.includes('revenue')) return c.r ? c.n + ' revenue: ' + c.r : 'Revenue undisclosed.';
+                    if (q.includes('fda')) return c.fda ? c.n + ': ' + c.fda : 'FDA status unknown.';
+                    if (q.includes('device') || q.includes('product')) return c.d ? c.n + ' has ' + c.d : c.n + ' is software-only.';
+                    if (q.includes('advantage') || q.includes('vs')) return 'vs ' + c.n + ': ' + c.adv;
+                    return c.n + ' (' + c.y + ')' + (c.l ? ' in ' + c.l : '') + '. ' + (c.f ? 'Raised ' + c.f + '. ' : '') + (c.ar ? 'ARPA-H participant.' : '');
                 }
-                return null;
-            }
-
-            function processQuery(transcript) {
-                const q = transcript.toLowerCase();
-
-                if (q.includes('list') || q.includes('all competitor') || q.includes('how many'))
-                    return 'There are 9 competitors: TytoCare, AliveCor, Biofourmis, Withings BeamO, Insight Health AI, nference Anumana, VoCare, Doctronic, and Tempus AI.';
-
-                if (q.includes('arpa'))
-                    return 'Three companies are in ARPA-H: AliveCor, Biofourmis, and Insight Health AI.';
-
-                if ((q.includes('hardware') || q.includes('device')) && (q.includes('which') || q.includes('who') || q.includes('what')))
-                    return 'Hardware companies: TytoCare, AliveCor, Biofourmis, Withings BeamO, and VoCare.';
-
-                if (q.includes('most fund') || q.includes('highest fund'))
-                    return 'Biofourmis raised $465 million. Tempus raised over $1 billion. TytoCare raised $205 million.';
-
-                if (q.includes('ausa') && q.includes('advantage'))
-                    return 'AUSA advantages: compact 7-in-1 device, full provider portal, teleconsultation, and prescription management.';
-
-                if (q.includes('newest') || q.includes('recent'))
-                    return 'Newest: Insight Health AI 2024, Doctronic 2023, Anumana 2021.';
-
-                const company = findCompany(q);
-                if (company) {
-                    if (q.includes('founder') || q.includes('who founded') || q.includes('who started'))
-                        return company.name + ' was founded by ' + company.founders.join(' and ') + '.';
-                    if (q.includes('fund') || q.includes('raised') || q.includes('money'))
-                        return company.funding ? company.name + ' raised ' + company.funding + '.' : 'Funding not disclosed.';
-                    if (q.includes('revenue') || q.includes('earn'))
-                        return company.revenue ? company.name + ' revenue: ' + company.revenue + '.' : 'Revenue not available.';
-                    if (q.includes('fda') || q.includes('clearance'))
-                        return company.fda ? company.name + ': ' + company.fda + '.' : 'FDA status unknown.';
-                    if (q.includes('device') || q.includes('product') || q.includes('hardware'))
-                        return company.device ? company.name + ' offers ' + company.device + '.' : company.name + ' is software-only.';
-                    if (q.includes('where') || q.includes('location'))
-                        return company.location ? company.name + ' is in ' + company.location + '.' : 'Location not specified.';
-                    if (q.includes('advantage') || q.includes('compare') || q.includes('vs'))
-                        return 'AUSA vs ' + company.name + ': ' + company.ausaAdvantage + '.';
-
-                    let r = company.name + ' founded ' + company.founded;
-                    if (company.location) r += ' in ' + company.location;
-                    r += '. ';
-                    if (company.funding) r += 'Raised ' + company.funding + '. ';
-                    if (company.arpaH) r += 'Part of ARPA-H.';
-                    return r;
-                }
-
-                return 'I heard: "' + transcript + '". Ask about TytoCare, AliveCor, Biofourmis, Withings, Insight, nference, VoCare, Doctronic, or Tempus.';
-            }
-
-            micBtn.addEventListener('click', () => {
-                if (micBtn.classList.contains('not-supported')) return;
-                if (isListening) { recognition.stop(); return; }
-                try {
-                    recognition.start();
-                    isListening = true;
-                    micBtn.classList.add('listening');
-                    showStatus('Listening', 'Speak now...', 'listening');
-                } catch (e) { showStatus('Error', 'Try again.'); }
-            });
-
-            recognition.onresult = (event) => {
-                const transcript = event.results[0][0].transcript;
-                showStatus('Heard', '"' + transcript + '"');
-                setTimeout(() => speak(processQuery(transcript)), 500);
+                return 'Heard: "' + t + '". Try: TytoCare, AliveCor, Biofourmis, Withings, Insight, nference, VoCare, Doctronic, Tempus.';
             };
-
-            recognition.onend = () => { isListening = false; micBtn.classList.remove('listening'); };
-
-            recognition.onerror = (event) => {
-                isListening = false;
-                micBtn.classList.remove('listening');
-                const msg = event.error === 'no-speech' ? 'No speech heard.' : event.error === 'not-allowed' ? 'Mic blocked.' : 'Error: ' + event.error;
-                showStatus('Error', msg);
-                setTimeout(() => statusEl.classList.remove('visible'), 3000);
+            mic.onclick = () => {
+                if (mic.classList.contains('not-supported')) return;
+                if (speaking) { speechSynthesis.cancel(); speaking = 0; mic.classList.remove('speaking'); hide(); return; }
+                if (listening) { rec.stop(); return; }
+                rec.start(); listening = 1; mic.classList.add('listening'); show('Listening', 'Speak now...', 'listening');
             };
+            rec.onresult = e => {
+                const t = e.results[0][0].transcript;
+                show('Heard', '"' + t + '"');
+                setTimeout(() => {
+                    const r = process(t);
+                    speechSynthesis.cancel();
+                    const u = new SpeechSynthesisUtterance(r); u.rate = 1;
+                    mic.classList.remove('listening'); mic.classList.add('speaking'); speaking = 1;
+                    show('Speaking (tap to stop)', r, 'speaking');
+                    u.onend = () => { speaking = 0; mic.classList.remove('speaking'); setTimeout(hide, 2000); };
+                    speechSynthesis.speak(u);
+                }, 400);
+            };
+            rec.onend = () => { listening = 0; mic.classList.remove('listening'); };
+            rec.onerror = e => { listening = 0; mic.classList.remove('listening'); show('Error', e.error === 'no-speech' ? 'No speech heard' : e.error); setTimeout(hide, 2000); };
         })();
     </script>
 </body>
