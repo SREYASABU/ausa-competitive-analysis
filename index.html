@@ -59,6 +59,13 @@
             opacity: 0.75;
         }
 
+        .cite {
+            font-size: 9px;
+            color: var(--link);
+            vertical-align: super;
+            margin-left: 1px;
+        }
+
         header {
             padding: 64px 0 48px;
             border-bottom: 1px solid var(--border);
@@ -120,7 +127,7 @@
 
         .context-content {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 40px;
             flex-wrap: wrap;
         }
@@ -139,6 +146,20 @@
         .context-main .highlight {
             color: var(--text-primary);
             font-weight: 500;
+        }
+
+        .context-stats-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .context-stats-label {
+            font-size: 10px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            text-align: center;
         }
 
         .context-stats {
@@ -694,26 +715,29 @@
                 <div class="context-main">
                     <p>AI agents for 24/7 heart failure management. <span class="highlight">46% of U.S. counties have zero cardiologists.</span></p>
                 </div>
-                <div class="context-stats">
-                    <div class="context-stat">
-                        <div class="value">37%</div>
-                        <div class="label">AI Startups</div>
-                    </div>
-                    <div class="context-stat">
-                        <div class="value">13%</div>
-                        <div class="label">Academic</div>
-                    </div>
-                    <div class="context-stat">
-                        <div class="value">8%</div>
-                        <div class="label">Defense</div>
-                    </div>
-                    <div class="context-stat">
-                        <div class="value">7%</div>
-                        <div class="label">Health Sys</div>
-                    </div>
-                    <div class="context-stat">
-                        <div class="value">6%</div>
-                        <div class="label">Big Tech</div>
+                <div class="context-stats-wrapper">
+                    <div class="context-stats-label">Teaming Page Applicants<a href="#ref-7" class="cite">[7]</a></div>
+                    <div class="context-stats">
+                        <div class="context-stat">
+                            <div class="value">37%</div>
+                            <div class="label">AI Startups</div>
+                        </div>
+                        <div class="context-stat">
+                            <div class="value">13%</div>
+                            <div class="label">Academic</div>
+                        </div>
+                        <div class="context-stat">
+                            <div class="value">8%</div>
+                            <div class="label">Defense</div>
+                        </div>
+                        <div class="context-stat">
+                            <div class="value">7%</div>
+                            <div class="label">Health Sys</div>
+                        </div>
+                        <div class="context-stat">
+                            <div class="value">6%</div>
+                            <div class="label">Big Tech</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -757,11 +781,11 @@
                         <div class="info-grid">
                             <div class="info-item">
                                 <div class="label">FDA Clearance</div>
-                                <div class="value">2016</div>
+                                <div class="value">2016<a href="#ref-1" class="cite">[1]</a></div>
                             </div>
                             <div class="info-item">
                                 <div class="label">Total Funding</div>
-                                <div class="value">$205M</div>
+                                <div class="value">$205M<a href="#ref-1" class="cite">[1]</a></div>
                             </div>
                             <div class="info-item">
                                 <div class="label">Est. Revenue</div>
@@ -797,7 +821,7 @@
                     <div class="content-section">
                         <h4>AI Capabilities</h4>
                         <div class="ai-details">
-                            <p><strong>Tyto Insights:</strong> FDA-cleared AI for wheeze, crackle, and rhonchi detection. Trained on 1.8M lung sound recordings.</p>
+                            <p><strong>Tyto Insights:</strong> FDA-cleared AI for wheeze, crackle, and rhonchi detection. Trained on 1.8M lung sound recordings.<a href="#ref-1" class="cite">[1]</a></p>
                             <div class="performance-stat">
                                 <span class="number">95.85%</span>
                                 <span class="unit">AUC (vs 79% for GPs)</span>
@@ -839,7 +863,7 @@
                         <div class="info-grid">
                             <div class="info-item">
                                 <div class="label">FDA Clearance</div>
-                                <div class="value">2012</div>
+                                <div class="value">2012<a href="#ref-2" class="cite">[2]</a></div>
                             </div>
                             <div class="info-item">
                                 <div class="label">Focus</div>
@@ -847,7 +871,7 @@
                             </div>
                             <div class="info-item">
                                 <div class="label">Conditions</div>
-                                <div class="value">39 detected</div>
+                                <div class="value">39 detected<a href="#ref-2" class="cite">[2]</a></div>
                             </div>
                             <div class="info-item">
                                 <div class="label">Users</div>
@@ -868,19 +892,19 @@
                         <div class="products-list">
                             <div class="product-item">
                                 <h5>KardiaMobile 1-Lead · $79</h5>
-                                <p>FDA cleared 2012. Consumer screening device. Uses ultrasonic audio encoding (~18kHz) transmitted to phone microphone. Instant AFib/Normal results.</p>
+                                <p>FDA cleared 2012.<a href="#ref-2" class="cite">[2]</a> Consumer screening device. Uses ultrasonic audio encoding (~18kHz) transmitted to phone microphone. Instant AFib/Normal results.</p>
                             </div>
                             <div class="product-item">
                                 <h5>KardiaMobile 6L · $99-129</h5>
-                                <p>FDA cleared 2019. 30s recording, 500Hz sample rate, 24-bit resolution. Detects AFib + 10+ arrhythmias via KAI AI.</p>
+                                <p>FDA cleared 2019.<a href="#ref-2" class="cite">[2]</a> 30s recording, 500Hz sample rate, 24-bit resolution. Detects AFib + 10+ arrhythmias via KAI AI.</p>
                             </div>
                             <div class="product-item">
                                 <h5>KardiaMobile Card · ~$99</h5>
-                                <p>FDA cleared Nov 2021. Credit card form factor. Bluetooth connection, Lead I ECG, instant AI analysis.</p>
+                                <p>FDA cleared Nov 2021.<a href="#ref-2" class="cite">[2]</a> Credit card form factor. Bluetooth connection, Lead I ECG, instant AI analysis.</p>
                             </div>
                             <div class="product-item">
                                 <h5>KardiaMobile 12L · $3,000+</h5>
-                                <p>FDA cleared June 2024. Hospital-quality 12-lead ECG. 5 electrodes vs traditional 10 (50% reduction). Single-cable design.</p>
+                                <p>FDA cleared June 2024.<a href="#ref-2" class="cite">[2]</a> Hospital-quality 12-lead ECG. 5 electrodes vs traditional 10 (50% reduction). Single-cable design.</p>
                                 <a href="https://store.alivecor.com/" target="_blank" class="product-image-link">View Products →</a>
                             </div>
                         </div>
@@ -926,11 +950,11 @@
                         <div class="info-grid">
                             <div class="info-item">
                                 <div class="label">Total Funding</div>
-                                <div class="value">$465M</div>
+                                <div class="value">$465M<a href="#ref-3" class="cite">[3]</a></div>
                             </div>
                             <div class="info-item">
                                 <div class="label">Peak Valuation</div>
-                                <div class="value">$1.3B (2022)</div>
+                                <div class="value">$1.3B (2022)<a href="#ref-3" class="cite">[3]</a></div>
                             </div>
                             <div class="info-item">
                                 <div class="label">Revenue</div>
@@ -938,7 +962,7 @@
                             </div>
                             <div class="info-item">
                                 <div class="label">Status</div>
-                                <div class="value" style="color: var(--warning);">Acquired 2024</div>
+                                <div class="value" style="color: var(--warning);">Acquired 2024<a href="#ref-3" class="cite">[3]</a></div>
                             </div>
                         </div>
                     </div>
@@ -956,7 +980,7 @@
                         </div>
                     </div>
                     <div class="warning-banner">
-                        <p>Founder departed 2023 (legal charges). 120 layoffs. Acquired by CopilotIQ 2024.</p>
+                        <p>Founder departed 2023 (legal charges). 120 layoffs. Acquired by CopilotIQ 2024.<a href="#ref-3" class="cite">[3]</a></p>
                     </div>
                     <div class="ausa-advantage">
                         <h4>AUSA Advantage</h4>
@@ -973,7 +997,7 @@
                             <h3><a href="https://www.withings.com/us/en/beam-o" target="_blank" class="external-link">Withings BeamO <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
                             <div class="company-meta">
                                 <span>France · 2008</span>
-                                <span>FDA Nov 2025</span>
+                                <span>FDA Nov 2025<a href="#ref-4" class="cite">[4]</a></span>
                             </div>
                         </div>
                     </div>
@@ -991,7 +1015,7 @@
                         <div class="info-grid">
                             <div class="info-item">
                                 <div class="label">Price</div>
-                                <div class="value">$249.95</div>
+                                <div class="value">$249.95<a href="#ref-4" class="cite">[4]</a></div>
                             </div>
                             <div class="info-item">
                                 <div class="label">Type</div>
@@ -1025,7 +1049,12 @@
                         <h4>Measurements</h4>
                         <div class="ai-details">
                             <p>1-lead ECG with AFib detection · Digital stethoscope · Pulse oximeter · Contactless thermometer</p>
-                            <p><a href="https://withingshealthsolutions.com/devices/beam-o-pro/" target="_blank">BeamO Pro →</a> Cellular-enabled version for healthcare providers.</p>
+                        </div>
+                    </div>
+                    <div class="content-section">
+                        <h4>Pro Version</h4>
+                        <div class="ai-details">
+                            <p><strong><a href="https://withingshealthsolutions.com/devices/beam-o-pro/" target="_blank">BeamO Pro</a></strong> is the clinical-grade upgrade over the consumer BeamO. Cellular-enabled with LTE connectivity for healthcare providers, designed for remote patient monitoring programs. Includes HIPAA-compliant data transmission, provider dashboard integration, and medical-grade workflows not available in the consumer version.<a href="#ref-4" class="cite">[4]</a></p>
                         </div>
                     </div>
                     <div class="ausa-advantage">
@@ -1062,11 +1091,11 @@
                         <div class="info-grid">
                             <div class="info-item">
                                 <div class="label">Seed Funding</div>
-                                <div class="value">$4.6M</div>
+                                <div class="value">$4.6M<a href="#ref-8" class="cite">[8]</a></div>
                             </div>
                             <div class="info-item">
                                 <div class="label">Investor</div>
-                                <div class="value">Kindred Ventures</div>
+                                <div class="value">Kindred Ventures<a href="#ref-8" class="cite">[8]</a></div>
                             </div>
                             <div class="info-item">
                                 <div class="label">Clinicians</div>
@@ -1131,7 +1160,7 @@
                         <div class="info-grid">
                             <div class="info-item">
                                 <div class="label">Anumana Raised</div>
-                                <div class="value">$185M</div>
+                                <div class="value">$185M<a href="#ref-5" class="cite">[5]</a></div>
                             </div>
                             <div class="info-item">
                                 <div class="label">nference Revenue</div>
@@ -1139,7 +1168,7 @@
                             </div>
                             <div class="info-item">
                                 <div class="label">FDA Status</div>
-                                <div class="value" style="color: var(--success);">Cleared Oct 2023</div>
+                                <div class="value" style="color: var(--success);">Cleared Oct 2023<a href="#ref-5" class="cite">[5]</a></div>
                             </div>
                             <div class="info-item">
                                 <div class="label">Latest</div>
@@ -1152,10 +1181,10 @@
                         <div class="products-list">
                             <div class="product-item">
                                 <h5>ECG-AI LEF</h5>
-                                <p>Detects low ejection fraction from standard 12-lead ECGs. Identifies heart failure risk before symptoms. Runs on existing hospital systems.</p>
+                                <p>Detects low ejection fraction from standard 12-lead ECGs. Identifies heart failure risk before symptoms. Runs on existing hospital systems.<a href="#ref-5" class="cite">[5]</a></p>
                                 <div class="performance-stat">
                                     <span class="number">84.5%</span>
-                                    <span class="unit">Sensitivity · 0.932 AUROC</span>
+                                    <span class="unit">Sensitivity · 0.932 AUROC<a href="#ref-5" class="cite">[5]</a></span>
                                 </div>
                             </div>
                         </div>
@@ -1284,11 +1313,11 @@
                         <div class="info-grid">
                             <div class="info-item">
                                 <div class="label">2025 Revenue</div>
-                                <div class="value" style="color: var(--success);">$1.27B</div>
+                                <div class="value" style="color: var(--success);">$1.27B<a href="#ref-6" class="cite">[6]</a></div>
                             </div>
                             <div class="info-item">
                                 <div class="label">Pre-IPO</div>
-                                <div class="value">$1B+ raised</div>
+                                <div class="value">$1B+ raised<a href="#ref-6" class="cite">[6]</a></div>
                             </div>
                             <div class="info-item">
                                 <div class="label">Primary</div>
@@ -1296,7 +1325,7 @@
                             </div>
                             <div class="info-item">
                                 <div class="label">IPO</div>
-                                <div class="value">Jun 14, 2024</div>
+                                <div class="value">Jun 14, 2024<a href="#ref-6" class="cite">[6]</a></div>
                             </div>
                         </div>
                         <div class="info-item" style="margin-bottom: 18px;">
@@ -1310,7 +1339,7 @@
                         <h4>Cardiovascular AI</h4>
                         <div class="products-list">
                             <div class="product-item">
-                                <h5>ECG-AF · FDA Jun 2024</h5>
+                                <h5>ECG-AF · FDA Jun 2024<a href="#ref-6" class="cite">[6]</a></h5>
                                 <p>Detects atrial fibrillation risk from standard hospital ECGs.</p>
                             </div>
                             <div class="product-item">
@@ -1441,14 +1470,14 @@
         <section class="references-section">
             <h3>References</h3>
             <div class="references-list">
-                <div class="reference-item">[1] TytoCare funding and FDA clearance: <a href="https://www.crunchbase.com/organization/tytocare" target="_blank">Crunchbase</a>, <a href="https://www.tytocare.com/" target="_blank">tytocare.com</a></div>
-                <div class="reference-item">[2] AliveCor product specs and FDA clearances: <a href="https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm" target="_blank">FDA 510(k) Database</a>, <a href="https://alivecor.com/" target="_blank">alivecor.com</a></div>
-                <div class="reference-item">[3] Biofourmis valuation and acquisition: <a href="https://www.crunchbase.com/organization/biofourmis" target="_blank">Crunchbase</a>, <a href="https://www.mobihealthnews.com/" target="_blank">MobiHealthNews</a></div>
-                <div class="reference-item">[4] Withings BeamO FDA clearance Nov 2025: <a href="https://www.withings.com/us/en/beam-o" target="_blank">withings.com</a></div>
-                <div class="reference-item">[5] Anumana FDA 510(k) clearance Oct 2023, performance data: <a href="https://anumana.ai/" target="_blank">anumana.ai</a>, FDA De Novo Database</div>
-                <div class="reference-item">[6] Tempus AI IPO Jun 2024, revenue: <a href="https://investor.tempus.com/" target="_blank">Tempus Investor Relations</a>, SEC filings</div>
-                <div class="reference-item">[7] ARPA-H ADVOCATE teaming participants: <a href="https://arpa-h.gov/explore-funding/programs/advocate/teaming" target="_blank">arpa-h.gov/advocate/teaming</a></div>
-                <div class="reference-item">[8] Insight Health AI funding: <a href="https://techcrunch.com/" target="_blank">TechCrunch</a>, company press releases</div>
+                <div class="reference-item" id="ref-1">[1] TytoCare funding and FDA clearance: <a href="https://www.crunchbase.com/organization/tytocare" target="_blank">Crunchbase</a>, <a href="https://www.tytocare.com/" target="_blank">tytocare.com</a></div>
+                <div class="reference-item" id="ref-2">[2] AliveCor product specs and FDA clearances: <a href="https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm" target="_blank">FDA 510(k) Database</a>, <a href="https://alivecor.com/" target="_blank">alivecor.com</a></div>
+                <div class="reference-item" id="ref-3">[3] Biofourmis valuation and acquisition: <a href="https://www.crunchbase.com/organization/biofourmis" target="_blank">Crunchbase</a>, <a href="https://www.mobihealthnews.com/" target="_blank">MobiHealthNews</a></div>
+                <div class="reference-item" id="ref-4">[4] Withings BeamO FDA clearance Nov 2025, BeamO Pro: <a href="https://www.withings.com/us/en/beam-o" target="_blank">withings.com</a>, <a href="https://withingshealthsolutions.com/devices/beam-o-pro/" target="_blank">withingshealthsolutions.com</a></div>
+                <div class="reference-item" id="ref-5">[5] Anumana FDA 510(k) clearance Oct 2023, performance data: <a href="https://anumana.ai/" target="_blank">anumana.ai</a>, FDA De Novo Database</div>
+                <div class="reference-item" id="ref-6">[6] Tempus AI IPO Jun 2024, revenue: <a href="https://investor.tempus.com/" target="_blank">Tempus Investor Relations</a>, SEC filings</div>
+                <div class="reference-item" id="ref-7">[7] ARPA-H ADVOCATE teaming page applicant breakdown: <a href="https://arpa-h.gov/explore-funding/programs/advocate/teaming" target="_blank">arpa-h.gov/advocate/teaming</a></div>
+                <div class="reference-item" id="ref-8">[8] Insight Health AI funding: <a href="https://techcrunch.com/" target="_blank">TechCrunch</a>, company press releases</div>
             </div>
         </section>
     </div>
