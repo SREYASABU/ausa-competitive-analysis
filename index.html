@@ -677,6 +677,203 @@
 
         .hidden { display: none !important; }
 
+        /* Voice Bot Styles */
+        .voice-bot-container {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 12px;
+        }
+
+        .voice-status {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 12px 16px;
+            max-width: 280px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            opacity: 0;
+            transform: translateY(10px) scale(0.95);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            pointer-events: none;
+        }
+
+        .voice-status.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+        }
+
+        .voice-status-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 6px;
+        }
+
+        .voice-status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--text-muted);
+        }
+
+        .voice-status.listening .voice-status-dot {
+            background: #f472b6;
+            animation: pulse-dot 1.5s ease-in-out infinite;
+        }
+
+        .voice-status.speaking .voice-status-dot {
+            background: var(--success);
+            animation: pulse-dot 0.8s ease-in-out infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+
+        .voice-status-label {
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .voice-status-text {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .voice-mic-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 50%, #6366f1 100%);
+            box-shadow: 
+                0 4px 20px rgba(236, 72, 153, 0.4),
+                0 0 0 0 rgba(236, 72, 153, 0.4);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .voice-mic-btn:hover {
+            transform: scale(1.08);
+            box-shadow: 
+                0 6px 28px rgba(236, 72, 153, 0.5),
+                0 0 0 0 rgba(236, 72, 153, 0.4);
+        }
+
+        .voice-mic-btn:active {
+            transform: scale(0.95);
+        }
+
+        .voice-mic-btn.listening {
+            animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        .voice-mic-btn.speaking {
+            background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+            box-shadow: 
+                0 4px 20px rgba(16, 185, 129, 0.4),
+                0 0 0 0 rgba(16, 185, 129, 0.4);
+        }
+
+        .voice-mic-btn.not-supported {
+            background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+            cursor: not-allowed;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes pulse-ring {
+            0% {
+                box-shadow: 
+                    0 4px 20px rgba(236, 72, 153, 0.4),
+                    0 0 0 0 rgba(236, 72, 153, 0.5);
+            }
+            70% {
+                box-shadow: 
+                    0 4px 20px rgba(236, 72, 153, 0.4),
+                    0 0 0 15px rgba(236, 72, 153, 0);
+            }
+            100% {
+                box-shadow: 
+                    0 4px 20px rgba(236, 72, 153, 0.4),
+                    0 0 0 0 rgba(236, 72, 153, 0);
+            }
+        }
+
+        .voice-mic-btn svg {
+            width: 26px;
+            height: 26px;
+            color: white;
+            filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+        }
+
+        .voice-mic-btn .mic-waves {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            opacity: 0;
+        }
+
+        .voice-mic-btn.listening .mic-waves {
+            animation: mic-wave 1.5s ease-out infinite;
+        }
+
+        @keyframes mic-wave {
+            0% {
+                transform: scale(1);
+                opacity: 0.4;
+                border: 2px solid rgba(255, 255, 255, 0.5);
+            }
+            100% {
+                transform: scale(1.6);
+                opacity: 0;
+                border: 2px solid rgba(255, 255, 255, 0);
+            }
+        }
+
+        .voice-hint {
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 10px 14px;
+            font-size: 12px;
+            color: var(--text-secondary);
+            white-space: nowrap;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transform: translateY(5px);
+            transition: all 0.2s ease;
+            pointer-events: none;
+        }
+
+        .voice-mic-btn:hover .voice-hint {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .voice-mic-btn.listening .voice-hint,
+        .voice-mic-btn.speaking .voice-hint {
+            opacity: 0 !important;
+        }
+
         @media (max-width: 768px) {
             .container { padding: 0 20px; }
             h1 { font-size: 20px; }
@@ -687,6 +884,9 @@
             .info-grid { grid-template-columns: 1fr; }
             .context-content { flex-direction: column; gap: 20px; }
             .context-stats { justify-content: flex-start; }
+            .voice-bot-container { bottom: 20px; right: 20px; }
+            .voice-mic-btn { width: 54px; height: 54px; }
+            .voice-status { max-width: 240px; }
         }
     </style>
 </head>
@@ -1607,7 +1807,29 @@
         </div>
     </footer>
 
+    <!-- Voice Bot UI -->
+    <div class="voice-bot-container">
+        <div class="voice-status" id="voiceStatus">
+            <div class="voice-status-header">
+                <div class="voice-status-dot"></div>
+                <span class="voice-status-label" id="voiceStatusLabel">Ready</span>
+            </div>
+            <div class="voice-status-text" id="voiceStatusText">Click the mic to ask a question</div>
+        </div>
+        <button class="voice-mic-btn" id="voiceMicBtn" aria-label="Voice assistant">
+            <div class="mic-waves"></div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                <line x1="12" y1="19" x2="12" y2="23"></line>
+                <line x1="8" y1="23" x2="16" y2="23"></line>
+            </svg>
+            <span class="voice-hint">Ask me about competitors</span>
+        </button>
+    </div>
+
     <script>
+        // Card expand/collapse
         document.querySelectorAll('.card-header').forEach(header => {
             header.addEventListener('click', (e) => {
                 if (e.target.tagName === 'A' || e.target.closest('a')) return;
@@ -1616,6 +1838,7 @@
             });
         });
 
+        // Category filter
         document.querySelectorAll('.nav-pill').forEach(pill => {
             pill.addEventListener('click', () => {
                 document.querySelectorAll('.nav-pill').forEach(p => p.classList.remove('active'));
@@ -1632,6 +1855,7 @@
             });
         });
 
+        // Search
         document.getElementById('searchInput').addEventListener('input', (e) => {
             const query = e.target.value.toLowerCase();
             document.querySelectorAll('.competitor-card').forEach(card => {
@@ -1641,6 +1865,383 @@
             document.querySelectorAll('.nav-pill').forEach(p => p.classList.remove('active'));
             document.querySelector('.nav-pill[data-filter="all"]').classList.add('active');
         });
+
+        // Voice Bot Implementation
+        (function() {
+            const micBtn = document.getElementById('voiceMicBtn');
+            const statusEl = document.getElementById('voiceStatus');
+            const statusLabel = document.getElementById('voiceStatusLabel');
+            const statusText = document.getElementById('voiceStatusText');
+
+            // Competitor data for voice queries
+            const competitors = {
+                tytocare: {
+                    name: 'TytoCare',
+                    founded: 2012,
+                    location: 'NYC and Israel',
+                    funding: '$205 million across 8 rounds',
+                    revenue: '$5 to $25 million per year',
+                    founders: ['Dedi Gilad', 'Ofer Tzadik'],
+                    hardware: true,
+                    ai: true,
+                    arpaH: false,
+                    fda: 'FDA cleared in 2016',
+                    device: 'Modular hub system with snap-on attachments including otoscope, stethoscope, thermometer, and exam camera',
+                    aiCapability: 'Tyto Insights AI for wheeze, crackle, and rhonchi detection with 95.85% AUC',
+                    ausaAdvantage: 'AUSA offers a compact 7-in-1 device that eliminates attachment management, simplifying patient self-exams'
+                },
+                alivecor: {
+                    name: 'AliveCor',
+                    founded: 2011,
+                    location: 'Mountain View, California',
+                    funding: 'over $165 million',
+                    revenue: '$30 to $50 million per year',
+                    founders: ['Dr. David Albert', 'Bruce Satchwell', 'Kim Barnett'],
+                    hardware: true,
+                    ai: true,
+                    arpaH: true,
+                    fda: 'First FDA clearance in 2012',
+                    device: 'KardiaMobile ECG devices including 1-Lead, 6-Lead, Card, and 12-Lead versions',
+                    aiCapability: 'AI trained on 1.75 million ECG recordings, detects 39 conditions',
+                    ausaAdvantage: 'AliveCor is ECG-only. AUSA provides comprehensive monitoring including SpO2, temperature, blood pressure, and lung sounds'
+                },
+                biofourmis: {
+                    name: 'Biofourmis',
+                    founded: 2015,
+                    location: 'Boston',
+                    funding: '$465 million',
+                    revenue: '$35 to $50 million per year',
+                    founders: ['Kuldeep Singh Rajput', 'Maulik Majmudar'],
+                    hardware: true,
+                    ai: true,
+                    arpaH: true,
+                    fda: 'FDA cleared',
+                    device: 'Everion armband for 24/7 continuous monitoring',
+                    aiCapability: 'Biovitals Analytics and Heart Rhythm Reader detecting 30+ irregular heartbeat types',
+                    ausaAdvantage: 'Biofourmis faced leadership instability and acquisition. AUSA offers a stable teleconsultation ecosystem with provider portal',
+                    warning: 'Founder departed in 2023 due to legal issues. Company was acquired by CopilotIQ in 2024'
+                },
+                withings: {
+                    name: 'Withings BeamO',
+                    founded: 2008,
+                    location: 'France',
+                    funding: 'over $60 million, acquired by Nokia in 2016',
+                    revenue: 'over $100 million estimated',
+                    founders: ['Éric Carreel'],
+                    hardware: true,
+                    ai: false,
+                    arpaH: false,
+                    fda: 'FDA cleared November 2025',
+                    device: '4-in-1 scanner with ECG, digital stethoscope, pulse oximeter, and contactless thermometer',
+                    price: '$249.95',
+                    ausaAdvantage: 'BeamO is consumer-focused with limited clinical integrations. AUSA provides a 7-in-1 device with full provider portal and teleconsultation'
+                },
+                insight: {
+                    name: 'Insight Health AI',
+                    founded: 2024,
+                    location: 'San Francisco',
+                    funding: '$4.6 million seed round in July 2025',
+                    founders: ['Jaimal Soni', 'Saran Siva'],
+                    hardware: false,
+                    ai: true,
+                    arpaH: true,
+                    products: 'Lumi conversational AI agent and Aura AI for clinical notes',
+                    impact: '1,500+ daily active clinicians, 100,000+ patient conversations',
+                    ausaAdvantage: 'Insight Health AI is software-only. AUSA combines hardware diagnostics with AI in a unified platform'
+                },
+                nference: {
+                    name: 'nference and Anumana',
+                    founded: 2021,
+                    location: 'Partners with Mayo Clinic and Duke Health',
+                    funding: '$185 million',
+                    revenue: '$36.7 million',
+                    founders: ['Murali Aravamudan'],
+                    hardware: false,
+                    ai: true,
+                    arpaH: false,
+                    fda: 'FDA cleared October 2023',
+                    product: 'ECG-AI LEF for detecting low ejection fraction with 84.5% sensitivity',
+                    ausaAdvantage: 'Anumana requires hospital ECG infrastructure. AUSA provides portable point-of-care diagnostics'
+                },
+                anumana: {
+                    name: 'nference and Anumana',
+                    founded: 2021,
+                    location: 'Partners with Mayo Clinic and Duke Health',
+                    funding: '$185 million',
+                    revenue: '$36.7 million',
+                    founders: ['Murali Aravamudan'],
+                    hardware: false,
+                    ai: true,
+                    arpaH: false,
+                    fda: 'FDA cleared October 2023',
+                    product: 'ECG-AI LEF for detecting low ejection fraction with 84.5% sensitivity',
+                    ausaAdvantage: 'Anumana requires hospital ECG infrastructure. AUSA provides portable point-of-care diagnostics'
+                },
+                vocare: {
+                    name: 'VoCare',
+                    founded: 2009,
+                    founders: ['Steven R. Peabody'],
+                    hardware: true,
+                    ai: false,
+                    arpaH: false,
+                    fda: 'FDA cleared',
+                    device: 'Vitals 360, a 6-in-1 Android device for heart rate, SpO2, temperature, blood pressure, ECG, and pulse',
+                    role: 'US distributor for Linktop devices from China',
+                    ausaAdvantage: 'VoCare distributes third-party hardware with basic portal. AUSA offers proprietary 7-in-1 with full clinical workflows'
+                },
+                doctronic: {
+                    name: 'Doctronic',
+                    founded: 2023,
+                    location: 'New York',
+                    funding: '$20 million',
+                    founders: ['Matt Pavelle', 'Dr. Adam Oskowitz'],
+                    hardware: false,
+                    ai: true,
+                    arpaH: false,
+                    fda: 'No FDA clearance, operating under Utah regulatory sandbox',
+                    focus: 'AI for prescription refills only',
+                    accuracy: '99.2% match with physician decisions in testing',
+                    ausaAdvantage: 'Doctronic operates only in Utah sandbox for refills only. AUSA pursues FDA clearance nationally with full diagnostic capabilities'
+                },
+                tempus: {
+                    name: 'Tempus AI',
+                    founded: 2015,
+                    location: 'NASDAQ: TEM',
+                    funding: 'over $1 billion pre-IPO',
+                    revenue: '$1.27 billion in 2025',
+                    founders: ['Eric Lefkofsky'],
+                    hardware: false,
+                    ai: true,
+                    arpaH: false,
+                    fda: 'FDA cleared June 2024',
+                    focus: 'Primarily a cancer company. Cardiovascular AI is a minor expansion',
+                    products: 'ECG-AF and ECG-Low EF for detecting heart conditions from hospital ECGs',
+                    ausaAdvantage: 'Tempus cardiovascular AI is a side business. AUSA focuses entirely on remote cardiac monitoring with portable home diagnostics'
+                }
+            };
+
+            // Check browser support
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            const speechSynthesis = window.speechSynthesis;
+
+            if (!SpeechRecognition) {
+                micBtn.classList.add('not-supported');
+                micBtn.title = 'Speech recognition not supported in this browser';
+                statusText.textContent = 'Voice not supported. Try Chrome or Edge.';
+                statusEl.classList.add('visible');
+                return;
+            }
+
+            const recognition = new SpeechRecognition();
+            recognition.continuous = false;
+            recognition.interimResults = false;
+            recognition.lang = 'en-US';
+
+            let isListening = false;
+
+            function showStatus(label, text, state = '') {
+                statusLabel.textContent = label;
+                statusText.textContent = text;
+                statusEl.className = 'voice-status visible ' + state;
+            }
+
+            function hideStatus() {
+                statusEl.classList.remove('visible');
+            }
+
+            function speak(text) {
+                if (!speechSynthesis) return;
+                
+                speechSynthesis.cancel();
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.rate = 1.0;
+                utterance.pitch = 1.0;
+                
+                micBtn.classList.remove('listening');
+                micBtn.classList.add('speaking');
+                showStatus('Speaking', text, 'speaking');
+                
+                utterance.onend = () => {
+                    micBtn.classList.remove('speaking');
+                    setTimeout(hideStatus, 2000);
+                };
+                
+                speechSynthesis.speak(utterance);
+            }
+
+            function findCompany(query) {
+                query = query.toLowerCase();
+                const aliases = {
+                    'tyto': 'tytocare',
+                    'tyto care': 'tytocare',
+                    'alive cor': 'alivecor',
+                    'bio fourmis': 'biofourmis',
+                    'beam o': 'withings',
+                    'beamo': 'withings',
+                    'insight': 'insight',
+                    'insight health': 'insight',
+                    'inference': 'nference',
+                    'n ference': 'nference',
+                    'vo care': 'vocare',
+                    'doctronics': 'doctronic',
+                    'tempus': 'tempus'
+                };
+                
+                for (const [alias, key] of Object.entries(aliases)) {
+                    if (query.includes(alias)) return competitors[key];
+                }
+                
+                for (const [key, company] of Object.entries(competitors)) {
+                    if (query.includes(key) || query.includes(company.name.toLowerCase())) {
+                        return company;
+                    }
+                }
+                return null;
+            }
+
+            function processQuery(transcript) {
+                const query = transcript.toLowerCase();
+                
+                // General questions
+                if (query.includes('how many') && query.includes('competitor')) {
+                    return `There are 9 competitors analyzed on this page: TytoCare, AliveCor, Biofourmis, Withings BeamO, Insight Health AI, nference/Anumana, VoCare, Doctronic, and Tempus AI.`;
+                }
+                
+                if (query.includes('arpa') && (query.includes('who') || query.includes('which') || query.includes('companies'))) {
+                    return `Three companies are part of the ARPA-H program: AliveCor, Biofourmis, and Insight Health AI.`;
+                }
+                
+                if ((query.includes('hardware') || query.includes('device')) && (query.includes('who') || query.includes('which'))) {
+                    return `Companies with hardware devices include: TytoCare with a modular hub system, AliveCor with KardiaMobile ECG devices, Biofourmis with the Everion armband, Withings with BeamO 4-in-1 scanner, and VoCare with Vitals 360.`;
+                }
+                
+                if (query.includes('most funding') || query.includes('highest funding') || query.includes('most funded')) {
+                    return `Biofourmis has raised the most funding at $465 million. Tempus AI raised over $1 billion pre-IPO and is now publicly traded. TytoCare has raised $205 million.`;
+                }
+                
+                if (query.includes('ausa') && query.includes('advantage')) {
+                    return `AUSA's key advantages include: a compact 7-in-1 integrated device, full provider portal with teleconsultation capabilities, prescription management, and portable point-of-care diagnostics for remote cardiac monitoring.`;
+                }
+
+                if (query.includes('newest') || query.includes('most recent') || query.includes('youngest')) {
+                    return `The newest companies are Insight Health AI founded in 2024, and Doctronic founded in 2023. Anumana was also founded in 2021 as a spin-off from nference.`;
+                }
+
+                // Company-specific queries
+                const company = findCompany(query);
+                
+                if (company) {
+                    // Founder question
+                    if (query.includes('founder') || query.includes('who founded') || query.includes('who started')) {
+                        if (company.founders) {
+                            return `${company.name} was founded by ${company.founders.join(' and ')}.`;
+                        }
+                        return `I don't have founder information for ${company.name}.`;
+                    }
+                    
+                    // Funding question
+                    if (query.includes('funding') || query.includes('raised') || query.includes('investment')) {
+                        if (company.funding) {
+                            return `${company.name} has raised ${company.funding}.`;
+                        }
+                        return `Funding information for ${company.name} is not disclosed.`;
+                    }
+                    
+                    // Revenue question
+                    if (query.includes('revenue') || query.includes('earn') || query.includes('make')) {
+                        if (company.revenue) {
+                            return `${company.name} generates ${company.revenue}.`;
+                        }
+                        return `Revenue information for ${company.name} is not available.`;
+                    }
+                    
+                    // FDA question
+                    if (query.includes('fda') || query.includes('clearance') || query.includes('approved')) {
+                        if (company.fda) {
+                            return `${company.name}: ${company.fda}.`;
+                        }
+                        return `${company.name} does not have FDA clearance or it's not applicable.`;
+                    }
+                    
+                    // Device question
+                    if (query.includes('device') || query.includes('product') || query.includes('hardware')) {
+                        if (company.device) {
+                            return `${company.name} offers ${company.device}.`;
+                        } else if (company.products) {
+                            return `${company.name} offers ${company.products}.`;
+                        }
+                        return `${company.name} does not have a hardware device; they are software-only.`;
+                    }
+                    
+                    // AUSA advantage question
+                    if (query.includes('advantage') || query.includes('ausa') || query.includes('better') || query.includes('compare')) {
+                        return `Compared to ${company.name}: ${company.ausaAdvantage}`;
+                    }
+                    
+                    // General info
+                    let response = `${company.name} was founded in ${company.founded}`;
+                    if (company.location) response += ` in ${company.location}`;
+                    response += '. ';
+                    if (company.funding) response += `They have raised ${company.funding}. `;
+                    if (company.hardware && company.ai) response += 'They offer both hardware and AI solutions. ';
+                    else if (company.hardware) response += 'They offer hardware solutions. ';
+                    else if (company.ai) response += 'They offer AI solutions. ';
+                    if (company.arpaH) response += 'They are part of the ARPA-H program.';
+                    
+                    return response;
+                }
+                
+                return `I can answer questions about the 9 competitors on this page: TytoCare, AliveCor, Biofourmis, Withings BeamO, Insight Health AI, nference, VoCare, Doctronic, and Tempus AI. Try asking about their funding, founders, devices, or AUSA's advantage.`;
+            }
+
+            micBtn.addEventListener('click', () => {
+                if (micBtn.classList.contains('not-supported')) return;
+                
+                if (isListening) {
+                    recognition.stop();
+                    return;
+                }
+                
+                try {
+                    recognition.start();
+                    isListening = true;
+                    micBtn.classList.add('listening');
+                    showStatus('Listening', 'Speak now...', 'listening');
+                } catch (e) {
+                    console.error('Speech recognition error:', e);
+                }
+            });
+
+            recognition.onresult = (event) => {
+                const transcript = event.results[0][0].transcript;
+                showStatus('Processing', `"${transcript}"`);
+                
+                setTimeout(() => {
+                    const response = processQuery(transcript);
+                    speak(response);
+                }, 500);
+            };
+
+            recognition.onend = () => {
+                isListening = false;
+                micBtn.classList.remove('listening');
+            };
+
+            recognition.onerror = (event) => {
+                isListening = false;
+                micBtn.classList.remove('listening');
+                
+                if (event.error === 'no-speech') {
+                    showStatus('No speech', 'I didn\'t hear anything. Try again.');
+                } else if (event.error === 'not-allowed') {
+                    showStatus('Blocked', 'Microphone access denied. Check your browser settings.');
+                } else {
+                    showStatus('Error', 'Something went wrong. Please try again.');
+                }
+                
+                setTimeout(hideStatus, 3000);
+            };
+        })();
     </script>
 </body>
 </html>
