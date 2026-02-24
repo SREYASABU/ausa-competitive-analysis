@@ -42,6 +42,17 @@
             padding: 0 24px;
         }
 
+        a {
+            color: var(--accent-light);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: #c7d2fe;
+            text-decoration: underline;
+        }
+
         header {
             padding: 48px 0 32px;
             border-bottom: 1px solid var(--border);
@@ -116,6 +127,18 @@
             border-radius: 6px;
             font-weight: 600;
             color: var(--accent-light);
+        }
+
+        .source-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 16px;
+            padding: 8px 16px;
+            background: rgba(99, 102, 241, 0.15);
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
         }
 
         .applicant-grid {
@@ -234,6 +257,14 @@
             margin-bottom: 4px;
         }
 
+        .company-info h3 a {
+            color: inherit;
+        }
+
+        .company-info h3 a:hover {
+            color: var(--accent-light);
+        }
+
         .company-meta {
             display: flex;
             gap: 16px;
@@ -323,6 +354,28 @@
         .info-item .value {
             font-size: 16px;
             font-weight: 600;
+        }
+
+        .founders-list {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 8px;
+        }
+
+        .founder-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 6px;
+            font-size: 13px;
+        }
+
+        .founder-link svg {
+            width: 14px;
+            height: 14px;
         }
 
         .products-list {
@@ -527,6 +580,38 @@
 
         .search-input::placeholder { color: var(--text-muted); }
         .hidden { display: none !important; }
+
+        .linkedin-icon {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background: #0a66c2;
+            border-radius: 3px;
+            position: relative;
+        }
+
+        .linkedin-icon::after {
+            content: "in";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 10px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .external-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .external-link svg {
+            width: 12px;
+            height: 12px;
+            opacity: 0.7;
+        }
     </style>
 </head>
 <body>
@@ -569,6 +654,14 @@
                     <div class="label">Big Tech</div>
                 </div>
             </div>
+            <a href="https://claude.ai/public/artifacts/d8a9a12d-c2d1-42a1-b8ca-ec28acafc0f9" target="_blank" class="source-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+                View Full Overview
+            </a>
         </section>
 
         <div class="search-wrapper">
@@ -589,7 +682,7 @@
                     <div class="card-header-left">
                         <div class="rank-badge">1</div>
                         <div class="company-info">
-                            <h3>TytoCare</h3>
+                            <h3><a href="https://www.tytocare.com/" target="_blank" class="external-link">TytoCare <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
                             <div class="company-meta">
                                 <span>Founded 2012</span>
                                 <span>HQ: NYC (Israel-based)</span>
@@ -625,6 +718,17 @@
                             <div class="info-item">
                                 <div class="label">Market Reach</div>
                                 <div class="value">180+ health systems (US, EU, China, LATAM)</div>
+                            </div>
+                        </div>
+                        <div class="info-item" style="margin-bottom: 24px;">
+                            <div class="label">Co-Founders</div>
+                            <div class="founders-list">
+                                <a href="https://www.linkedin.com/in/dedigilad/" target="_blank" class="founder-link">
+                                    <span class="linkedin-icon"></span> Dedi Gilad
+                                </a>
+                                <a href="https://www.linkedin.com/in/ofer-tzadik-3921b33/" target="_blank" class="founder-link">
+                                    <span class="linkedin-icon"></span> Ofer Tzadik
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -671,7 +775,7 @@
                     <div class="card-header-left">
                         <div class="rank-badge">2</div>
                         <div class="company-info">
-                            <h3>AliveCor</h3>
+                            <h3><a href="https://alivecor.com/" target="_blank" class="external-link">AliveCor <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
                             <div class="company-meta">
                                 <span>Founded 2011</span>
                                 <span>HQ: Mountain View, CA</span>
@@ -697,16 +801,22 @@
                                 <div class="value">2012</div>
                             </div>
                             <div class="info-item">
-                                <div class="label">Founders</div>
-                                <div class="value">Dr. David Albert, Bruce Satchwell, Kim Barnett</div>
-                            </div>
-                            <div class="info-item">
                                 <div class="label">Focus Area</div>
                                 <div class="value">ECG Only</div>
                             </div>
                             <div class="info-item">
                                 <div class="label">Conditions Detected</div>
                                 <div class="value">Up to 39</div>
+                            </div>
+                        </div>
+                        <div class="info-item" style="margin-bottom: 24px;">
+                            <div class="label">Co-Founders</div>
+                            <div class="founders-list">
+                                <a href="https://www.linkedin.com/in/drdavealbert/" target="_blank" class="founder-link">
+                                    <span class="linkedin-icon"></span> Dr. David Albert
+                                </a>
+                                <span class="founder-link" style="background: var(--bg-secondary);">Bruce Satchwell</span>
+                                <span class="founder-link" style="background: var(--bg-secondary);">Kim Barnett</span>
                             </div>
                         </div>
                     </div>
@@ -754,7 +864,7 @@
                     <div class="card-header-left">
                         <div class="rank-badge">3</div>
                         <div class="company-info">
-                            <h3>Biofourmis</h3>
+                            <h3><a href="https://biofourmis.com/" target="_blank" class="external-link">Biofourmis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
                             <div class="company-meta">
                                 <span>Founded 2015</span>
                                 <span>HQ: Boston</span>
@@ -789,6 +899,15 @@
                             <div class="info-item">
                                 <div class="label">Status</div>
                                 <div class="value" style="color: #f59e0b;">Acquired by CopilotIQ (2024)</div>
+                            </div>
+                        </div>
+                        <div class="info-item" style="margin-bottom: 24px;">
+                            <div class="label">Co-Founders</div>
+                            <div class="founders-list">
+                                <span class="founder-link" style="background: var(--bg-secondary);">Kuldeep Singh Rajput (Founder)</span>
+                                <a href="https://www.linkedin.com/in/mmajmudar/" target="_blank" class="founder-link">
+                                    <span class="linkedin-icon"></span> Maulik Majmudar, MD
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -865,7 +984,7 @@
                     <div class="card-header-left">
                         <div class="rank-badge">5</div>
                         <div class="company-info">
-                            <h3>Insights Health AI</h3>
+                            <h3><a href="https://www.insighthealth.ai/" target="_blank" class="external-link">Insights Health AI <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
                             <div class="company-meta">
                                 <span>Founded 2024</span>
                                 <span>AI-Only</span>
@@ -927,7 +1046,7 @@
                     <div class="card-header-left">
                         <div class="rank-badge">6</div>
                         <div class="company-info">
-                            <h3>nference / Anumana</h3>
+                            <h3><a href="https://anumana.ai/" target="_blank" class="external-link">nference / Anumana <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
                             <div class="company-meta">
                                 <span>AI-Only</span>
                                 <span>Mayo Clinic Partner</span>
@@ -948,7 +1067,7 @@
                     <div class="content-section">
                         <h4>Platform</h4>
                         <div class="ai-details">
-                            <p><strong>nSights Platform:</strong> AI insights on structured and unstructured records of 11+ million patients from health system partners including Mayo Clinic and Duke Health.</p>
+                            <p><strong><a href="https://nference.com/nsights" target="_blank">nSights Platform</a>:</strong> AI insights on structured and unstructured records of 11+ million patients from health system partners including Mayo Clinic and Duke Health.</p>
                             <p><strong>Customers:</strong> Pharmaceutical companies and researchers.</p>
                         </div>
                     </div>
@@ -964,7 +1083,7 @@
                     <div class="card-header-left">
                         <div class="rank-badge">7</div>
                         <div class="company-info">
-                            <h3>VoCare</h3>
+                            <h3><a href="https://vocare.com/" target="_blank" class="external-link">VoCare <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
                             <div class="company-meta">
                                 <span>Founded 2009</span>
                             </div>
@@ -1010,7 +1129,7 @@
                     <div class="card-header-left">
                         <div class="rank-badge">8</div>
                         <div class="company-info">
-                            <h3>Doctronics</h3>
+                            <h3><a href="https://www.doctronic.ai/" target="_blank" class="external-link">Doctronics <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
                             <div class="company-meta">
                                 <span>Founded 2024</span>
                                 <span>AI-Only</span>
@@ -1065,7 +1184,7 @@
                     <div class="card-header-left">
                         <div class="rank-badge">9</div>
                         <div class="company-info">
-                            <h3>Tempus AI</h3>
+                            <h3><a href="https://www.tempus.com/" target="_blank" class="external-link">Tempus AI <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
                             <div class="company-meta">
                                 <span>Founded 2015</span>
                                 <span>Largest by Revenue</span>
@@ -1147,7 +1266,7 @@
                             <td class="check">Yes</td>
                         </tr>
                         <tr>
-                            <td>TytoCare</td>
+                            <td><a href="https://www.tytocare.com/" target="_blank">TytoCare</a></td>
                             <td class="check">Modular</td>
                             <td class="check">Diagnostic Support</td>
                             <td class="check">2016</td>
@@ -1156,7 +1275,7 @@
                             <td class="check">100+ EHRs</td>
                         </tr>
                         <tr>
-                            <td>AliveCor</td>
+                            <td><a href="https://alivecor.com/" target="_blank">AliveCor</a></td>
                             <td class="check">ECG Only</td>
                             <td class="check">39 Conditions</td>
                             <td class="check">2012</td>
@@ -1165,7 +1284,7 @@
                             <td class="partial">Limited</td>
                         </tr>
                         <tr>
-                            <td>Biofourmis</td>
+                            <td><a href="https://biofourmis.com/" target="_blank">Biofourmis</a></td>
                             <td class="check">Armband</td>
                             <td class="check">Predictive</td>
                             <td class="check">Yes</td>
@@ -1174,7 +1293,7 @@
                             <td class="partial">Limited</td>
                         </tr>
                         <tr>
-                            <td>VoCare</td>
+                            <td><a href="https://vocare.com/" target="_blank">VoCare</a></td>
                             <td class="check">6-in-1</td>
                             <td class="cross">No</td>
                             <td class="check">Yes</td>
@@ -1183,7 +1302,7 @@
                             <td class="cross">No</td>
                         </tr>
                         <tr>
-                            <td>Doctronics</td>
+                            <td><a href="https://www.doctronic.ai/" target="_blank">Doctronics</a></td>
                             <td class="cross">No</td>
                             <td class="check">Rx Refills</td>
                             <td class="cross">No (Utah only)</td>
@@ -1192,7 +1311,7 @@
                             <td class="cross">No</td>
                         </tr>
                         <tr>
-                            <td>Tempus AI</td>
+                            <td><a href="https://www.tempus.com/" target="_blank">Tempus AI</a></td>
                             <td class="cross">No</td>
                             <td class="check">ECG Analysis</td>
                             <td class="check">Yes</td>
@@ -1214,7 +1333,8 @@
 
     <script>
         document.querySelectorAll('.card-header').forEach(header => {
-            header.addEventListener('click', () => {
+            header.addEventListener('click', (e) => {
+                if (e.target.tagName === 'A' || e.target.closest('a')) return;
                 const card = header.closest('.competitor-card');
                 card.classList.toggle('expanded');
             });
