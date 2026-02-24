@@ -3,23 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AUSA Competitive Analysis | Healthcare AI Landscape</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>AUSA Competitive Analysis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;450;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-primary: #0a0a0b;
-            --bg-secondary: #141416;
-            --bg-card: #1a1a1d;
-            --bg-card-hover: #222225;
-            --text-primary: #ffffff;
-            --text-secondary: #a1a1aa;
-            --text-muted: #71717a;
-            --accent: #6366f1;
-            --accent-light: #818cf8;
-            --border: #27272a;
-            --success: #22c55e;
-            --warning: #f59e0b;
-            --danger: #ef4444;
+            --bg-primary: #09090b;
+            --bg-secondary: #111113;
+            --bg-card: #151517;
+            --bg-elevated: #1a1a1c;
+            --text-primary: #fafafa;
+            --text-secondary: #a0a0a8;
+            --text-muted: #606068;
+            --accent: #7c7cff;
+            --accent-soft: rgba(124, 124, 255, 0.12);
+            --border: rgba(255, 255, 255, 0.06);
+            --border-hover: rgba(255, 255, 255, 0.12);
+            --success: #34d399;
+            --warning: #fbbf24;
+            --danger: #f87171;
         }
 
         * {
@@ -32,167 +33,218 @@
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: var(--bg-primary);
             color: var(--text-primary);
-            line-height: 1.6;
+            line-height: 1.7;
             min-height: 100vh;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
         }
 
         .container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 32px;
         }
 
         a {
-            color: var(--accent-light);
+            color: var(--accent);
             text-decoration: none;
-            transition: color 0.2s ease;
+            transition: opacity 0.2s ease;
         }
 
         a:hover {
-            color: #c7d2fe;
-            text-decoration: underline;
+            opacity: 0.8;
         }
 
         header {
-            padding: 32px 0 24px;
+            padding: 56px 0 40px;
             border-bottom: 1px solid var(--border);
-            margin-bottom: 32px;
+            margin-bottom: 40px;
         }
 
         .header-content {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 16px;
+            align-items: flex-end;
+            gap: 24px;
         }
 
         .header-meta {
-            text-align: right;
-        }
-
-        .header-meta p {
             color: var(--text-muted);
             font-size: 13px;
+            font-weight: 400;
         }
 
         h1 {
-            font-size: 32px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            margin-bottom: 8px;
+            font-size: 28px;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
         }
 
         .subtitle {
             font-size: 15px;
-            color: var(--text-secondary);
-            max-width: 700px;
+            color: var(--text-muted);
+            margin-top: 8px;
+            font-weight: 400;
         }
 
-        .context-banner {
-            background: rgba(99, 102, 241, 0.05);
-            border: 1px solid rgba(99, 102, 241, 0.15);
-            border-radius: 12px;
-            padding: 16px 20px;
-            margin-bottom: 32px;
+        /* ARPA-H Context Section */
+        .context-section {
+            margin-bottom: 48px;
+        }
+
+        .context-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 12px;
+            margin-bottom: 20px;
         }
 
-        .context-banner-left {
+        .context-title {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .context-link {
+            font-size: 12px;
+            color: var(--accent);
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 4px;
+        }
+
+        .context-link svg {
+            width: 12px;
+            height: 12px;
+        }
+
+        .context-content {
+            display: flex;
+            align-items: center;
+            gap: 32px;
             flex-wrap: wrap;
         }
 
-        .context-banner .context-title {
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--accent-light);
+        .context-main {
+            flex: 1;
+            min-width: 280px;
         }
 
-        .context-banner .context-stat {
-            font-size: 12px;
+        .context-main p {
             color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.6;
         }
 
-        .stat-highlight {
-            display: inline-block;
-            background: rgba(99, 102, 241, 0.15);
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-weight: 600;
-            color: var(--accent-light);
-            font-size: 12px;
-        }
-
-        .source-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            padding: 6px 12px;
-            background: rgba(99, 102, 241, 0.1);
-            border-radius: 6px;
-            font-size: 12px;
+        .context-main .highlight {
+            color: var(--accent);
             font-weight: 500;
         }
 
+        .context-stats {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .context-stat {
+            text-align: center;
+        }
+
+        .context-stat .value {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+        }
+
+        .context-stat .label {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 2px;
+            white-space: nowrap;
+        }
+
+        /* Search */
+        .search-wrapper {
+            margin-bottom: 24px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 14px 20px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: var(--text-primary);
+            font-size: 14px;
+            font-family: inherit;
+            font-weight: 400;
+            transition: all 0.2s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--border-hover);
+            background: var(--bg-card);
+        }
+
+        .search-input::placeholder {
+            color: var(--text-muted);
+        }
+
+        /* Navigation */
         .nav-pills {
             display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
+            gap: 4px;
             margin-bottom: 32px;
-            padding: 8px;
+            padding: 4px;
             background: var(--bg-secondary);
-            border-radius: 12px;
-            position: sticky;
-            top: 16px;
-            z-index: 100;
+            border-radius: 10px;
+            width: fit-content;
         }
 
         .nav-pill {
-            padding: 10px 20px;
+            padding: 8px 16px;
             background: transparent;
             border: none;
-            border-radius: 8px;
-            color: var(--text-secondary);
-            font-size: 14px;
-            font-weight: 500;
+            border-radius: 7px;
+            color: var(--text-muted);
+            font-size: 13px;
+            font-weight: 450;
             cursor: pointer;
             transition: all 0.2s ease;
             font-family: inherit;
         }
 
         .nav-pill:hover {
-            background: var(--bg-card);
-            color: var(--text-primary);
+            color: var(--text-secondary);
         }
 
         .nav-pill.active {
-            background: var(--accent);
-            color: white;
+            background: var(--bg-elevated);
+            color: var(--text-primary);
         }
 
+        /* Cards */
         .competitors-grid {
             display: grid;
-            gap: 24px;
+            gap: 16px;
         }
 
         .competitor-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 16px;
+            border-radius: 14px;
             overflow: hidden;
-            transition: all 0.3s ease;
+            transition: all 0.25s ease;
         }
 
         .competitor-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-2px);
+            border-color: var(--border-hover);
         }
 
         .competitor-card.expanded .card-content {
@@ -200,11 +252,12 @@
         }
 
         .card-header {
-            padding: 24px;
+            padding: 20px 24px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 16px;
         }
 
         .card-header-left {
@@ -214,21 +267,22 @@
         }
 
         .rank-badge {
-            width: 40px;
-            height: 40px;
-            background: var(--accent);
-            border-radius: 10px;
+            width: 36px;
+            height: 36px;
+            background: var(--accent-soft);
+            border-radius: 9px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 700;
-            font-size: 18px;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--accent);
         }
 
         .company-info h3 {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 4px;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 2px;
         }
 
         .company-info h3 a {
@@ -236,50 +290,44 @@
         }
 
         .company-info h3 a:hover {
-            color: var(--accent-light);
+            color: var(--accent);
         }
 
         .company-meta {
             display: flex;
-            gap: 16px;
-            font-size: 13px;
+            gap: 12px;
+            font-size: 12px;
             color: var(--text-muted);
-        }
-
-        .company-meta span {
-            display: flex;
-            align-items: center;
-            gap: 4px;
         }
 
         .tags {
             display: flex;
-            gap: 8px;
+            gap: 6px;
             flex-wrap: wrap;
         }
 
         .tag {
-            padding: 4px 12px;
+            padding: 4px 10px;
             background: var(--bg-secondary);
-            border-radius: 20px;
-            font-size: 12px;
-            color: var(--text-secondary);
+            border-radius: 6px;
+            font-size: 11px;
+            color: var(--text-muted);
             font-weight: 500;
         }
 
-        .tag.device { background: rgba(34, 197, 94, 0.15); color: #4ade80; }
-        .tag.ai { background: rgba(99, 102, 241, 0.15); color: #a5b4fc; }
-        .tag.arpa { background: rgba(245, 158, 11, 0.15); color: #fcd34d; }
+        .tag.device { background: rgba(52, 211, 153, 0.1); color: var(--success); }
+        .tag.ai { background: var(--accent-soft); color: var(--accent); }
+        .tag.arpa { background: rgba(251, 191, 36, 0.1); color: var(--warning); }
 
         .expand-icon {
-            width: 32px;
-            height: 32px;
+            width: 28px;
+            height: 28px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: var(--bg-secondary);
-            border-radius: 8px;
-            transition: transform 0.3s ease;
+            border-radius: 7px;
+            transition: all 0.25s ease;
+            color: var(--text-muted);
         }
 
         .competitor-card.expanded .expand-icon {
@@ -297,41 +345,41 @@
         }
 
         .content-section h4 {
-            font-size: 14px;
-            font-weight: 600;
+            font-size: 11px;
+            font-weight: 500;
             color: var(--text-muted);
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 16px;
+            letter-spacing: 0.08em;
+            margin-bottom: 14px;
         }
 
         .info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 16px;
-            margin-bottom: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
         }
 
         .info-item {
             background: var(--bg-secondary);
-            padding: 16px;
-            border-radius: 12px;
+            padding: 14px 16px;
+            border-radius: 10px;
         }
 
         .info-item .label {
-            font-size: 12px;
+            font-size: 11px;
             color: var(--text-muted);
             margin-bottom: 4px;
         }
 
         .info-item .value {
-            font-size: 16px;
-            font-weight: 600;
+            font-size: 14px;
+            font-weight: 500;
         }
 
         .founders-list {
             display: flex;
-            gap: 12px;
+            gap: 8px;
             flex-wrap: wrap;
             margin-top: 8px;
         }
@@ -341,49 +389,67 @@
             align-items: center;
             gap: 6px;
             padding: 6px 12px;
-            background: rgba(99, 102, 241, 0.1);
+            background: var(--bg-secondary);
             border-radius: 6px;
-            font-size: 13px;
+            font-size: 12px;
+            color: var(--text-secondary);
         }
 
-        .founder-link svg {
+        .linkedin-icon {
+            display: inline-block;
             width: 14px;
             height: 14px;
+            background: #0a66c2;
+            border-radius: 3px;
+            position: relative;
+        }
+
+        .linkedin-icon::after {
+            content: "in";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 9px;
+            font-weight: 700;
+            color: white;
         }
 
         .products-list {
             display: grid;
-            gap: 12px;
+            gap: 10px;
         }
 
         .product-item {
             background: var(--bg-secondary);
             padding: 16px;
-            border-radius: 12px;
-            border-left: 3px solid var(--accent);
+            border-radius: 10px;
+            border-left: 2px solid var(--accent);
         }
 
         .product-item h5 {
-            font-size: 15px;
-            font-weight: 600;
-            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 6px;
         }
 
         .product-item p {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--text-secondary);
+            line-height: 1.6;
         }
 
         .ai-details {
             background: var(--bg-secondary);
-            padding: 20px;
-            border-radius: 12px;
+            padding: 16px;
+            border-radius: 10px;
         }
 
         .ai-details p {
             color: var(--text-secondary);
-            font-size: 14px;
-            margin-bottom: 12px;
+            font-size: 13px;
+            margin-bottom: 10px;
+            line-height: 1.6;
         }
 
         .ai-details p:last-child {
@@ -394,94 +460,130 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(34, 197, 94, 0.15);
-            padding: 8px 16px;
+            background: rgba(52, 211, 153, 0.1);
+            padding: 8px 14px;
             border-radius: 8px;
-            margin-top: 12px;
+            margin-top: 10px;
         }
 
         .performance-stat .number {
-            font-size: 24px;
-            font-weight: 700;
-            color: #4ade80;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--success);
         }
 
         .performance-stat .unit {
-            font-size: 14px;
+            font-size: 12px;
             color: var(--text-secondary);
         }
 
         .ausa-advantage {
-            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
-            border: 1px solid rgba(34, 197, 94, 0.3);
-            padding: 16px 20px;
-            border-radius: 12px;
-            margin-top: 24px;
+            background: rgba(52, 211, 153, 0.06);
+            border: 1px solid rgba(52, 211, 153, 0.15);
+            padding: 16px;
+            border-radius: 10px;
+            margin-top: 20px;
         }
 
         .ausa-advantage h4 {
-            color: #4ade80;
+            color: var(--success);
             margin-bottom: 8px;
-            font-size: 13px;
         }
 
         .ausa-advantage p {
             color: var(--text-secondary);
-            font-size: 14px;
-            line-height: 1.5;
+            font-size: 13px;
+            line-height: 1.6;
         }
 
         .warning-banner {
-            background: rgba(239, 68, 68, 0.1);
-            border: 1px solid rgba(239, 68, 68, 0.3);
-            padding: 16px;
-            border-radius: 12px;
+            background: rgba(248, 113, 113, 0.08);
+            border: 1px solid rgba(248, 113, 113, 0.15);
+            padding: 14px 16px;
+            border-radius: 10px;
             margin-top: 16px;
         }
 
         .warning-banner p {
-            color: #fca5a5;
-            font-size: 14px;
+            color: var(--danger);
+            font-size: 13px;
         }
 
+        .product-image-link {
+            display: inline-block;
+            padding: 6px 12px;
+            background: var(--bg-elevated);
+            border-radius: 6px;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+
+        .specs-grid {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+
+        .spec-item {
+            background: var(--accent-soft);
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .spec-item .spec-value {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .spec-item .spec-label {
+            font-size: 10px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 2px;
+        }
+
+        /* Table */
         .comparison-section {
             margin-top: 64px;
             margin-bottom: 64px;
         }
 
         .comparison-section h2 {
-            font-size: 28px;
-            font-weight: 700;
+            font-size: 20px;
+            font-weight: 500;
             margin-bottom: 24px;
+            letter-spacing: -0.01em;
         }
 
         .table-wrapper {
             overflow-x: auto;
-            border-radius: 16px;
+            border-radius: 12px;
             border: 1px solid var(--border);
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 14px;
+            font-size: 13px;
         }
 
         th, td {
-            padding: 16px;
+            padding: 14px 16px;
             text-align: left;
             border-bottom: 1px solid var(--border);
         }
 
         th {
             background: var(--bg-card);
-            font-weight: 600;
+            font-weight: 500;
             color: var(--text-muted);
             text-transform: uppercase;
-            font-size: 12px;
-            letter-spacing: 0.5px;
-            position: sticky;
-            top: 0;
+            font-size: 11px;
+            letter-spacing: 0.05em;
         }
 
         td {
@@ -496,69 +598,17 @@
             background: var(--bg-card);
         }
 
-        .check { color: #4ade80; }
-        .cross { color: #ef4444; }
-        .partial { color: #f59e0b; }
+        .check { color: var(--success); }
+        .cross { color: var(--danger); }
+        .partial { color: var(--warning); }
 
         footer {
-            padding: 48px 0;
+            padding: 40px 0;
             border-top: 1px solid var(--border);
             margin-top: 64px;
             text-align: center;
             color: var(--text-muted);
-            font-size: 14px;
-        }
-
-        @media (max-width: 768px) {
-            h1 { font-size: 24px; }
-            .header-content { flex-direction: column; }
-            .header-meta { text-align: left; }
-            .nav-pills { position: static; }
-            .card-header { flex-direction: column; align-items: flex-start; gap: 16px; }
-            .info-grid { grid-template-columns: 1fr; }
-            .context-banner { flex-direction: column; align-items: flex-start; }
-        }
-
-        .search-wrapper { margin-bottom: 24px; }
-
-        .search-input {
-            width: 100%;
-            padding: 16px 20px;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            color: var(--text-primary);
-            font-size: 16px;
-            font-family: inherit;
-            transition: border-color 0.2s ease;
-        }
-
-        .search-input:focus {
-            outline: none;
-            border-color: var(--accent);
-        }
-
-        .search-input::placeholder { color: var(--text-muted); }
-        .hidden { display: none !important; }
-
-        .linkedin-icon {
-            display: inline-block;
-            width: 16px;
-            height: 16px;
-            background: #0a66c2;
-            border-radius: 3px;
-            position: relative;
-        }
-
-        .linkedin-icon::after {
-            content: "in";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 10px;
-            font-weight: 700;
-            color: white;
+            font-size: 12px;
         }
 
         .external-link {
@@ -568,45 +618,23 @@
         }
 
         .external-link svg {
-            width: 12px;
-            height: 12px;
-            opacity: 0.7;
+            width: 11px;
+            height: 11px;
+            opacity: 0.5;
         }
 
-        .product-image-link {
-            display: inline-block;
-            padding: 8px 16px;
-            background: var(--bg-secondary);
-            border-radius: 8px;
-            font-size: 13px;
-            margin-top: 12px;
-        }
+        .hidden { display: none !important; }
 
-        .specs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 12px;
-            margin-top: 12px;
-        }
-
-        .spec-item {
-            background: rgba(99, 102, 241, 0.1);
-            padding: 12px;
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .spec-item .spec-value {
-            font-size: 18px;
-            font-weight: 700;
-            color: var(--accent-light);
-        }
-
-        .spec-item .spec-label {
-            font-size: 11px;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            margin-top: 4px;
+        @media (max-width: 768px) {
+            .container { padding: 0 20px; }
+            h1 { font-size: 22px; }
+            header { padding: 40px 0 32px; }
+            .header-content { flex-direction: column; align-items: flex-start; }
+            .nav-pills { width: 100%; overflow-x: auto; }
+            .card-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+            .info-grid { grid-template-columns: 1fr; }
+            .context-content { flex-direction: column; gap: 24px; }
+            .context-stats { justify-content: flex-start; }
         }
     </style>
 </head>
@@ -616,36 +644,59 @@
             <div class="header-content">
                 <div>
                     <h1>Competitive Analysis</h1>
-                    <p class="subtitle">Healthcare AI and remote patient monitoring landscape overview.</p>
+                    <p class="subtitle">Healthcare AI & Remote Patient Monitoring Landscape</p>
                 </div>
-                <div class="header-meta">
-                    <p>Last updated: February 2026</p>
-                </div>
+                <div class="header-meta">February 2026</div>
             </div>
         </header>
 
-        <div class="context-banner">
-            <div class="context-banner-left">
-                <span class="context-title">ARPA-H ADVOCATE ($5.5B)</span>
-                <span class="context-stat">AI agents for 24/7 heart failure management</span>
-                <span class="stat-highlight">46% of U.S. counties have zero cardiologists</span>
+        <section class="context-section">
+            <div class="context-header">
+                <span class="context-title">ARPA-H ADVOCATE · $5.5B Initiative</span>
+                <a href="https://arpa-h.gov/explore-funding/programs/advocate/teaming" target="_blank" class="context-link">
+                    Teaming Page
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                </a>
             </div>
-            <a href="https://arpa-h.gov/explore-funding/programs/advocate/teaming" target="_blank" class="source-link">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                </svg>
-                Teaming Page
-            </a>
-        </div>
+            <div class="context-content">
+                <div class="context-main">
+                    <p>AI agents for 24/7 heart failure management. <span class="highlight">46% of U.S. counties have zero cardiologists.</span></p>
+                </div>
+                <div class="context-stats">
+                    <div class="context-stat">
+                        <div class="value">37%</div>
+                        <div class="label">AI Startups</div>
+                    </div>
+                    <div class="context-stat">
+                        <div class="value">13%</div>
+                        <div class="label">Academic Med</div>
+                    </div>
+                    <div class="context-stat">
+                        <div class="value">8%</div>
+                        <div class="label">Defense</div>
+                    </div>
+                    <div class="context-stat">
+                        <div class="value">7%</div>
+                        <div class="label">Health Systems</div>
+                    </div>
+                    <div class="context-stat">
+                        <div class="value">6%</div>
+                        <div class="label">Big Tech</div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <div class="search-wrapper">
             <input type="text" class="search-input" placeholder="Search competitors..." id="searchInput">
         </div>
 
         <nav class="nav-pills" id="categoryNav">
-            <button class="nav-pill active" data-filter="all">All Competitors</button>
+            <button class="nav-pill active" data-filter="all">All</button>
             <button class="nav-pill" data-filter="device">Hardware + AI</button>
             <button class="nav-pill" data-filter="ai">AI Only</button>
         </nav>
@@ -659,7 +710,7 @@
                             <h3><a href="https://www.tytocare.com/" target="_blank" class="external-link">TytoCare <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
                             <div class="company-meta">
                                 <span>Founded 2012</span>
-                                <span>HQ: NYC (Israel-based)</span>
+                                <span>NYC / Israel</span>
                             </div>
                         </div>
                     </div>
@@ -682,7 +733,7 @@
                             </div>
                             <div class="info-item">
                                 <div class="label">Total Funding</div>
-                                <div class="value">$205M (8 rounds)</div>
+                                <div class="value">$205M</div>
                             </div>
                             <div class="info-item">
                                 <div class="label">Est. Revenue</div>
@@ -690,10 +741,10 @@
                             </div>
                             <div class="info-item">
                                 <div class="label">Market Reach</div>
-                                <div class="value">180+ health systems (US, EU, China, LATAM)</div>
+                                <div class="value">180+ health systems</div>
                             </div>
                         </div>
-                        <div class="info-item" style="margin-bottom: 24px;">
+                        <div class="info-item" style="margin-bottom: 20px;">
                             <div class="label">Co-Founders</div>
                             <div class="founders-list">
                                 <a href="https://www.linkedin.com/in/dedigilad/" target="_blank" class="founder-link">
@@ -706,37 +757,28 @@
                         </div>
                     </div>
                     <div class="content-section">
-                        <h4>Device Architecture</h4>
+                        <h4>Device</h4>
                         <div class="products-list">
                             <div class="product-item">
-                                <h5>Central Hub System</h5>
-                                <p>Modular hub-based system with snap-on attachments: Otoscope (ear canal imaging), Stethoscope (heart/lung/abdomen), Thermometer (forehead), Exam Camera (throat/skin). Optional: BP Cuff, Pulse Oximeter, ECG Module.</p>
-                                <a href="https://www.tytocare.com/how-it-works" target="_blank" class="product-image-link">View Product Images →</a>
+                                <h5>Modular Hub System</h5>
+                                <p>Snap-on attachments: Otoscope, Stethoscope, Thermometer, Exam Camera. Optional BP Cuff, Pulse Oximeter, ECG Module.</p>
+                                <a href="https://www.tytocare.com/how-it-works" target="_blank" class="product-image-link">View Product →</a>
                             </div>
                         </div>
-                    </div>
-                    <div class="content-section">
-                        <h4>Platform</h4>
-                        <p style="color: var(--text-secondary); font-size: 14px; margin-bottom: 16px;">
-                            <strong>Patient App:</strong> TytoHome App (iOS/Android)<br>
-                            <strong>Provider Portal:</strong> Pro Smart Clinic Portal, 100+ EHRs (Epic/Cerner)<br>
-                            <strong>Modes:</strong> Synchronous (live video) + Asynchronous (exam forwarding)
-                        </p>
                     </div>
                     <div class="content-section">
                         <h4>AI Capabilities</h4>
                         <div class="ai-details">
-                            <p><strong>Tyto Insights:</strong> FDA-cleared AI for wheeze, crackle, and rhonchi detection. Diagnostic support only - flags findings for clinicians. No autonomous decision-making.</p>
-                            <p><strong>Training Data:</strong> 1.8 million real-world lung sound recordings from actual patients. Machine learning validated by pulmonologists.</p>
+                            <p><strong>Tyto Insights:</strong> FDA-cleared AI for wheeze, crackle, and rhonchi detection. Trained on 1.8M lung sound recordings.</p>
                             <div class="performance-stat">
                                 <span class="number">95.85%</span>
-                                <span class="unit">AUC (vs 79.45% for GPs, 83.03% for pulmonary experts)</span>
+                                <span class="unit">AUC (vs 79% for GPs)</span>
                             </div>
                         </div>
                     </div>
                     <div class="ausa-advantage">
-                        <h4>AUSA Advantages</h4>
-                        <p>AUSA offers a compact 7-in-1 portable device versus TytoCare's modular snap-on system requiring multiple attachments. Our integrated form factor eliminates attachment management and simplifies patient self-exams.</p>
+                        <h4>AUSA Advantage</h4>
+                        <p>AUSA's compact 7-in-1 device eliminates attachment management. Integrated form factor simplifies patient self-exams versus TytoCare's modular system.</p>
                     </div>
                 </div>
             </article>
@@ -749,14 +791,14 @@
                             <h3><a href="https://alivecor.com/" target="_blank" class="external-link">AliveCor <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
                             <div class="company-meta">
                                 <span>Founded 2011</span>
-                                <span>HQ: Mountain View, CA</span>
+                                <span>Mountain View, CA</span>
                             </div>
                         </div>
                     </div>
                     <div class="tags">
                         <span class="tag device">Hardware</span>
                         <span class="tag ai">AI</span>
-                        <span class="tag arpa">ARPA-H ADVOCATE</span>
+                        <span class="tag arpa">ARPA-H</span>
                     </div>
                     <div class="expand-icon">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -768,65 +810,48 @@
                     <div class="content-section">
                         <div class="info-grid">
                             <div class="info-item">
-                                <div class="label">First FDA Clearance</div>
+                                <div class="label">FDA Clearance</div>
                                 <div class="value">2012</div>
                             </div>
                             <div class="info-item">
-                                <div class="label">Focus Area</div>
+                                <div class="label">Focus</div>
                                 <div class="value">ECG Only</div>
                             </div>
                             <div class="info-item">
-                                <div class="label">Conditions Detected</div>
-                                <div class="value">Up to 39</div>
+                                <div class="label">Conditions</div>
+                                <div class="value">39 detected</div>
                             </div>
                             <div class="info-item">
-                                <div class="label">Active Users</div>
+                                <div class="label">Users</div>
                                 <div class="value">1M+ quarterly</div>
                             </div>
                         </div>
-                        <div class="info-item" style="margin-bottom: 24px;">
-                            <div class="label">Co-Founders</div>
+                        <div class="info-item" style="margin-bottom: 20px;">
+                            <div class="label">Founder</div>
                             <div class="founders-list">
                                 <a href="https://www.linkedin.com/in/drdavealbert/" target="_blank" class="founder-link">
                                     <span class="linkedin-icon"></span> Dr. David Albert
                                 </a>
-                                <span class="founder-link" style="background: var(--bg-secondary);">Bruce Satchwell</span>
-                                <span class="founder-link" style="background: var(--bg-secondary);">Kim Barnett</span>
                             </div>
                         </div>
                     </div>
                     <div class="content-section">
-                        <h4>Product Line</h4>
+                        <h4>Products</h4>
                         <div class="products-list">
                             <div class="product-item">
-                                <h5>KardiaMobile 1-Lead - $79</h5>
-                                <p>FDA cleared 2012. Consumer screening device. Uses ultrasonic audio encoding (~18kHz) transmitted to phone microphone. Instant AFib/Normal results.</p>
+                                <h5>KardiaMobile 6L · $99-129</h5>
+                                <p>30s recording, 500Hz sample rate. Detects AFib + 10+ arrhythmias via KAI AI.</p>
                             </div>
                             <div class="product-item">
-                                <h5>KardiaMobile 6L - $99-129</h5>
-                                <p>FDA cleared 2019. 30s recording, 500Hz sample rate, 24-bit resolution, ~21g weight. Detects AFib + 10+ arrhythmias via KAI AI.</p>
-                            </div>
-                            <div class="product-item">
-                                <h5>KardiaMobile Card - ~$99</h5>
-                                <p>FDA cleared Nov 2021. Credit card form factor. Bluetooth connection, Lead I ECG, instant AI analysis.</p>
-                            </div>
-                            <div class="product-item">
-                                <h5>KardiaMobile 12L - $3,000+</h5>
-                                <p>FDA cleared June 2024. Clinician-grade, hospital-quality 12-lead ECG. Breakthrough: 5 electrodes vs traditional 10 (50% reduction). Single-cable design.</p>
+                                <h5>KardiaMobile 12L · $3,000+</h5>
+                                <p>Hospital-quality 12-lead ECG. 5 electrodes vs traditional 10 (50% reduction).</p>
                                 <a href="https://store.alivecor.com/" target="_blank" class="product-image-link">View Products →</a>
                             </div>
                         </div>
                     </div>
-                    <div class="content-section">
-                        <h4>AI Training</h4>
-                        <div class="ai-details">
-                            <p><strong>Training Data:</strong> 1.75 million labeled clinical ECG recordings from leading US medical centers.</p>
-                            <p>Multiple neural networks specialized for different detection tasks.</p>
-                        </div>
-                    </div>
                     <div class="ausa-advantage">
-                        <h4>AUSA Advantages</h4>
-                        <p>AliveCor focuses exclusively on ECG while AUSA provides comprehensive vital signs monitoring including SpO2, temperature, blood pressure, and lung sounds in a single integrated device. Our full-stack approach addresses complete patient assessment, not just cardiac screening.</p>
+                        <h4>AUSA Advantage</h4>
+                        <p>AliveCor is ECG-only. AUSA provides comprehensive monitoring including SpO2, temperature, BP, and lung sounds in one integrated device.</p>
                     </div>
                 </div>
             </article>
@@ -839,14 +864,14 @@
                             <h3><a href="https://biofourmis.com/" target="_blank" class="external-link">Biofourmis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
                             <div class="company-meta">
                                 <span>Founded 2015</span>
-                                <span>HQ: Boston</span>
+                                <span>Boston</span>
                             </div>
                         </div>
                     </div>
                     <div class="tags">
                         <span class="tag device">Hardware</span>
                         <span class="tag ai">AI</span>
-                        <span class="tag arpa">ARPA-H ADVOCATE</span>
+                        <span class="tag arpa">ARPA-H</span>
                     </div>
                     <div class="expand-icon">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -866,30 +891,12 @@
                                 <div class="value">$1.3B (2022)</div>
                             </div>
                             <div class="info-item">
-                                <div class="label">Est. Revenue</div>
+                                <div class="label">Revenue</div>
                                 <div class="value">$35-50M</div>
                             </div>
                             <div class="info-item">
                                 <div class="label">Status</div>
-                                <div class="value" style="color: #f59e0b;">Acquired by CopilotIQ (2024)</div>
-                            </div>
-                        </div>
-                        <div class="info-item" style="margin-bottom: 24px;">
-                            <div class="label">Co-Founders</div>
-                            <div class="founders-list">
-                                <span class="founder-link" style="background: var(--bg-secondary);">Kuldeep Singh Rajput (Founder)</span>
-                                <a href="https://www.linkedin.com/in/mmajmudar/" target="_blank" class="founder-link">
-                                    <span class="linkedin-icon"></span> Maulik Majmudar, MD
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="content-section">
-                        <h4>Device</h4>
-                        <div class="products-list">
-                            <div class="product-item">
-                                <h5>Everion Armband (Acquired)</h5>
-                                <p>FDA cleared. 24/7 continuous monitoring: Heart Rate, HRV, SpO2, Respiration Rate, Stroke Volume, Core Body Temperature, EDA (stress), Activity Tracking.</p>
+                                <div class="value" style="color: var(--warning);">Acquired 2024</div>
                             </div>
                         </div>
                     </div>
@@ -897,25 +904,21 @@
                         <h4>AI Systems</h4>
                         <div class="products-list">
                             <div class="product-item">
-                                <h5>Biovitals Analytics (FDA Cleared)</h5>
-                                <p>Studies patient baseline readings and detects pattern fluctuations.</p>
+                                <h5>Biovitals Analytics</h5>
+                                <p>FDA-cleared. Detects pattern fluctuations from patient baseline.</p>
                             </div>
                             <div class="product-item">
-                                <h5>Heart Rhythm Reader (FDA Cleared)</h5>
-                                <p>Deep neural network trained on 1M+ heart recordings. Detects 30+ types of irregular heartbeats.</p>
-                            </div>
-                            <div class="product-item">
-                                <h5>BiovitalsHF (FDA Breakthrough Designation 2020)</h5>
-                                <p>Combines Everion data + patient symptoms + lab results to suggest heart failure medication adjustments.</p>
+                                <h5>BiovitalsHF</h5>
+                                <p>FDA Breakthrough Designation 2020. Suggests HF medication adjustments.</p>
                             </div>
                         </div>
                     </div>
                     <div class="warning-banner">
-                        <p><strong>Challenges:</strong> Founder departed 2023, faces legal charges (falsified invoices, forgery). Laid off 120 employees in 2023. Acquired by CopilotIQ in 2024.</p>
+                        <p>Founder departed 2023 (legal charges). 120 layoffs. Acquired by CopilotIQ 2024.</p>
                     </div>
                     <div class="ausa-advantage">
-                        <h4>AUSA Advantages</h4>
-                        <p>Biofourmis faced leadership instability and was acquired post-restructuring. AUSA offers a complete teleconsultation ecosystem with provider portal and prescription management, avoiding single-device dependency.</p>
+                        <h4>AUSA Advantage</h4>
+                        <p>Biofourmis faced leadership instability and acquisition. AUSA offers stable teleconsultation ecosystem with provider portal and Rx management.</p>
                     </div>
                 </div>
             </article>
@@ -927,8 +930,8 @@
                         <div class="company-info">
                             <h3><a href="https://www.withings.com/us/en/beam-o" target="_blank" class="external-link">Withings BeamO <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
                             <div class="company-meta">
-                                <span>Founded 2008 (France)</span>
-                                <span>FDA Cleared: Nov 2025</span>
+                                <span>France · 2008</span>
+                                <span>FDA Nov 2025</span>
                             </div>
                         </div>
                     </div>
@@ -945,25 +948,22 @@
                     <div class="content-section">
                         <div class="info-grid">
                             <div class="info-item">
-                                <div class="label">FDA Clearance</div>
-                                <div class="value">November 13, 2025</div>
-                            </div>
-                            <div class="info-item">
                                 <div class="label">Price</div>
                                 <div class="value">$249.95</div>
                             </div>
                             <div class="info-item">
-                                <div class="label">Device Type</div>
-                                <div class="value">4-in-1 Health Scanner</div>
+                                <div class="label">Type</div>
+                                <div class="value">4-in-1 Scanner</div>
                             </div>
                             <div class="info-item">
-                                <div class="label">Target Market</div>
-                                <div class="value">Consumer / At-Home</div>
+                                <div class="label">Target</div>
+                                <div class="value">Consumer</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="label">Checkup</div>
+                                <div class="value">&lt;60 seconds</div>
                             </div>
                         </div>
-                    </div>
-                    <div class="content-section">
-                        <h4>Device Specifications</h4>
                         <div class="specs-grid">
                             <div class="spec-item">
                                 <div class="spec-value">80g</div>
@@ -975,43 +975,20 @@
                             </div>
                             <div class="spec-item">
                                 <div class="spec-value">8 mo</div>
-                                <div class="spec-label">Battery Life</div>
-                            </div>
-                            <div class="spec-item">
-                                <div class="spec-value">&lt;60s</div>
-                                <div class="spec-label">Full Checkup</div>
-                            </div>
-                        </div>
-                        <div class="products-list" style="margin-top: 20px;">
-                            <div class="product-item">
-                                <h5>4-in-1 Measurements</h5>
-                                <p><strong>1. ECG:</strong> Medical-grade 1-lead ECG with AFib detection (30s recording via stainless steel electrodes)<br>
-                                <strong>2. Digital Stethoscope:</strong> Piezoelectric sensor captures heart & lung sounds in real-time<br>
-                                <strong>3. Pulse Oximeter:</strong> SpO2 and pulse rate measurement<br>
-                                <strong>4. Contactless Thermometer:</strong> Temporal artery temperature reading</p>
-                                <a href="https://www.withings.com/us/en/beam-o" target="_blank" class="product-image-link">View Product →</a>
+                                <div class="spec-label">Battery</div>
                             </div>
                         </div>
                     </div>
                     <div class="content-section">
-                        <h4>Technical Details</h4>
+                        <h4>Measurements</h4>
                         <div class="ai-details">
-                            <p><strong>Display:</strong> RGB TFT LCD, 170x320px, 1.9" 16-bit high color</p>
-                            <p><strong>Connectivity:</strong> Bluetooth Low Energy + Wi-Fi 2.4GHz b/g/n</p>
-                            <p><strong>Materials:</strong> Polycarbonate body, silicone membrane, stainless steel electrodes</p>
-                            <p><strong>App:</strong> Withings App (iOS/Android) - ECG unlocks after doctor review within 24-48 hours</p>
-                        </div>
-                    </div>
-                    <div class="content-section">
-                        <h4>Pro Version</h4>
-                        <div class="ai-details">
-                            <p><strong>BeamO Pro:</strong> Cellular-enabled version for healthcare providers with remote patient monitoring capabilities.</p>
-                            <p><a href="https://withingshealthsolutions.com/devices/beam-o-pro/" target="_blank">View BeamO Pro for Healthcare →</a></p>
+                            <p>1-lead ECG with AFib detection · Digital stethoscope · Pulse oximeter · Contactless thermometer</p>
+                            <p><a href="https://withingshealthsolutions.com/devices/beam-o-pro/" target="_blank">BeamO Pro →</a> Cellular-enabled version for healthcare providers.</p>
                         </div>
                     </div>
                     <div class="ausa-advantage">
-                        <h4>AUSA Advantages</h4>
-                        <p>BeamO is a consumer-focused 4-in-1 device lacking EHR integration and clinical workflow support. AUSA provides a 7-in-1 device with full provider portal, prescription management, and enterprise EHR connectivity built for clinical deployment.</p>
+                        <h4>AUSA Advantage</h4>
+                        <p>BeamO is consumer-focused with no EHR integration. AUSA provides 7-in-1 device with full provider portal and enterprise connectivity.</p>
                     </div>
                 </div>
             </article>
@@ -1024,13 +1001,13 @@
                             <h3><a href="https://www.insighthealth.ai/" target="_blank" class="external-link">Insight Health AI <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
                             <div class="company-meta">
                                 <span>Founded 2023</span>
-                                <span>San Francisco, CA</span>
+                                <span>San Francisco</span>
                             </div>
                         </div>
                     </div>
                     <div class="tags">
                         <span class="tag ai">AI Only</span>
-                        <span class="tag arpa">ARPA-H ADVOCATE</span>
+                        <span class="tag arpa">ARPA-H</span>
                     </div>
                     <div class="expand-icon">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1043,51 +1020,45 @@
                         <div class="info-grid">
                             <div class="info-item">
                                 <div class="label">Seed Funding</div>
-                                <div class="value">$4.6M (July 2025)</div>
+                                <div class="value">$4.6M</div>
                             </div>
                             <div class="info-item">
-                                <div class="label">Lead Investor</div>
+                                <div class="label">Investor</div>
                                 <div class="value">Kindred Ventures</div>
                             </div>
                             <div class="info-item">
-                                <div class="label">Daily Active Clinicians</div>
-                                <div class="value">1,500+</div>
+                                <div class="label">Clinicians</div>
+                                <div class="value">1,500+ daily</div>
                             </div>
                             <div class="info-item">
-                                <div class="label">Autonomous Conversations</div>
-                                <div class="value">100K+</div>
+                                <div class="label">Conversations</div>
+                                <div class="value">100K+ auto</div>
                             </div>
                         </div>
-                        <div class="info-item" style="margin-bottom: 24px;">
+                        <div class="info-item" style="margin-bottom: 20px;">
                             <div class="label">Leadership</div>
                             <div class="founders-list">
-                                <span class="founder-link" style="background: var(--bg-secondary);">Jaimal Soni (CEO, ex-Segment)</span>
-                                <span class="founder-link" style="background: var(--bg-secondary);">Saran Siva (CTO, ex-Segment)</span>
-                                <span class="founder-link" style="background: var(--bg-secondary);">Dr. Pankaj Gore (CMO)</span>
-                                <span class="founder-link" style="background: var(--bg-secondary);">Dr. Eric Stecker (CMO)</span>
+                                <span class="founder-link">Jaimal Soni · CEO (ex-Segment)</span>
+                                <span class="founder-link">Saran Siva · CTO (ex-Segment)</span>
                             </div>
                         </div>
                     </div>
                     <div class="content-section">
-                        <h4>AI Products</h4>
+                        <h4>Products</h4>
                         <div class="products-list">
                             <div class="product-item">
-                                <h5>Lumi (Conversational AI Agent)</h5>
-                                <p>First autonomous AI clinical agent (launched 2023). Patient-facing AI that communicates via voice or text to gather disease-specific history, update medication lists, process referrals, and guide triage. Saves clinicians 100K+ hours/month.</p>
+                                <h5>Lumi · Conversational AI Agent</h5>
+                                <p>First autonomous clinical AI (2023). Patient-facing voice/text agent for history, medications, referrals, triage.</p>
                             </div>
                             <div class="product-item">
                                 <h5>Aura AI</h5>
-                                <p>Creates clinical notes from consultations. Available as iOS app or web extension.</p>
+                                <p>Clinical notes from consultations. iOS app + web extension.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="content-section">
-                        <h4>Specialties Served</h4>
-                        <p style="color: var(--text-secondary); font-size: 14px;">Neurosurgery, Oncology, GI, Primary Care</p>
-                    </div>
                     <div class="ausa-advantage">
-                        <h4>AUSA Advantages</h4>
-                        <p>Insight Health AI is software-only, requiring integration with existing hardware for vitals collection. AUSA combines hardware diagnostics with AI in a unified platform, eliminating third-party device dependencies.</p>
+                        <h4>AUSA Advantage</h4>
+                        <p>Insight Health AI is software-only, requiring third-party hardware. AUSA combines hardware diagnostics with AI in a unified platform.</p>
                     </div>
                 </div>
             </article>
@@ -1099,8 +1070,8 @@
                         <div class="company-info">
                             <h3><a href="https://anumana.ai/" target="_blank" class="external-link">nference / Anumana <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
                             <div class="company-meta">
-                                <span>Anumana Founded 2021</span>
-                                <span>Mayo Clinic Partnership</span>
+                                <span>Anumana 2021</span>
+                                <span>Mayo Clinic Partner</span>
                             </div>
                         </div>
                     </div>
@@ -1117,20 +1088,20 @@
                     <div class="content-section">
                         <div class="info-grid">
                             <div class="info-item">
-                                <div class="label">Anumana Total Raised</div>
+                                <div class="label">Anumana Raised</div>
                                 <div class="value">$185M</div>
                             </div>
                             <div class="info-item">
                                 <div class="label">nference Revenue</div>
-                                <div class="value">$36.7M (2024)</div>
+                                <div class="value">$36.7M</div>
                             </div>
                             <div class="info-item">
                                 <div class="label">FDA Status</div>
-                                <div class="value" style="color: #4ade80;">510(k) Cleared Oct 2023</div>
+                                <div class="value" style="color: var(--success);">Cleared Oct 2023</div>
                             </div>
                             <div class="info-item">
-                                <div class="label">Latest Funding</div>
-                                <div class="value">Series C - Boston Scientific (Apr 2025)</div>
+                                <div class="label">Latest</div>
+                                <div class="value">Boston Scientific</div>
                             </div>
                         </div>
                     </div>
@@ -1138,29 +1109,18 @@
                         <h4>FDA-Cleared Product</h4>
                         <div class="products-list">
                             <div class="product-item">
-                                <h5>ECG-AI LEF (Low Ejection Fraction)</h5>
-                                <p>Detects low left ventricular ejection fraction from standard 12-lead ECGs. Identifies patients at risk of heart failure before symptoms appear. Runs on existing hospital ECG systems - no new hardware required.</p>
+                                <h5>ECG-AI LEF</h5>
+                                <p>Detects low ejection fraction from standard 12-lead ECGs. Identifies heart failure risk before symptoms. Runs on existing hospital systems.</p>
                                 <div class="performance-stat">
                                     <span class="number">84.5%</span>
-                                    <span class="unit">Sensitivity | 83.6% Specificity | 0.932 AUROC</span>
+                                    <span class="unit">Sensitivity · 0.932 AUROC</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="content-section">
-                        <h4>nference Platform</h4>
-                        <div class="ai-details">
-                            <p><strong><a href="https://nference.com/nsights" target="_blank">nSights Platform</a>:</strong> AI insights on structured and unstructured records of 11+ million patients from health system partners including Mayo Clinic and Duke Health.</p>
-                            <p><strong>Customers:</strong> Pharmaceutical companies and clinical researchers for drug development and real-world evidence.</p>
-                        </div>
-                    </div>
-                    <div class="content-section">
-                        <h4>Partnership</h4>
-                        <p style="color: var(--text-secondary); font-size: 14px;">Anumana was founded in 2021 as a joint venture between nference and Mayo Clinic, combining nference's AI expertise with Mayo's clinical validation infrastructure and ECG database.</p>
-                    </div>
                     <div class="ausa-advantage">
-                        <h4>AUSA Advantages</h4>
-                        <p>Anumana's ECG-AI requires existing hospital ECG infrastructure and focuses solely on cardiac screening. AUSA provides portable point-of-care diagnostics across multiple vital signs with integrated patient management workflows.</p>
+                        <h4>AUSA Advantage</h4>
+                        <p>Anumana requires hospital ECG infrastructure. AUSA provides portable point-of-care diagnostics with integrated patient management workflows.</p>
                     </div>
                 </div>
             </article>
@@ -1190,18 +1150,14 @@
                         <h4>Device</h4>
                         <div class="products-list">
                             <div class="product-item">
-                                <h5>Vitals 360 (6-in-1 Android Device)</h5>
-                                <p>Measures: Heart rate, SpO2, Temperature, Blood pressure, ECG rhythms, Pulse. Manufactured by Linktop (China), VoCare is US distributor.</p>
+                                <h5>Vitals 360 · 6-in-1</h5>
+                                <p>Heart rate, SpO2, Temperature, BP, ECG, Pulse. Manufactured by Linktop (China), VoCare is US distributor.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="content-section">
-                        <h4>Platform</h4>
-                        <p style="color: var(--text-secondary); font-size: 14px;">Care provider portal for nurses/doctors to view patient readings, set alert thresholds, and add notes. Used by home health nurses, nursing home staff, and RPM programs.</p>
-                    </div>
                     <div class="ausa-advantage">
-                        <h4>AUSA Advantages</h4>
-                        <p>VoCare distributes third-party hardware with basic portal functionality and no prescription management. AUSA offers proprietary 7-in-1 hardware with full clinical care management including Rx workflows.</p>
+                        <h4>AUSA Advantage</h4>
+                        <p>VoCare distributes third-party hardware with basic portal and no Rx management. AUSA offers proprietary 7-in-1 with full clinical workflows.</p>
                     </div>
                 </div>
             </article>
@@ -1214,7 +1170,6 @@
                             <h3><a href="https://www.doctronic.ai/" target="_blank" class="external-link">Doctronics <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
                             <div class="company-meta">
                                 <span>Founded 2024</span>
-                                <span>AI-Only</span>
                             </div>
                         </div>
                     </div>
@@ -1232,35 +1187,31 @@
                         <div class="info-grid">
                             <div class="info-item">
                                 <div class="label">Focus</div>
-                                <div class="value">Prescription Refills via AI</div>
+                                <div class="value">Rx Refills</div>
                             </div>
                             <div class="info-item">
-                                <div class="label">Regulatory Status</div>
-                                <div class="value" style="color: #f59e0b;">Utah State Sandbox Only</div>
+                                <div class="label">Regulatory</div>
+                                <div class="value" style="color: var(--warning);">Utah Sandbox</div>
                             </div>
                             <div class="info-item">
-                                <div class="label">FDA Approval</div>
-                                <div class="value" style="color: #ef4444;">No</div>
+                                <div class="label">FDA</div>
+                                <div class="value" style="color: var(--danger);">No</div>
                             </div>
                             <div class="info-item">
-                                <div class="label">AI Accuracy</div>
-                                <div class="value">99.2% match with physicians</div>
+                                <div class="label">Accuracy</div>
+                                <div class="value">99.2%</div>
                             </div>
                         </div>
-                    </div>
-                    <div class="content-section">
-                        <h4>How It Works</h4>
-                        <p style="color: var(--text-secondary); font-size: 14px;">AI chatbot handles prescription refills by asking questions. Only handles refills (not new prescriptions). Escalates to doctor when uncertain.</p>
                     </div>
                     <div class="content-section">
                         <h4>Validation</h4>
                         <div class="ai-details">
-                            <p>Tested on 500 urgent care cases with AI and real physicians reviewing independently. AI matched physician decisions 99.2% of the time. This evidence was submitted to and accepted by Utah regulators.</p>
+                            <p>Tested on 500 urgent care cases. AI matched physician decisions 99.2% of the time. Utah regulators accepted this evidence.</p>
                         </div>
                     </div>
                     <div class="ausa-advantage">
-                        <h4>AUSA Advantages</h4>
-                        <p>Doctronics operates only in Utah's regulatory sandbox with no FDA pathway and handles refills only. AUSA pursues FDA clearance nationally with full diagnostic and prescription capabilities.</p>
+                        <h4>AUSA Advantage</h4>
+                        <p>Doctronics operates only in Utah sandbox, handles refills only. AUSA pursues FDA clearance nationally with full diagnostic and Rx capabilities.</p>
                     </div>
                 </div>
             </article>
@@ -1273,7 +1224,7 @@
                             <h3><a href="https://www.tempus.com/" target="_blank" class="external-link">Tempus AI <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
                             <div class="company-meta">
                                 <span>Founded 2015</span>
-                                <span>NASDAQ: TEM (IPO June 2024)</span>
+                                <span>NASDAQ: TEM</span>
                             </div>
                         </div>
                     </div>
@@ -1291,56 +1242,51 @@
                         <div class="info-grid">
                             <div class="info-item">
                                 <div class="label">2025 Revenue</div>
-                                <div class="value" style="color: #4ade80;">~$1.27 Billion</div>
+                                <div class="value" style="color: var(--success);">$1.27B</div>
                             </div>
                             <div class="info-item">
-                                <div class="label">Private Funding</div>
-                                <div class="value">$1B+ pre-IPO</div>
+                                <div class="label">Pre-IPO</div>
+                                <div class="value">$1B+ raised</div>
                             </div>
                             <div class="info-item">
-                                <div class="label">Primary Business</div>
+                                <div class="label">Primary</div>
                                 <div class="value">Cancer/Lab Testing</div>
                             </div>
                             <div class="info-item">
-                                <div class="label">Public Listing</div>
-                                <div class="value">NASDAQ: TEM (Jun 14, 2024)</div>
+                                <div class="label">IPO</div>
+                                <div class="value">Jun 14, 2024</div>
                             </div>
                         </div>
-                        <div class="info-item" style="margin-bottom: 24px;">
+                        <div class="info-item" style="margin-bottom: 20px;">
                             <div class="label">Founder</div>
                             <div class="founders-list">
-                                <span class="founder-link" style="background: var(--bg-secondary);">Eric Lefkofsky (CEO, Groupon co-founder)</span>
+                                <span class="founder-link">Eric Lefkofsky · CEO (Groupon co-founder)</span>
                             </div>
                         </div>
                     </div>
                     <div class="content-section">
-                        <h4>FDA-Cleared Cardiovascular AI</h4>
+                        <h4>Cardiovascular AI</h4>
                         <div class="products-list">
                             <div class="product-item">
-                                <h5>ECG-AF (FDA Cleared June 2024)</h5>
+                                <h5>ECG-AF · FDA Jun 2024</h5>
                                 <p>Detects atrial fibrillation risk from standard hospital ECGs.</p>
                             </div>
                             <div class="product-item">
-                                <h5>ECG-Low EF (FDA Cleared)</h5>
-                                <p>Detects weak heart pumping - a sign of early heart failure.</p>
+                                <h5>ECG-Low EF · FDA Cleared</h5>
+                                <p>Detects weak heart pumping. Cardiovascular AI is a minor expansion vertical for this cancer-focused company.</p>
                             </div>
                         </div>
-                        <p style="color: var(--text-secondary); font-size: 14px; margin-top: 16px;">Both run on existing hospital ECGs - no new device needed. Tempus is fundamentally a cancer/genomics company ($1.27B revenue) that added cardiovascular AI as an expansion vertical.</p>
-                    </div>
-                    <div class="content-section">
-                        <h4>Business Model</h4>
-                        <p style="color: var(--text-secondary); font-size: 14px;">Lab testing (largest revenue stream), Data licensing to pharma, Tempus Next platform for precision medicine. Cardiovascular AI represents a minor fraction of total business.</p>
                     </div>
                     <div class="ausa-advantage">
-                        <h4>AUSA Advantages</h4>
-                        <p>Tempus's cardiovascular AI is a side business for a cancer-focused company, analyzing existing hospital ECGs. AUSA focuses entirely on remote cardiac monitoring with portable hardware enabling home-based and point-of-care diagnostics.</p>
+                        <h4>AUSA Advantage</h4>
+                        <p>Tempus cardiovascular AI is a side business analyzing hospital ECGs. AUSA focuses entirely on remote cardiac monitoring with portable home diagnostics.</p>
                     </div>
                 </div>
             </article>
         </div>
 
         <section class="comparison-section">
-            <h2>Feature Comparison Matrix</h2>
+            <h2>Feature Comparison</h2>
             <div class="table-wrapper">
                 <table>
                     <thead>
@@ -1348,10 +1294,10 @@
                             <th>Company</th>
                             <th>Hardware</th>
                             <th>AI</th>
-                            <th>FDA Cleared</th>
-                            <th>Provider Portal</th>
-                            <th>EHR Integration</th>
-                            <th>ARPA-H Teaming</th>
+                            <th>FDA</th>
+                            <th>Portal</th>
+                            <th>EHR</th>
+                            <th>ARPA-H</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -1367,20 +1313,20 @@
                         <tr>
                             <td><a href="https://www.tytocare.com/" target="_blank">TytoCare</a></td>
                             <td class="check">Modular</td>
-                            <td class="check">Diagnostic Support</td>
+                            <td class="check">Diagnostic</td>
                             <td class="check">2016</td>
                             <td class="check">Yes</td>
-                            <td class="check">100+ EHRs</td>
+                            <td class="check">100+</td>
                             <td class="cross">No</td>
                         </tr>
                         <tr>
                             <td><a href="https://alivecor.com/" target="_blank">AliveCor</a></td>
-                            <td class="check">ECG Only</td>
-                            <td class="check">39 Conditions</td>
+                            <td class="check">ECG</td>
+                            <td class="check">39 cond.</td>
                             <td class="check">2012</td>
                             <td class="partial">Limited</td>
                             <td class="partial">Limited</td>
-                            <td class="check">Yes (ADVOCATE)</td>
+                            <td class="check">Yes</td>
                         </tr>
                         <tr>
                             <td><a href="https://biofourmis.com/" target="_blank">Biofourmis</a></td>
@@ -1389,33 +1335,33 @@
                             <td class="check">Yes</td>
                             <td class="cross">No</td>
                             <td class="partial">Limited</td>
-                            <td class="check">Yes (ADVOCATE)</td>
+                            <td class="check">Yes</td>
                         </tr>
                         <tr>
-                            <td><a href="https://www.withings.com/us/en/beam-o" target="_blank">Withings BeamO</a></td>
+                            <td><a href="https://www.withings.com/us/en/beam-o" target="_blank">Withings</a></td>
                             <td class="check">4-in-1</td>
                             <td class="cross">No</td>
                             <td class="check">Nov 2025</td>
-                            <td class="cross">Consumer Only</td>
+                            <td class="cross">Consumer</td>
                             <td class="cross">No</td>
                             <td class="cross">No</td>
                         </tr>
                         <tr>
-                            <td><a href="https://www.insighthealth.ai/" target="_blank">Insight Health AI</a></td>
+                            <td><a href="https://www.insighthealth.ai/" target="_blank">Insight Health</a></td>
                             <td class="cross">No</td>
-                            <td class="check">Agentic AI</td>
+                            <td class="check">Agentic</td>
                             <td class="cross">N/A</td>
                             <td class="check">Yes</td>
                             <td class="check">Yes</td>
-                            <td class="check">Yes (ADVOCATE)</td>
+                            <td class="check">Yes</td>
                         </tr>
                         <tr>
                             <td><a href="https://anumana.ai/" target="_blank">Anumana</a></td>
                             <td class="cross">No</td>
-                            <td class="check">ECG-AI LEF</td>
+                            <td class="check">ECG-AI</td>
                             <td class="check">Oct 2023</td>
                             <td class="cross">No</td>
-                            <td class="check">Hospital ECG</td>
+                            <td class="check">Hospital</td>
                             <td class="cross">No</td>
                         </tr>
                         <tr>
@@ -1430,8 +1376,8 @@
                         <tr>
                             <td><a href="https://www.doctronic.ai/" target="_blank">Doctronics</a></td>
                             <td class="cross">No</td>
-                            <td class="check">Rx Refills</td>
-                            <td class="cross">Utah only</td>
+                            <td class="check">Rx</td>
+                            <td class="cross">Utah</td>
                             <td class="cross">No</td>
                             <td class="cross">No</td>
                             <td class="cross">No</td>
@@ -1439,7 +1385,7 @@
                         <tr>
                             <td><a href="https://www.tempus.com/" target="_blank">Tempus AI</a></td>
                             <td class="cross">No</td>
-                            <td class="check">ECG-AF/Low EF</td>
+                            <td class="check">ECG</td>
                             <td class="check">Jun 2024</td>
                             <td class="partial">Research</td>
                             <td class="check">Yes</td>
@@ -1448,15 +1394,12 @@
                     </tbody>
                 </table>
             </div>
-            <p style="color: var(--text-muted); font-size: 12px; margin-top: 16px;">
-                * ARPA-H ADVOCATE Teaming data sourced from <a href="https://arpa-h.gov/explore-funding/programs/advocate/teaming" target="_blank">arpa-h.gov/advocate/teaming</a>
-            </p>
         </section>
     </div>
 
     <footer>
         <div class="container">
-            <p>AUSA Competitive Analysis - Internal Use Only - Updated February 2026</p>
+            <p>AUSA Competitive Analysis · Internal · February 2026</p>
         </div>
     </footer>
 
@@ -1479,11 +1422,7 @@
                         card.classList.remove('hidden');
                     } else {
                         const categories = card.dataset.categories;
-                        if (categories.includes(filter)) {
-                            card.classList.remove('hidden');
-                        } else {
-                            card.classList.add('hidden');
-                        }
+                        card.classList.toggle('hidden', !categories.includes(filter));
                     }
                 });
             });
@@ -1493,11 +1432,7 @@
             const query = e.target.value.toLowerCase();
             document.querySelectorAll('.competitor-card').forEach(card => {
                 const text = card.textContent.toLowerCase();
-                if (text.includes(query)) {
-                    card.classList.remove('hidden');
-                } else {
-                    card.classList.add('hidden');
-                }
+                card.classList.toggle('hidden', !text.includes(query));
             });
             document.querySelectorAll('.nav-pill').forEach(p => p.classList.remove('active'));
             document.querySelector('.nav-pill[data-filter="all"]').classList.add('active');
