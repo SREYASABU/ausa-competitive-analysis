@@ -295,6 +295,7 @@
 
         .tag.device { background: rgba(34, 197, 94, 0.15); color: #4ade80; }
         .tag.ai { background: rgba(99, 102, 241, 0.15); color: #a5b4fc; }
+        .tag.arpa { background: rgba(245, 158, 11, 0.15); color: #fcd34d; }
 
         .expand-icon {
             width: 32px;
@@ -610,6 +611,50 @@
             height: 12px;
             opacity: 0.7;
         }
+
+        .product-image {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 12px;
+            margin: 16px 0;
+            border: 1px solid var(--border);
+        }
+
+        .product-image-link {
+            display: inline-block;
+            padding: 8px 16px;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            font-size: 13px;
+            margin-top: 12px;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .spec-item {
+            background: rgba(99, 102, 241, 0.1);
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .spec-item .spec-value {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--accent-light);
+        }
+
+        .spec-item .spec-label {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
     </style>
 </head>
 <body>
@@ -733,6 +778,7 @@
                             <div class="product-item">
                                 <h5>Central Hub System</h5>
                                 <p>Modular hub-based system with snap-on attachments: Otoscope (ear canal imaging), Stethoscope (heart/lung/abdomen), Thermometer (forehead), Exam Camera (throat/skin). Optional: BP Cuff, Pulse Oximeter, ECG Module.</p>
+                                <a href="https://www.tytocare.com/how-it-works" target="_blank" class="product-image-link">View Product Images →</a>
                             </div>
                         </div>
                     </div>
@@ -780,6 +826,7 @@
                     <div class="tags">
                         <span class="tag device">Hardware</span>
                         <span class="tag ai">AI</span>
+                        <span class="tag arpa">ARPA-H ADVOCATE</span>
                     </div>
                     <div class="expand-icon">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -801,6 +848,10 @@
                             <div class="info-item">
                                 <div class="label">Conditions Detected</div>
                                 <div class="value">Up to 39</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="label">Active Users</div>
+                                <div class="value">1M+ quarterly</div>
                             </div>
                         </div>
                         <div class="info-item" style="margin-bottom: 24px;">
@@ -832,6 +883,7 @@
                             <div class="product-item">
                                 <h5>KardiaMobile 12L - $3,000+</h5>
                                 <p>FDA cleared June 2024. Clinician-grade, hospital-quality 12-lead ECG. Breakthrough: 5 electrodes vs traditional 10 (50% reduction). Single-cable design.</p>
+                                <a href="https://store.alivecor.com/" target="_blank" class="product-image-link">View Products →</a>
                             </div>
                         </div>
                     </div>
@@ -868,6 +920,7 @@
                     <div class="tags">
                         <span class="tag device">Hardware</span>
                         <span class="tag ai">AI</span>
+                        <span class="tag arpa">ARPA-H ADVOCATE</span>
                     </div>
                     <div class="expand-icon">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -951,9 +1004,10 @@
                     <div class="card-header-left">
                         <div class="rank-badge">4</div>
                         <div class="company-info">
-                            <h3>Withings</h3>
+                            <h3><a href="https://www.withings.com/us/en/beam-o" target="_blank" class="external-link">Withings BeamO <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
                             <div class="company-meta">
-                                <span>Product: Beamo</span>
+                                <span>Founded 2008 (France)</span>
+                                <span>FDA Cleared: Nov 2025</span>
                             </div>
                         </div>
                     </div>
@@ -968,7 +1022,81 @@
                 </div>
                 <div class="card-content">
                     <div class="content-section">
-                        <p style="color: var(--text-secondary); font-size: 14px;">Consumer health device manufacturer with the Beamo product line. Additional details pending analysis.</p>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <div class="label">FDA Clearance</div>
+                                <div class="value">November 13, 2025</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="label">Price</div>
+                                <div class="value">$249.95</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="label">Device Type</div>
+                                <div class="value">4-in-1 Health Scanner</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="label">Target Market</div>
+                                <div class="value">Consumer / At-Home</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-section">
+                        <h4>Device Specifications</h4>
+                        <div class="specs-grid">
+                            <div class="spec-item">
+                                <div class="spec-value">80g</div>
+                                <div class="spec-label">Weight</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-value">13.6cm</div>
+                                <div class="spec-label">Length</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-value">8 mo</div>
+                                <div class="spec-label">Battery Life</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-value">&lt;60s</div>
+                                <div class="spec-label">Full Checkup</div>
+                            </div>
+                        </div>
+                        <div class="products-list" style="margin-top: 20px;">
+                            <div class="product-item">
+                                <h5>4-in-1 Measurements</h5>
+                                <p><strong>1. ECG:</strong> Medical-grade 1-lead ECG with AFib detection (30s recording via stainless steel electrodes)<br>
+                                <strong>2. Digital Stethoscope:</strong> Piezoelectric sensor captures heart & lung sounds in real-time<br>
+                                <strong>3. Pulse Oximeter:</strong> SpO2 and pulse rate measurement<br>
+                                <strong>4. Contactless Thermometer:</strong> Temporal artery temperature reading</p>
+                                <a href="https://www.withings.com/us/en/beam-o" target="_blank" class="product-image-link">View Product →</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-section">
+                        <h4>Technical Details</h4>
+                        <div class="ai-details">
+                            <p><strong>Display:</strong> RGB TFT LCD, 170x320px, 1.9" 16-bit high color</p>
+                            <p><strong>Connectivity:</strong> Bluetooth Low Energy + Wi-Fi 2.4GHz b/g/n</p>
+                            <p><strong>Materials:</strong> Polycarbonate body, silicone membrane, stainless steel electrodes</p>
+                            <p><strong>App:</strong> Withings App (iOS/Android) - ECG unlocks after doctor review within 24-48 hours</p>
+                        </div>
+                    </div>
+                    <div class="content-section">
+                        <h4>Pro Version</h4>
+                        <div class="ai-details">
+                            <p><strong>BeamO Pro:</strong> Cellular-enabled version for healthcare providers with remote patient monitoring capabilities.</p>
+                            <p><a href="https://withingshealthsolutions.com/devices/beam-o-pro/" target="_blank">View BeamO Pro for Healthcare →</a></p>
+                        </div>
+                    </div>
+                    <div class="ausa-advantage">
+                        <h4>AUSA Advantages</h4>
+                        <ul>
+                            <li>7-in-1 vs 4-in-1 device (more comprehensive)</li>
+                            <li>Full clinical ecosystem with provider portal</li>
+                            <li>EHR integration built-in</li>
+                            <li>Designed for clinical use, not just consumer</li>
+                            <li>Prescription management capabilities</li>
+                        </ul>
                     </div>
                 </div>
             </article>
@@ -978,7 +1106,7 @@
                     <div class="card-header-left">
                         <div class="rank-badge">5</div>
                         <div class="company-info">
-                            <h3><a href="https://www.insighthealth.ai/" target="_blank" class="external-link">Insights Health AI <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                            <h3><a href="https://www.insighthealth.ai/" target="_blank" class="external-link">Insight Health AI <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
                             <div class="company-meta">
                                 <span>Founded 2024</span>
                                 <span>AI-Only</span>
@@ -987,6 +1115,7 @@
                     </div>
                     <div class="tags">
                         <span class="tag ai">AI Only</span>
+                        <span class="tag arpa">ARPA-H ADVOCATE</span>
                     </div>
                     <div class="expand-icon">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1019,8 +1148,8 @@
                         <h4>AI Products</h4>
                         <div class="products-list">
                             <div class="product-item">
-                                <h5>Lumi (Conversational AI)</h5>
-                                <p>Patient-facing app agent that calls patients before consultations to gather necessary information. 100,000+ autonomous patient conversations conducted.</p>
+                                <h5>Lumi (Conversational AI Agent)</h5>
+                                <p>Patient-facing AI agent that communicates directly via voice or text to gather disease-specific history, update medication lists, process referrals, and guide phone/portal-based triage. First autonomous AI clinical agent launched in 2023.</p>
                             </div>
                             <div class="product-item">
                                 <h5>Aura AI</h5>
@@ -1241,9 +1370,9 @@
                             <th>Hardware</th>
                             <th>AI</th>
                             <th>FDA Cleared</th>
-                            <th>Telehealth</th>
                             <th>Provider Portal</th>
                             <th>EHR Integration</th>
+                            <th>ARPA-H Teaming</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -1252,9 +1381,9 @@
                             <td class="check">7-in-1</td>
                             <td class="check">Yes</td>
                             <td class="partial">Pending</td>
-                            <td class="check">Yes</td>
                             <td class="check">Full CMS</td>
                             <td class="check">Yes</td>
+                            <td class="partial">TBD</td>
                         </tr>
                         <tr>
                             <td><a href="https://www.tytocare.com/" target="_blank">TytoCare</a></td>
@@ -1262,17 +1391,17 @@
                             <td class="check">Diagnostic Support</td>
                             <td class="check">2016</td>
                             <td class="check">Yes</td>
-                            <td class="check">Yes</td>
                             <td class="check">100+ EHRs</td>
+                            <td class="cross">No</td>
                         </tr>
                         <tr>
                             <td><a href="https://alivecor.com/" target="_blank">AliveCor</a></td>
                             <td class="check">ECG Only</td>
                             <td class="check">39 Conditions</td>
                             <td class="check">2012</td>
-                            <td class="cross">No</td>
                             <td class="partial">Limited</td>
                             <td class="partial">Limited</td>
+                            <td class="check">Yes (ADVOCATE)</td>
                         </tr>
                         <tr>
                             <td><a href="https://biofourmis.com/" target="_blank">Biofourmis</a></td>
@@ -1280,8 +1409,26 @@
                             <td class="check">Predictive</td>
                             <td class="check">Yes</td>
                             <td class="cross">No</td>
-                            <td class="cross">No</td>
                             <td class="partial">Limited</td>
+                            <td class="check">Yes (ADVOCATE)</td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://www.withings.com/us/en/beam-o" target="_blank">Withings BeamO</a></td>
+                            <td class="check">4-in-1</td>
+                            <td class="cross">No</td>
+                            <td class="check">Nov 2025</td>
+                            <td class="cross">Consumer Only</td>
+                            <td class="cross">No</td>
+                            <td class="cross">No</td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://www.insighthealth.ai/" target="_blank">Insight Health AI</a></td>
+                            <td class="cross">No</td>
+                            <td class="check">Agentic AI</td>
+                            <td class="cross">N/A</td>
+                            <td class="check">Yes</td>
+                            <td class="check">Yes</td>
+                            <td class="check">Yes (ADVOCATE)</td>
                         </tr>
                         <tr>
                             <td><a href="https://vocare.com/" target="_blank">VoCare</a></td>
@@ -1289,14 +1436,14 @@
                             <td class="cross">No</td>
                             <td class="check">Yes</td>
                             <td class="partial">Basic</td>
-                            <td class="partial">Basic</td>
+                            <td class="cross">No</td>
                             <td class="cross">No</td>
                         </tr>
                         <tr>
                             <td><a href="https://www.doctronic.ai/" target="_blank">Doctronics</a></td>
                             <td class="cross">No</td>
                             <td class="check">Rx Refills</td>
-                            <td class="cross">No (Utah only)</td>
+                            <td class="cross">Utah only</td>
                             <td class="cross">No</td>
                             <td class="cross">No</td>
                             <td class="cross">No</td>
@@ -1306,13 +1453,16 @@
                             <td class="cross">No</td>
                             <td class="check">ECG Analysis</td>
                             <td class="check">Yes</td>
-                            <td class="cross">No</td>
                             <td class="partial">Research</td>
                             <td class="check">Yes</td>
+                            <td class="cross">No</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+            <p style="color: var(--text-muted); font-size: 12px; margin-top: 16px;">
+                * ARPA-H ADVOCATE Teaming data sourced from <a href="https://arpa-h.gov/explore-funding/programs/advocate/teaming" target="_blank">arpa-h.gov/advocate/teaming</a>
+            </p>
         </section>
     </div>
 
