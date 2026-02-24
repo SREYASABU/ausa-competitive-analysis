@@ -81,11 +81,44 @@
         .company-info h3 a { color: inherit; }
         .company-info h3 a:hover { color: var(--link); }
         .company-meta { display: flex; gap: 10px; font-size: 12px; color: var(--text-muted); }
-        .tags { display: flex; gap: 5px; flex-wrap: wrap; }
-        .tag { padding: 3px 8px; background: var(--bg-secondary); border-radius: 5px; font-size: 10px; color: var(--text-muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.02em; }
-        .tag.device { background: var(--success-soft); color: var(--success); }
-        .tag.ai { background: var(--accent-soft); color: var(--text-secondary); }
-        .tag.arpa { background: var(--warning-soft); color: var(--warning); }
+        .tags { display: flex; gap: 6px; flex-wrap: wrap; }
+        .tag { 
+            padding: 4px 10px; 
+            background: transparent; 
+            border: 1px solid var(--border-hover); 
+            border-radius: 100px; 
+            font-size: 9px; 
+            color: var(--text-muted); 
+            font-weight: 500; 
+            text-transform: uppercase; 
+            letter-spacing: 0.05em;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .tag::before {
+            content: '';
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: currentColor;
+            opacity: 0.6;
+        }
+        .tag.device { 
+            border-color: rgba(110, 231, 183, 0.25); 
+            color: var(--success); 
+            background: rgba(110, 231, 183, 0.05);
+        }
+        .tag.ai { 
+            border-color: rgba(147, 197, 253, 0.25); 
+            color: var(--link); 
+            background: rgba(147, 197, 253, 0.05);
+        }
+        .tag.arpa { 
+            border-color: rgba(252, 211, 77, 0.25); 
+            color: var(--warning); 
+            background: rgba(252, 211, 77, 0.05);
+        }
         .expand-icon { width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; color: var(--text-muted); }
         .competitor-card.expanded .expand-icon { transform: rotate(180deg); }
         .card-content { display: none; padding: 0 22px 22px; border-top: 1px solid var(--border); }
