@@ -54,9 +54,9 @@
         }
 
         header {
-            padding: 48px 0 32px;
+            padding: 32px 0 24px;
             border-bottom: 1px solid var(--border);
-            margin-bottom: 48px;
+            margin-bottom: 32px;
         }
 
         .header-content {
@@ -64,17 +64,7 @@
             justify-content: space-between;
             align-items: flex-start;
             flex-wrap: wrap;
-            gap: 24px;
-        }
-
-        .logo {
-            font-size: 28px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-
-        .logo span {
-            color: var(--accent);
+            gap: 16px;
         }
 
         .header-meta {
@@ -83,88 +73,72 @@
 
         .header-meta p {
             color: var(--text-muted);
-            font-size: 14px;
+            font-size: 13px;
         }
 
         h1 {
-            font-size: 42px;
+            font-size: 32px;
             font-weight: 700;
-            letter-spacing: -1px;
-            margin-top: 32px;
-            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
         }
 
         .subtitle {
-            font-size: 18px;
+            font-size: 15px;
             color: var(--text-secondary);
             max-width: 700px;
         }
 
         .context-banner {
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
-            border: 1px solid rgba(99, 102, 241, 0.2);
-            border-radius: 16px;
-            padding: 32px;
-            margin-bottom: 48px;
+            background: rgba(99, 102, 241, 0.05);
+            border: 1px solid rgba(99, 102, 241, 0.15);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-bottom: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
         }
 
-        .context-banner h2 {
-            font-size: 20px;
+        .context-banner-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .context-banner .context-title {
+            font-size: 13px;
             font-weight: 600;
-            margin-bottom: 16px;
             color: var(--accent-light);
         }
 
-        .context-banner p {
+        .context-banner .context-stat {
+            font-size: 12px;
             color: var(--text-secondary);
-            margin-bottom: 12px;
         }
 
         .stat-highlight {
             display: inline-block;
-            background: rgba(99, 102, 241, 0.2);
-            padding: 4px 12px;
-            border-radius: 6px;
+            background: rgba(99, 102, 241, 0.15);
+            padding: 2px 8px;
+            border-radius: 4px;
             font-weight: 600;
             color: var(--accent-light);
+            font-size: 12px;
         }
 
         .source-link {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            margin-top: 16px;
-            padding: 8px 16px;
-            background: rgba(99, 102, 241, 0.15);
-            border-radius: 8px;
-            font-size: 14px;
+            gap: 4px;
+            padding: 6px 12px;
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 6px;
+            font-size: 12px;
             font-weight: 500;
-        }
-
-        .applicant-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 16px;
-            margin-top: 24px;
-        }
-
-        .applicant-stat {
-            text-align: center;
-            padding: 16px;
-            background: rgba(0,0,0,0.2);
-            border-radius: 12px;
-        }
-
-        .applicant-stat .percentage {
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-
-        .applicant-stat .label {
-            font-size: 13px;
-            color: var(--text-muted);
-            margin-top: 4px;
         }
 
         .nav-pills {
@@ -440,35 +414,21 @@
         .ausa-advantage {
             background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
             border: 1px solid rgba(34, 197, 94, 0.3);
-            padding: 20px;
+            padding: 16px 20px;
             border-radius: 12px;
             margin-top: 24px;
         }
 
         .ausa-advantage h4 {
             color: #4ade80;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
+            font-size: 13px;
         }
 
-        .ausa-advantage ul {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .ausa-advantage li {
-            display: flex;
-            align-items: center;
-            gap: 8px;
+        .ausa-advantage p {
             color: var(--text-secondary);
             font-size: 14px;
-        }
-
-        .ausa-advantage li::before {
-            content: "\2713";
-            color: #4ade80;
-            font-weight: bold;
+            line-height: 1.5;
         }
 
         .warning-banner {
@@ -550,12 +510,13 @@
         }
 
         @media (max-width: 768px) {
-            h1 { font-size: 28px; }
+            h1 { font-size: 24px; }
             .header-content { flex-direction: column; }
             .header-meta { text-align: left; }
             .nav-pills { position: static; }
             .card-header { flex-direction: column; align-items: flex-start; gap: 16px; }
             .info-grid { grid-template-columns: 1fr; }
+            .context-banner { flex-direction: column; align-items: flex-start; }
         }
 
         .search-wrapper { margin-bottom: 24px; }
@@ -612,14 +573,6 @@
             opacity: 0.7;
         }
 
-        .product-image {
-            width: 100%;
-            max-width: 300px;
-            border-radius: 12px;
-            margin: 16px 0;
-            border: 1px solid var(--border);
-        }
-
         .product-image-link {
             display: inline-block;
             padding: 8px 16px;
@@ -661,51 +614,31 @@
     <div class="container">
         <header>
             <div class="header-content">
-                <div class="logo">AUSA<span>.</span>analysis</div>
+                <div>
+                    <h1>Competitive Analysis</h1>
+                    <p class="subtitle">Healthcare AI and remote patient monitoring landscape overview.</p>
+                </div>
                 <div class="header-meta">
-                    <p>Healthcare AI Competitive Landscape</p>
                     <p>Last updated: February 2026</p>
                 </div>
             </div>
-            <h1>Competitive Analysis</h1>
-            <p class="subtitle">A comprehensive overview of the healthcare AI and remote patient monitoring landscape, analyzing key competitors and market positioning.</p>
         </header>
 
-        <section class="context-banner">
-            <h2>ARPA-H $5.5B Initiative Context</h2>
-            <p>The mission: Deploy AI agents that can prescribe medications and manage heart failure 24/7.</p>
-            <p>Why this matters: <span class="stat-highlight">46% of U.S. counties have zero cardiologists</span></p>
-            <div class="applicant-grid">
-                <div class="applicant-stat">
-                    <div class="percentage">37%</div>
-                    <div class="label">AI Startups</div>
-                </div>
-                <div class="applicant-stat">
-                    <div class="percentage">13%</div>
-                    <div class="label">Academic Medical Centers</div>
-                </div>
-                <div class="applicant-stat">
-                    <div class="percentage">8%</div>
-                    <div class="label">Defense Contractors</div>
-                </div>
-                <div class="applicant-stat">
-                    <div class="percentage">7%</div>
-                    <div class="label">Health Systems</div>
-                </div>
-                <div class="applicant-stat">
-                    <div class="percentage">6%</div>
-                    <div class="label">Big Tech</div>
-                </div>
+        <div class="context-banner">
+            <div class="context-banner-left">
+                <span class="context-title">ARPA-H ADVOCATE ($5.5B)</span>
+                <span class="context-stat">AI agents for 24/7 heart failure management</span>
+                <span class="stat-highlight">46% of U.S. counties have zero cardiologists</span>
             </div>
-            <a href="https://claude.ai/public/artifacts/d8a9a12d-c2d1-42a1-b8ca-ec28acafc0f9" target="_blank" class="source-link">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <a href="https://arpa-h.gov/explore-funding/programs/advocate/teaming" target="_blank" class="source-link">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                     <polyline points="15 3 21 3 21 9"></polyline>
                     <line x1="10" y1="14" x2="21" y2="3"></line>
                 </svg>
-                View Full Overview
+                Teaming Page
             </a>
-        </section>
+        </div>
 
         <div class="search-wrapper">
             <input type="text" class="search-input" placeholder="Search competitors..." id="searchInput">
@@ -803,10 +736,7 @@
                     </div>
                     <div class="ausa-advantage">
                         <h4>AUSA Advantages</h4>
-                        <ul>
-                            <li>7-in-1 portable device vs modular system</li>
-                            <li>More streamlined form factor</li>
-                        </ul>
+                        <p>AUSA offers a compact 7-in-1 portable device versus TytoCare's modular snap-on system requiring multiple attachments. Our integrated form factor eliminates attachment management and simplifies patient self-exams.</p>
                     </div>
                 </div>
             </article>
@@ -896,11 +826,7 @@
                     </div>
                     <div class="ausa-advantage">
                         <h4>AUSA Advantages</h4>
-                        <ul>
-                            <li>Broader scope beyond ECG-only</li>
-                            <li>Full vital signs monitoring (SpO2, temp, etc.)</li>
-                            <li>Integrated multi-parameter device</li>
-                        </ul>
+                        <p>AliveCor focuses exclusively on ECG while AUSA provides comprehensive vital signs monitoring including SpO2, temperature, blood pressure, and lung sounds in a single integrated device. Our full-stack approach addresses complete patient assessment, not just cardiac screening.</p>
                     </div>
                 </div>
             </article>
@@ -989,12 +915,7 @@
                     </div>
                     <div class="ausa-advantage">
                         <h4>AUSA Advantages</h4>
-                        <ul>
-                            <li>Full teleconsultation ecosystem</li>
-                            <li>Comprehensive care provider portal</li>
-                            <li>Better leadership stability</li>
-                            <li>Broader platform scope</li>
-                        </ul>
+                        <p>Biofourmis faced leadership instability and was acquired post-restructuring. AUSA offers a complete teleconsultation ecosystem with provider portal and prescription management, avoiding single-device dependency.</p>
                     </div>
                 </div>
             </article>
@@ -1090,13 +1011,7 @@
                     </div>
                     <div class="ausa-advantage">
                         <h4>AUSA Advantages</h4>
-                        <ul>
-                            <li>7-in-1 vs 4-in-1 device (more comprehensive)</li>
-                            <li>Full clinical ecosystem with provider portal</li>
-                            <li>EHR integration built-in</li>
-                            <li>Designed for clinical use, not just consumer</li>
-                            <li>Prescription management capabilities</li>
-                        </ul>
+                        <p>BeamO is a consumer-focused 4-in-1 device lacking EHR integration and clinical workflow support. AUSA provides a 7-in-1 device with full provider portal, prescription management, and enterprise EHR connectivity built for clinical deployment.</p>
                     </div>
                 </div>
             </article>
@@ -1108,8 +1023,8 @@
                         <div class="company-info">
                             <h3><a href="https://www.insighthealth.ai/" target="_blank" class="external-link">Insight Health AI <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
                             <div class="company-meta">
-                                <span>Founded 2024</span>
-                                <span>AI-Only</span>
+                                <span>Founded 2023</span>
+                                <span>San Francisco, CA</span>
                             </div>
                         </div>
                     </div>
@@ -1131,16 +1046,25 @@
                                 <div class="value">$4.6M (July 2025)</div>
                             </div>
                             <div class="info-item">
+                                <div class="label">Lead Investor</div>
+                                <div class="value">Kindred Ventures</div>
+                            </div>
+                            <div class="info-item">
                                 <div class="label">Daily Active Clinicians</div>
                                 <div class="value">1,500+</div>
                             </div>
                             <div class="info-item">
-                                <div class="label">Conversations Processed</div>
+                                <div class="label">Autonomous Conversations</div>
                                 <div class="value">100K+</div>
                             </div>
-                            <div class="info-item">
-                                <div class="label">Time Saved</div>
-                                <div class="value">100K+ hours/month</div>
+                        </div>
+                        <div class="info-item" style="margin-bottom: 24px;">
+                            <div class="label">Leadership</div>
+                            <div class="founders-list">
+                                <span class="founder-link" style="background: var(--bg-secondary);">Jaimal Soni (CEO, ex-Segment)</span>
+                                <span class="founder-link" style="background: var(--bg-secondary);">Saran Siva (CTO, ex-Segment)</span>
+                                <span class="founder-link" style="background: var(--bg-secondary);">Dr. Pankaj Gore (CMO)</span>
+                                <span class="founder-link" style="background: var(--bg-secondary);">Dr. Eric Stecker (CMO)</span>
                             </div>
                         </div>
                     </div>
@@ -1149,7 +1073,7 @@
                         <div class="products-list">
                             <div class="product-item">
                                 <h5>Lumi (Conversational AI Agent)</h5>
-                                <p>Patient-facing AI agent that communicates directly via voice or text to gather disease-specific history, update medication lists, process referrals, and guide phone/portal-based triage. First autonomous AI clinical agent launched in 2023.</p>
+                                <p>First autonomous AI clinical agent (launched 2023). Patient-facing AI that communicates via voice or text to gather disease-specific history, update medication lists, process referrals, and guide triage. Saves clinicians 100K+ hours/month.</p>
                             </div>
                             <div class="product-item">
                                 <h5>Aura AI</h5>
@@ -1161,6 +1085,10 @@
                         <h4>Specialties Served</h4>
                         <p style="color: var(--text-secondary); font-size: 14px;">Neurosurgery, Oncology, GI, Primary Care</p>
                     </div>
+                    <div class="ausa-advantage">
+                        <h4>AUSA Advantages</h4>
+                        <p>Insight Health AI is software-only, requiring integration with existing hardware for vitals collection. AUSA combines hardware diagnostics with AI in a unified platform, eliminating third-party device dependencies.</p>
+                    </div>
                 </div>
             </article>
 
@@ -1171,8 +1099,8 @@
                         <div class="company-info">
                             <h3><a href="https://anumana.ai/" target="_blank" class="external-link">nference / Anumana <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
                             <div class="company-meta">
-                                <span>AI-Only</span>
-                                <span>Mayo Clinic Partner</span>
+                                <span>Anumana Founded 2021</span>
+                                <span>Mayo Clinic Partnership</span>
                             </div>
                         </div>
                     </div>
@@ -1187,15 +1115,52 @@
                 </div>
                 <div class="card-content">
                     <div class="content-section">
-                        <h4>Platform</h4>
-                        <div class="ai-details">
-                            <p><strong><a href="https://nference.com/nsights" target="_blank">nSights Platform</a>:</strong> AI insights on structured and unstructured records of 11+ million patients from health system partners including Mayo Clinic and Duke Health.</p>
-                            <p><strong>Customers:</strong> Pharmaceutical companies and researchers.</p>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <div class="label">Anumana Total Raised</div>
+                                <div class="value">$185M</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="label">nference Revenue</div>
+                                <div class="value">$36.7M (2024)</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="label">FDA Status</div>
+                                <div class="value" style="color: #4ade80;">510(k) Cleared Oct 2023</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="label">Latest Funding</div>
+                                <div class="value">Series C - Boston Scientific (Apr 2025)</div>
+                            </div>
                         </div>
                     </div>
                     <div class="content-section">
-                        <h4>Anumana (Mayo Clinic Partnership)</h4>
-                        <p style="color: var(--text-secondary); font-size: 14px;">Founded by nference in partnership with Mayo Clinic to develop innovative ECG-AI technology, leveraging clinical and technical expertise of both organizations.</p>
+                        <h4>FDA-Cleared Product</h4>
+                        <div class="products-list">
+                            <div class="product-item">
+                                <h5>ECG-AI LEF (Low Ejection Fraction)</h5>
+                                <p>Detects low left ventricular ejection fraction from standard 12-lead ECGs. Identifies patients at risk of heart failure before symptoms appear. Runs on existing hospital ECG systems - no new hardware required.</p>
+                                <div class="performance-stat">
+                                    <span class="number">84.5%</span>
+                                    <span class="unit">Sensitivity | 83.6% Specificity | 0.932 AUROC</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-section">
+                        <h4>nference Platform</h4>
+                        <div class="ai-details">
+                            <p><strong><a href="https://nference.com/nsights" target="_blank">nSights Platform</a>:</strong> AI insights on structured and unstructured records of 11+ million patients from health system partners including Mayo Clinic and Duke Health.</p>
+                            <p><strong>Customers:</strong> Pharmaceutical companies and clinical researchers for drug development and real-world evidence.</p>
+                        </div>
+                    </div>
+                    <div class="content-section">
+                        <h4>Partnership</h4>
+                        <p style="color: var(--text-secondary); font-size: 14px;">Anumana was founded in 2021 as a joint venture between nference and Mayo Clinic, combining nference's AI expertise with Mayo's clinical validation infrastructure and ECG database.</p>
+                    </div>
+                    <div class="ausa-advantage">
+                        <h4>AUSA Advantages</h4>
+                        <p>Anumana's ECG-AI requires existing hospital ECG infrastructure and focuses solely on cardiac screening. AUSA provides portable point-of-care diagnostics across multiple vital signs with integrated patient management workflows.</p>
                     </div>
                 </div>
             </article>
@@ -1236,11 +1201,7 @@
                     </div>
                     <div class="ausa-advantage">
                         <h4>AUSA Advantages</h4>
-                        <ul>
-                            <li>Full clinical care management portal (VoCare lacks prescriptions)</li>
-                            <li>7-in-1 vs 6-in-1 device</li>
-                            <li>More comprehensive ecosystem</li>
-                        </ul>
+                        <p>VoCare distributes third-party hardware with basic portal functionality and no prescription management. AUSA offers proprietary 7-in-1 hardware with full clinical care management including Rx workflows.</p>
                     </div>
                 </div>
             </article>
@@ -1297,6 +1258,10 @@
                             <p>Tested on 500 urgent care cases with AI and real physicians reviewing independently. AI matched physician decisions 99.2% of the time. This evidence was submitted to and accepted by Utah regulators.</p>
                         </div>
                     </div>
+                    <div class="ausa-advantage">
+                        <h4>AUSA Advantages</h4>
+                        <p>Doctronics operates only in Utah's regulatory sandbox with no FDA pathway and handles refills only. AUSA pursues FDA clearance nationally with full diagnostic and prescription capabilities.</p>
+                    </div>
                 </div>
             </article>
 
@@ -1308,7 +1273,7 @@
                             <h3><a href="https://www.tempus.com/" target="_blank" class="external-link">Tempus AI <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
                             <div class="company-meta">
                                 <span>Founded 2015</span>
-                                <span>Largest by Revenue</span>
+                                <span>NASDAQ: TEM (IPO June 2024)</span>
                             </div>
                         </div>
                     </div>
@@ -1329,12 +1294,22 @@
                                 <div class="value" style="color: #4ade80;">~$1.27 Billion</div>
                             </div>
                             <div class="info-item">
+                                <div class="label">Private Funding</div>
+                                <div class="value">$1B+ pre-IPO</div>
+                            </div>
+                            <div class="info-item">
                                 <div class="label">Primary Business</div>
                                 <div class="value">Cancer/Lab Testing</div>
                             </div>
                             <div class="info-item">
-                                <div class="label">Secondary Business</div>
-                                <div class="value">Cardiovascular AI</div>
+                                <div class="label">Public Listing</div>
+                                <div class="value">NASDAQ: TEM (Jun 14, 2024)</div>
+                            </div>
+                        </div>
+                        <div class="info-item" style="margin-bottom: 24px;">
+                            <div class="label">Founder</div>
+                            <div class="founders-list">
+                                <span class="founder-link" style="background: var(--bg-secondary);">Eric Lefkofsky (CEO, Groupon co-founder)</span>
                             </div>
                         </div>
                     </div>
@@ -1342,19 +1317,23 @@
                         <h4>FDA-Cleared Cardiovascular AI</h4>
                         <div class="products-list">
                             <div class="product-item">
-                                <h5>ECG-AF</h5>
+                                <h5>ECG-AF (FDA Cleared June 2024)</h5>
                                 <p>Detects atrial fibrillation risk from standard hospital ECGs.</p>
                             </div>
                             <div class="product-item">
-                                <h5>ECG-Low EF</h5>
+                                <h5>ECG-Low EF (FDA Cleared)</h5>
                                 <p>Detects weak heart pumping - a sign of early heart failure.</p>
                             </div>
                         </div>
-                        <p style="color: var(--text-secondary); font-size: 14px; margin-top: 16px;">Both run on existing hospital ECGs - no new device needed. Tempus is fundamentally a cancer company that has added cardiovascular AI as a new business line.</p>
+                        <p style="color: var(--text-secondary); font-size: 14px; margin-top: 16px;">Both run on existing hospital ECGs - no new device needed. Tempus is fundamentally a cancer/genomics company ($1.27B revenue) that added cardiovascular AI as an expansion vertical.</p>
                     </div>
                     <div class="content-section">
                         <h4>Business Model</h4>
-                        <p style="color: var(--text-secondary); font-size: 14px;">Lab testing (largest revenue stream), Data licensing, Tempus Next platform.</p>
+                        <p style="color: var(--text-secondary); font-size: 14px;">Lab testing (largest revenue stream), Data licensing to pharma, Tempus Next platform for precision medicine. Cardiovascular AI represents a minor fraction of total business.</p>
+                    </div>
+                    <div class="ausa-advantage">
+                        <h4>AUSA Advantages</h4>
+                        <p>Tempus's cardiovascular AI is a side business for a cancer-focused company, analyzing existing hospital ECGs. AUSA focuses entirely on remote cardiac monitoring with portable hardware enabling home-based and point-of-care diagnostics.</p>
                     </div>
                 </div>
             </article>
@@ -1431,6 +1410,15 @@
                             <td class="check">Yes (ADVOCATE)</td>
                         </tr>
                         <tr>
+                            <td><a href="https://anumana.ai/" target="_blank">Anumana</a></td>
+                            <td class="cross">No</td>
+                            <td class="check">ECG-AI LEF</td>
+                            <td class="check">Oct 2023</td>
+                            <td class="cross">No</td>
+                            <td class="check">Hospital ECG</td>
+                            <td class="cross">No</td>
+                        </tr>
+                        <tr>
                             <td><a href="https://vocare.com/" target="_blank">VoCare</a></td>
                             <td class="check">6-in-1</td>
                             <td class="cross">No</td>
@@ -1451,8 +1439,8 @@
                         <tr>
                             <td><a href="https://www.tempus.com/" target="_blank">Tempus AI</a></td>
                             <td class="cross">No</td>
-                            <td class="check">ECG Analysis</td>
-                            <td class="check">Yes</td>
+                            <td class="check">ECG-AF/Low EF</td>
+                            <td class="check">Jun 2024</td>
                             <td class="partial">Research</td>
                             <td class="check">Yes</td>
                             <td class="cross">No</td>
